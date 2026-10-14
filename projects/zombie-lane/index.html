@@ -58,27 +58,34 @@
           <p><strong>Rights status:</strong> unknown. Needs research before any assets are reused in a public build.</p>
 
           <h2>Which build we target</h2>
-          <p>Facts below come from a first look at the APK's file listing and manifest strings. REA has not been run on it yet.</p>
+          <p>Facts below come from REA's package inspection, class inventory and extraction (see <a href="https://github.com/a-barzanti/ai-rebuilds/blob/main/projects/zombie-lane/notes/evidence.md">evidence index</a>).</p>
           <table>
             <thead><tr><th>Field</th><th>Value</th></tr></thead>
             <tbody>
               <tr><td>Version</td><td><code>1.0.33</code> ("multi")</td></tr>
               <tr><td>Platform</td><td>Android, <code>armeabi</code></td></tr>
-              <tr><td>Package</td><td><code>com.dchoc.*</code>, main activity <code>DCiDead</code></td></tr>
-              <tr><td>Code</td><td>Java / Dalvik (<code>classes.dex</code>). No native game engine library</td></tr>
+              <tr><td>Package</td><td><code>com.dchoc</code> (versionCode 10330, minSdk 9), single landscape activity <code>DCiDead</code></td></tr>
+              <tr><td>Code</td><td>Java / Dalvik, 2,137 classes (428 under <code>com.dchoc</code>). The game is written for J2ME and runs on Android through Digital Chocolate's own MIDP/M3G compatibility layer, which draws with OpenGL ES</td></tr>
               <tr><td>Native libs</td><td><code>liballjoyn_java.so</code>, <code>libdaemon-jni.so</code> (AllJoyn peer-to-peer), dated 2015-04-24</td></tr>
-              <tr><td>Assets</td><td>Custom packed files: <code>assets/l0_0</code> … <code>assets/l4_0</code>, <code>assets/p</code>, <code>assets/r1</code>, <code>assets/56</code></td></tr>
+              <tr><td>Assets</td><td>Text tables <code>l0_0</code>…<code>l4_0</code> (en, fr, it, de, es), data table <code>r1</code> (18,766 records), config <code>p</code>, coin catalogue <code>56</code>, and 537 sprite bundles <code>bundle_&lt;id&gt;/</code> (descriptor + 669 PNGs)</td></tr>
+              <tr><td>Audio</td><td>47 WAV (16-bit mono 22 kHz) + 2 MP3 in <code>res/raw</code></td></tr>
               <tr><td>Online services</td><td>Facebook SDK login, Google Play billing, Fortumo, PayPal MEP, Tapjoy, Flurry</td></tr>
               <tr><td>SHA-256</td><td><code>39b93f6f5409a3e9f84a47efdd23e3067333117bc5edad6c27887091ebda0ad6</code></td></tr>
             </tbody>
           </table>
           <p>
-            The game logic is in Dalvik bytecode, not a native engine, so REA's Android tools are the place to start.
-            Use the <code>.dex</code> classes for logic and the custom archives for art, maps and balance data.
+            All game logic is Java bytecode, so REA's Android (JADX) tools cover it. The native libraries are only
+            used for AllJoyn local multiplayer.
           </p>
 
           <h2>Findings</h2>
-          <p>Nothing yet. Specs go in <a href="https://github.com/a-barzanti/ai-rebuilds/tree/main/projects/zombie-lane/notes"><code>notes/</code></a> once analysis starts.</p>
+          <ul>
+            <li><strong>Main loop:</strong> one logic update per rendered frame, with a variable time step. <code>dt</code> is the average of the last 8 frame times, each capped at 500&nbsp;ms. <a href="https://github.com/a-barzanti/ai-rebuilds/blob/main/projects/zombie-lane/notes/architecture.md">architecture.md</a></li>
+            <li><strong>Rendering:</strong> everything draws through a J2ME-style 2D <code>Graphics</code> API in an orthographic projection, so it maps directly onto Canvas 2D.</li>
+            <li><strong>Saves are local:</strong> the home scene and missions are stored as J2ME RecordStore records, and the built-in neighbor "Rob" loads locally. The core game likely works offline (still to confirm).</li>
+            <li><strong>Data formats decoded:</strong> an indexed table container (u32 size, u32 count, u32 offsets), 32-bit resource/text IDs (file number + index), and <code>readUTF</code> strings. <a href="https://github.com/a-barzanti/ai-rebuilds/blob/main/projects/zombie-lane/notes/resource-formats.md">resource-formats.md</a></li>
+            <li><strong>Online:</strong> the game's own XML "servlet" API on a now-gone EC2 host only handled sessions, cloud save, timers and social features. Facebook, payments, ads and analytics become stubs. <a href="https://github.com/a-barzanti/ai-rebuilds/blob/main/projects/zombie-lane/notes/online-dependencies.md">online-dependencies.md</a></li>
+          </ul>
 
           <h2>Rebuild plan</h2>
           <ol>
@@ -89,6 +96,7 @@
 
           <h2>Log</h2>
           <ul>
+            <li>2026-10-14: First REA pass: package, class map, main loop, rendering, resource formats, online dependencies. Status: analysis.</li>
             <li>2026-10-14: Project proposed. First look at APK 1.0.33.</li>
           </ul>
         </div>

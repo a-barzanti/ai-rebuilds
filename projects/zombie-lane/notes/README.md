@@ -10,3 +10,12 @@ Do **not** paste decompiled source here. Short identifiers, constants, struct la
 
 REA evidence bundles exported with `export_evidence_bundle` can go in `../evidence/`, as long as they
 contain no copyrighted code or assets.
+
+## Index
+
+| Spec | Covers |
+| ---- | ------ |
+| [architecture.md](architecture.md) | Code layers, main loop and time step, game-engine states, rendering model |
+| [resource-formats.md](resource-formats.md) | Indexed table container, resource/text IDs, text tables, config, bundles, audio |
+| [online-dependencies.md](online-dependencies.md) | Game server API, third-party SDKs, what the rebuild replaces |
+| [evidence.md](evidence.md) | REA evidence IDs behind every claim |
