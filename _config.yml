@@ -1,0 +1,46 @@
+title: AI Rebuilds
+tagline: Abandoned games, rebuilt for the open web.
+description: >-
+  An open, community-run collection of projects that use AI agents and REA to
+  study abandonware and legacy games and rebuild them to run in the browser.
+url: https://ai-rebuilds.com
+baseurl: ""
+repository: a-barzanti/ai-rebuilds
+branch: main
+rea_url: https://github.com/morluto/rea
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable: true
+
+# Project statuses, in pipeline order. Every project's `status` must be one of these keys.
+statuses:
+  - key: proposed
+    label: Proposed
+    hint: Someone wants to rebuild it. Nobody has started yet.
+  - key: analysis
+    label: Analysis
+    hint: The original is being studied with REA.
+  - key: rebuilding
+    label: Rebuilding
+    hint: A web version is being written from the analysis notes.
+  - key: playable
+    label: Playable
+    hint: You can play it in the browser, though some parts may be missing.
+  - key: complete
+    label: Complete
+    hint: Matches the original's behavior.
+
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - binaries/
+  - vendor/
+  - .github/
+  - "**/*.apk"
+  - "**/*.exe"

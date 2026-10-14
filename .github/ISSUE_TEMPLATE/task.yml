@@ -1,0 +1,25 @@
+name: Project task
+description: A finding, bug, or piece of work for an existing project.
+labels: ["task"]
+body:
+  - type: input
+    id: project
+    attributes:
+      label: Project slug
+      description: The folder name under projects/, e.g. zombie-lane
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options: [Analysis, Rebuild, Verification (behavior differs from the original), Research, Site]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: For behavior differences, describe what the original does and what the rebuild does, with REA evidence or captures if you have them.
+    validations:
+      required: true

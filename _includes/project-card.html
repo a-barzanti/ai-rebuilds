@@ -1,0 +1,16 @@
+{%- assign p = include.project -%}
+{%- capture search_text -%}{{ p.title }} {{ p.summary }} {{ p.original.developer }} {{ p.original.publisher }} {{ p.original.platforms | join: " " }} {{ p.tags | join: " " }}{%- endcapture -%}
+<article class="card" data-status="{{ p.status }}" data-search="{{ search_text | downcase | strip_newlines | escape }}">
+  <div class="card-top">
+    {% include status-badge.html status=p.status %}
+    {%- if p.original.year %}<span class="card-year">{{ p.original.year }}</span>{% endif -%}
+  </div>
+  <h3 class="card-title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+  <p class="card-meta">
+    {{ p.original.developer | default: "Unknown developer" }}{% if p.original.platforms %} · {{ p.original.platforms | join: ", " }}{% endif %}
+  </p>
+  <p class="card-summary">{{ p.summary }}</p>
+  {%- if p.help_wanted and p.help_wanted.size > 0 %}
+  <p class="card-help">{{ p.help_wanted.size }} open task{% if p.help_wanted.size != 1 %}s{% endif %}</p>
+  {%- endif %}
+</article>

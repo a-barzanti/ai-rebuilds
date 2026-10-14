@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Game Title · AI Rebuilds</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #0f1115; color: #ece8e1; font: 15px/1.5 system-ui, sans-serif; }
+      main { display: grid; place-items: center; min-height: 100%; gap: 12px; padding: 16px; box-sizing: border-box; }
+      canvas { max-width: 100%; image-rendering: pixelated; background: #000; border: 1px solid #2a2f3a; }
+      label { cursor: pointer; }
+      a { color: #fdba74; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <canvas id="screen" width="640" height="400"></canvas>
+      <p>
+        <label>Load your own copy of the original game files:
+          <input type="file" id="original" />
+        </label>
+      </p>
+      <p><small>Files stay in your browser. Nothing is uploaded. <a href="../">Back to the project</a></small></p>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

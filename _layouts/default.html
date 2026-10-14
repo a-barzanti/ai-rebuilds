@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% if page.title %}{% assign page_title = page.title | append: " · " | append: site.title %}{% else %}{% assign page_title = site.title | append: " · " | append: site.tagline %}{% endif %}
+    {% assign page_description = page.summary | default: page.description | default: site.description | strip_newlines %}
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page_description | escape }}" />
+    <meta property="og:title" content="{{ page_title | escape }}" />
+    <meta property="og:description" content="{{ page_description | escape }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Silkscreen&display=swap"
+    />
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="logo" href="{{ '/' | relative_url }}">
+          <span class="logo-mark" aria-hidden="true">&#9654;</span>AI&nbsp;Rebuilds
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a href="{{ '/#projects' | relative_url }}">Projects</a>
+          <a href="{{ '/guide/' | relative_url }}"{% if page.url == '/guide/' %} aria-current="page"{% endif %}>Guide</a>
+          <a href="{{ '/contribute/' | relative_url }}"{% if page.url == '/contribute/' %} aria-current="page"{% endif %}>Contribute</a>
+          <a href="https://github.com/{{ site.repository }}">GitHub</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <span aria-hidden="true">&#9680;</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">{{ content }}</main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-row">
+        <p>
+          Community-run. Analysis powered by <a href="{{ site.rea_url }}">REA</a>.
+          No original game files are hosted here.
+        </p>
+        <p>
+          <a href="{{ '/contribute/#ground-rules' | relative_url }}">Ground rules</a> ·
+          <a href="https://github.com/{{ site.repository }}/issues/new/choose">Open an issue</a> ·
+          <a href="https://github.com/{{ site.repository }}">Source</a>
+        </p>
+      </div>
+    </footer>
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  </body>
+</html>
