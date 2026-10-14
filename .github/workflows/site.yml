@@ -1,0 +1,43 @@
+name: Site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Validate projects & forbid game files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun run check
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      # Plain static files, published as-is. No build step.
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

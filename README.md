@@ -37,8 +37,8 @@ bun run check
 
 ## Deployment
 
-GitHub Pages serves the `main` branch as-is (`.nojekyll`), on the custom domain in `CNAME`.
-`.github/workflows/check.yml` runs `bun run check` on every push and pull request.
+`.github/workflows/site.yml` runs `bun run check` on every push and pull request, and on `main` publishes the
+files as-is to GitHub Pages, on the custom domain in `CNAME`.
 
 ## License
 
