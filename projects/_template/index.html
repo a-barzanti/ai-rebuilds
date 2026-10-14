@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--
+      Project page template.
+      1. Copy this folder to projects/<your-game-slug>/
+      2. Replace every "your-game-slug" and "Game Title" below
+      3. Add an entry for the game to /projects/projects.json (status, facts and help wanted come from there)
+      4. Run `bun run check`
+    -->
+    <title>Game Title · AI Rebuilds</title>
+    <meta name="description" content="Rebuilding Game Title for the browser." />
+    <meta property="og:title" content="Game Title · AI Rebuilds" />
+    <meta property="og:url" content="https://ai-rebuilds.com/projects/your-game-slug/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Silkscreen&display=swap" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+    <script src="/assets/js/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">&#9654;</span>AI&nbsp;Rebuilds</a>
+        <nav class="nav" aria-label="Main">
+          <a href="/#projects">Projects</a>
+          <a href="/guide/">Guide</a>
+          <a href="/contribute/">Contribute</a>
+          <a href="https://github.com/a-barzanti/ai-rebuilds">GitHub</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode"><span aria-hidden="true">&#9680;</span></button>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <article class="wrap project" data-project="your-game-slug">
+        <p class="crumbs"><a href="/#projects">&larr; All projects</a></p>
+
+        <header class="project-head">
+          <div>
+            <h1>Game Title</h1>
+            <p class="lede">One sentence. What the game is and why it needs a rebuild.</p>
+            <div class="project-actions" data-slot="actions"></div>
+          </div>
+          <dl class="facts" data-slot="facts"></dl>
+        </header>
+        <ol class="pipeline" data-slot="pipeline" aria-label="Project progress"></ol>
+        <section class="help-wanted" data-slot="help" hidden></section>
+
+        <div class="prose">
+          <h2>About the original</h2>
+          <p>
+            What the game was, who made it, when and why it stopped running (store delisting, servers shut down,
+            platform discontinued, etc.). Link to sources such as Wikipedia, MobyGames or archived pages.
+          </p>
+          <p><strong>Rights status:</strong> what you know about who holds the rights today. "Unknown" is a valid answer. Do not guess.</p>
+
+          <h2>Which build we target</h2>
+          <table>
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td>Version</td><td>e.g. 1.0.33</td></tr>
+              <tr><td>Platform</td><td>e.g. Windows 95, DirectX 5</td></tr>
+              <tr><td>Format</td><td>e.g. PE32 executable + .PAK archives</td></tr>
+              <tr><td>SHA-256</td><td>Hash of the original file, so others can check they have the same build</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Never commit the original file itself.</strong></p>
+
+          <h2>Findings</h2>
+          <p>Short summaries of what REA showed, each linking to a spec in <code>notes/</code>.</p>
+
+          <h2>Rebuild plan</h2>
+          <p>How the web version is structured, what it loads, and what is already implemented.</p>
+
+          <h2>Log</h2>
+          <ul>
+            <li>YYYY-MM-DD: Project proposed.</li>
+          </ul>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-row">
+        <p>Community-run. Analysis powered by <a href="https://github.com/morluto/rea">REA</a>. No original game files are hosted here.</p>
+        <p>
+          <a href="/contribute/#ground-rules">Ground rules</a> ·
+          <a href="https://github.com/a-barzanti/ai-rebuilds/issues/new/choose">Open an issue</a> ·
+          <a href="https://github.com/a-barzanti/ai-rebuilds">Source</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

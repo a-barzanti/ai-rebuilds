@@ -1,2 +1,0 @@
-{%- assign _status = site.statuses | where: "key", include.status | first -%}
-<span class="badge badge-{{ include.status }}" title="{{ _status.hint | escape }}">{{ _status.label | default: include.status }}</span>

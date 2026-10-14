@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Contribute · AI Rebuilds</title>
+    <meta name="description" content="How to propose a game, analyze it with REA, and rebuild it for the web. Plus the ground rules." />
+    <meta property="og:title" content="Contribute · AI Rebuilds" />
+    <meta property="og:url" content="https://ai-rebuilds.com/contribute/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Silkscreen&display=swap" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+    <script src="/assets/js/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">&#9654;</span>AI&nbsp;Rebuilds</a>
+        <nav class="nav" aria-label="Main">
+          <a href="/#projects">Projects</a>
+          <a href="/guide/">Guide</a>
+          <a href="/contribute/" aria-current="page">Contribute</a>
+          <a href="https://github.com/a-barzanti/ai-rebuilds">GitHub</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode"><span aria-hidden="true">&#9680;</span></button>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <article class="wrap page">
+        <header class="page-head">
+          <h1>Contribute</h1>
+          <p class="lede">Thanks for helping bring old games back. Everyone can take part, whether you reverse engineer, write web code, make art, research history, or just remember how a game played.</p>
+        </header>
+        <div class="prose">
+          <h2 id="ways-to-help">Ways to help</h2>
+          <ul>
+            <li><strong>Propose a game.</strong> Open a <a href="https://github.com/a-barzanti/ai-rebuilds/issues/new?template=new-project.yml">new project issue</a> or send the project as a pull request.</li>
+            <li><strong>Analyze.</strong> Run <a href="https://github.com/morluto/rea">REA</a> on a game you own and write up what you find as specs in a project's <code>notes/</code>.</li>
+            <li><strong>Rebuild.</strong> Implement specs in a project's <code>play/</code> folder, or in its own repository.</li>
+            <li><strong>Verify.</strong> Play the original and the rebuild next to each other and report differences.</li>
+            <li><strong>Research.</strong> Fill in history, versions and rights status on project pages.</li>
+          </ul>
+          <p>Every project page has a <strong>Help wanted</strong> list. Those are good first tasks.</p>
+
+          <h2 id="start-a-new-project">Start a new project</h2>
+          <ol>
+            <li>Search the <a href="/#projects">projects</a> and <a href="https://github.com/a-barzanti/ai-rebuilds/issues">issues</a> to make sure the game isn't already covered.</li>
+            <li>Fork the repo and copy the template:
+<pre><code>cp -r projects/_template projects/your-game-slug</code></pre>
+              Use a lowercase slug with dashes, such as <code>zombie-lane</code> or <code>dark-reign-2</code>.</li>
+            <li>Add an entry to <code>projects/projects.json</code> (see below), then fill in <code>projects/your-game-slug/index.html</code>.</li>
+            <li>Add yourself to <code>maintainers</code> if you plan to lead it. You can also leave it empty for someone else to pick up.</li>
+            <li>Run <code>bun run check</code>, then open a pull request. Once it merges, the project gets its own page and a card on the home page.</li>
+          </ol>
+          <p>
+            Each project is self-contained. Maintainers decide their stack, structure and roadmap. Changes outside a
+            project folder (styles, scripts, docs) are reviewed by the site maintainers.
+          </p>
+
+          <h3 id="projects-json">The <code>projects.json</code> entry</h3>
+<pre><code>{
+  "slug": "your-game-slug",
+  "title": "Game Title",
+  "summary": "One sentence.",
+  "status": "proposed",            // proposed | analysis | rebuilding | playable | complete
+  "original": {
+    "developer": "Studio",
+    "publisher": null,             // optional
+    "year": 1999,
+    "platforms": ["Windows"]
+  },
+  "target": "HTML5 Canvas + JavaScript",
+  "play": null,                    // "play/" once something runs, or a full URL
+  "repo": null,                    // optional separate repository
+  "maintainers": ["your-github-username"],
+  "tags": ["strategy"],
+  "help_wanted": ["A task someone could pick up"]
+}</code></pre>
+          <p class="muted">The comments above are only for explanation. JSON doesn't allow comments, so leave them out.</p>
+
+          <h2 id="ground-rules">Ground rules</h2>
+          <p>These rules protect the project and the people who made the original games. Pull requests that break them will be closed.</p>
+          <ol>
+            <li><strong>Never commit original game files.</strong> That means binaries, ROMs, APKs, ISOs, extracted art, audio, maps or text. <code>.gitignore</code> blocks common formats and CI rejects them, but you are still responsible.</li>
+            <li><strong>Commit specs, not decompiled code.</strong> Notes describe behavior and file formats in your own words, with evidence references. Short identifiers, constants and format tables are fine. Pages of decompiled functions are not.</li>
+            <li><strong>Write rebuilds from scratch.</strong> Implement from the specs. Do not translate decompiled code line by line.</li>
+            <li><strong>Bring your own copy.</strong> A rebuild either loads original assets locally from the player's own files (in the browser, never uploaded) or uses new assets with a compatible license.</li>
+            <li><strong>"Abandonware" has no legal meaning.</strong> Record what is known about each game's rights status. If a rights holder asks for a project to be removed, it will be removed promptly, without argument. Get in touch through a <a href="https://github.com/a-barzanti/ai-rebuilds/issues">GitHub issue</a> or privately via the repository owner's profile.</li>
+            <li><strong>No cheating, piracy or DRM-bypass tools.</strong> The goal is preservation and playability, not getting around protections on games that are still sold.</li>
+            <li><strong>Be kind.</strong> Critique work, not people. Harassment of any kind is not tolerated.</li>
+          </ol>
+
+          <h2 id="running-locally">Running the site locally</h2>
+          <p>The site is plain HTML, CSS and JavaScript. There is no build step. Serve the repo root with any static server:</p>
+<pre><code>bun run dev          # bunx serve . → http://localhost:3000
+bun run check        # validate projects.json and look for forbidden files</code></pre>
+
+          <h2 id="ai">Using AI responsibly</h2>
+          <p>AI agents do most of the analysis here, and they can be wrong. Before you commit a finding:</p>
+          <ul>
+            <li>Make sure every claim in a spec points to REA evidence (an address, method, capture or file offset).</li>
+            <li>Mark guesses as guesses, and keep open questions in the spec's "Unknowns" section.</li>
+            <li>Read and understand the code you commit. You are its author.</li>
+          </ul>
+
+          <h2 id="license">License</h2>
+          <p>
+            Site code and docs are MIT-licensed. Each project's code is MIT by default unless its folder includes a
+            different <code>LICENSE</code>. Contributors keep the copyright to their contributions. Original games and
+            their assets belong to their rights holders and are never distributed here.
+          </p>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-row">
+        <p>Community-run. Analysis powered by <a href="https://github.com/morluto/rea">REA</a>. No original game files are hosted here.</p>
+        <p>
+          <a href="/contribute/#ground-rules">Ground rules</a> ·
+          <a href="https://github.com/a-barzanti/ai-rebuilds/issues/new/choose">Open an issue</a> ·
+          <a href="https://github.com/a-barzanti/ai-rebuilds">Source</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

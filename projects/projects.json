@@ -1,0 +1,25 @@
+[
+  {
+    "slug": "zombie-lane",
+    "title": "Zombie Lane",
+    "summary": "Digital Chocolate's zombie-survival builder game. The Android build depended on Facebook login and online services from 2015.",
+    "status": "proposed",
+    "original": {
+      "developer": "Digital Chocolate",
+      "publisher": null,
+      "year": 2011,
+      "platforms": ["Facebook", "Android"]
+    },
+    "target": "HTML5 Canvas + TypeScript (proposed)",
+    "play": null,
+    "repo": null,
+    "maintainers": ["a-barzanti"],
+    "tags": ["zombies", "builder", "social", "mobile"],
+    "help_wanted": [
+      "Confirm the rights status of Digital Chocolate's catalogue today",
+      "Run `inspect_android_package` on build 1.0.33 and record the class layout in `notes/`",
+      "Reverse the packed asset archives (`assets/l0_0` … `assets/l4_0`, `assets/p`, `assets/r1`)",
+      "Find out which features break without the original servers (Facebook login, billing, offers)"
+    ]
+  }
+]

@@ -1,105 +1,121 @@
----
-layout: default
----
-{%- assign projects = site.pages | where: "layout", "project" | sort: "title" -%}
-
-<section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Open source · Community-run · Built with REA</p>
-    <h1>Abandoned games, <span class="accent">rebuilt for the open web.</span></h1>
-    <p class="lede">
-      Many old games no longer run because their platforms, stores or servers shut down.
-      Here, contributors use AI agents and
-      <a href="{{ site.rea_url }}">REA</a> to work out how each game behaves. Then they write a
-      new version that runs in any browser.
-    </p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#projects">Browse projects</a>
-      <a class="btn" href="{{ '/contribute/#start-a-new-project' | relative_url }}">Start a rebuild</a>
-    </div>
-  </div>
-</section>
-
-<section class="wrap how" aria-labelledby="how-title">
-  <h2 id="how-title" class="section-title">How a rebuild works</h2>
-  <ol class="steps">
-    <li>
-      <span class="step-n">01</span>
-      <h3>Pick a game</h3>
-      <p>
-        Choose a game that is abandoned or no longer runs anywhere. Open a project with its
-        history, the platforms it ran on, and what is known about how it was built.
-      </p>
-    </li>
-    <li>
-      <span class="step-n">02</span>
-      <h3>Analyze with REA</h3>
-      <p>
-        An agent connected to <a href="{{ site.rea_url }}">REA</a> examines your own copy of the
-        game, whether it is a native binary, an APK, a .NET build, Flash or WASM. Every finding
-        cites its evidence. You write the findings up as specs.
-      </p>
-    </li>
-    <li>
-      <span class="step-n">03</span>
-      <h3>Rebuild for the web</h3>
-      <p>
-        Write new code from the specs, not from decompiled source, using whatever web stack fits
-        the game. Players load the original assets from a copy they own, or the project uses
-        newly made assets.
-      </p>
-    </li>
-    <li>
-      <span class="step-n">04</span>
-      <h3>Verify and ship</h3>
-      <p>
-        Check the rebuild's behavior against what was recorded from the original. When it is
-        playable, it goes live on this site.
-      </p>
-    </li>
-  </ol>
-</section>
-
-<section id="projects" class="wrap projects" aria-labelledby="projects-title">
-  <div class="projects-head">
-    <h2 id="projects-title" class="section-title">Projects <span class="count">{{ projects.size }}</span></h2>
-    <div class="filters" role="group" aria-label="Filter projects">
-      <input
-        type="search"
-        id="project-search"
-        class="search"
-        placeholder="Search title, developer, platform…"
-        aria-label="Search projects"
-      />
-      <div class="chips">
-        <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
-        {%- for s in site.statuses %}
-        <button type="button" class="chip" data-filter="{{ s.key }}" aria-pressed="false" title="{{ s.hint | escape }}">{{ s.label }}</button>
-        {%- endfor %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AI Rebuilds · Abandoned games, rebuilt for the open web</title>
+    <meta name="description" content="An open, community-run collection of projects that use AI agents and REA to study abandonware and legacy games and rebuild them to run in the browser." />
+    <meta property="og:title" content="AI Rebuilds" />
+    <meta property="og:description" content="Abandoned games, rebuilt for the open web with AI agents and REA." />
+    <meta property="og:url" content="https://ai-rebuilds.com/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Silkscreen&display=swap" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+    <script src="/assets/js/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">&#9654;</span>AI&nbsp;Rebuilds</a>
+        <nav class="nav" aria-label="Main">
+          <a href="/#projects">Projects</a>
+          <a href="/guide/">Guide</a>
+          <a href="/contribute/">Contribute</a>
+          <a href="https://github.com/a-barzanti/ai-rebuilds">GitHub</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode"><span aria-hidden="true">&#9680;</span></button>
+        </nav>
       </div>
-    </div>
-  </div>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div class="wrap">
+          <p class="eyebrow">Open source · Community-run · Built with REA</p>
+          <h1>Abandoned games, <span class="accent">rebuilt for the open web.</span></h1>
+          <p class="lede">
+            Many old games no longer run because their platforms, stores or servers shut down.
+            Here, contributors use AI agents and <a href="https://github.com/morluto/rea">REA</a> to work out how
+            each game behaves. Then they write a new version that runs in any browser.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Browse projects</a>
+            <a class="btn" href="/contribute/#start-a-new-project">Start a rebuild</a>
+          </div>
+        </div>
+      </section>
 
-  <div class="grid" id="project-grid">
-    {%- for p in projects %}
-    {% include project-card.html project=p %}
-    {%- endfor %}
-    <a class="card card-new" href="{{ '/contribute/#start-a-new-project' | relative_url }}">
-      <span class="plus" aria-hidden="true">+</span>
-      <span class="card-title">Propose a game</span>
-      <span class="card-summary">Copy the project template and open a pull request.</span>
-    </a>
-  </div>
-  <p class="empty" id="project-empty" hidden>No projects match that filter.</p>
-</section>
+      <section class="wrap how" aria-labelledby="how-title">
+        <h2 id="how-title" class="section-title">How a rebuild works</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-n">01</span>
+            <h3>Pick a game</h3>
+            <p>Choose a game that is abandoned or no longer runs anywhere. Open a project with its history, the platforms it ran on, and what is known about how it was built.</p>
+          </li>
+          <li>
+            <span class="step-n">02</span>
+            <h3>Analyze with REA</h3>
+            <p>An agent connected to <a href="https://github.com/morluto/rea">REA</a> examines your own copy of the game, whether it is a native binary, an APK, a .NET build, Flash or WASM. Every finding cites its evidence. You write the findings up as specs.</p>
+          </li>
+          <li>
+            <span class="step-n">03</span>
+            <h3>Rebuild for the web</h3>
+            <p>Write new code from the specs, not from decompiled source, using whatever web stack fits the game. Players load the original assets from a copy they own, or the project uses newly made assets.</p>
+          </li>
+          <li>
+            <span class="step-n">04</span>
+            <h3>Verify and ship</h3>
+            <p>Check the rebuild's behavior against what was recorded from the original. When it is playable, it goes live on this site.</p>
+          </li>
+        </ol>
+      </section>
 
-<section class="wrap rules" aria-labelledby="rules-title">
-  <h2 id="rules-title" class="section-title">Ground rules</h2>
-  <ul class="rule-list">
-    <li><strong>No original files here.</strong> Do not commit game binaries, ROMs, APKs or extracted assets. The <code>.gitignore</code> blocks the common file types.</li>
-    <li><strong>Specs, not stolen code.</strong> Commit findings, notes and specs. Do not commit dumps of decompiled source.</li>
-    <li><strong>Bring your own copy.</strong> A rebuild loads original assets from the player's own files, or uses newly made assets.</li>
-    <li><strong>Rights holders come first.</strong> "Abandonware" has no legal meaning. If a rights holder objects, the project comes down. No arguing.</li>
-  </ul>
-  <p><a href="{{ '/contribute/#ground-rules' | relative_url }}">Read the full ground rules &rarr;</a></p>
-</section>
+      <section id="projects" class="wrap projects" aria-labelledby="projects-title">
+        <div class="projects-head">
+          <h2 id="projects-title" class="section-title">Projects <span class="count" id="project-count">…</span></h2>
+          <div class="filters" role="group" aria-label="Filter projects">
+            <input type="search" id="project-search" class="search" placeholder="Search title, developer, platform…" aria-label="Search projects" />
+            <div class="chips" id="status-chips"></div>
+          </div>
+        </div>
+
+        <div class="grid" id="project-grid">
+          <a class="card card-new" href="/contribute/#start-a-new-project">
+            <span class="plus" aria-hidden="true">+</span>
+            <span class="card-title">Propose a game</span>
+            <span class="card-summary">Copy the project template and open a pull request.</span>
+          </a>
+        </div>
+        <p class="empty" id="project-empty" hidden>No projects match that filter.</p>
+        <noscript><p class="empty">The project list needs JavaScript. You can also <a href="https://github.com/a-barzanti/ai-rebuilds/tree/main/projects">browse projects on GitHub</a>.</p></noscript>
+      </section>
+
+      <section class="wrap rules" aria-labelledby="rules-title">
+        <h2 id="rules-title" class="section-title">Ground rules</h2>
+        <ul class="rule-list">
+          <li><strong>No original files here.</strong> Do not commit game binaries, ROMs, APKs or extracted assets. CI rejects them.</li>
+          <li><strong>Specs, not stolen code.</strong> Commit findings, notes and specs. Do not commit dumps of decompiled source.</li>
+          <li><strong>Bring your own copy.</strong> A rebuild loads original assets from the player's own files, or uses newly made assets.</li>
+          <li><strong>Rights holders come first.</strong> "Abandonware" has no legal meaning. If a rights holder objects, the project comes down. No arguing.</li>
+        </ul>
+        <p><a href="/contribute/#ground-rules">Read the full ground rules &rarr;</a></p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-row">
+        <p>Community-run. Analysis powered by <a href="https://github.com/morluto/rea">REA</a>. No original game files are hosted here.</p>
+        <p>
+          <a href="/contribute/#ground-rules">Ground rules</a> ·
+          <a href="https://github.com/a-barzanti/ai-rebuilds/issues/new/choose">Open an issue</a> ·
+          <a href="https://github.com/a-barzanti/ai-rebuilds">Source</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

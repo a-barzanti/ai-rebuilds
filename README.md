@@ -8,33 +8,37 @@ build a new version from the specs that runs in any browser.
 
 ## How it's organized
 
+Plain HTML, CSS and JavaScript. No framework and no build step.
+
 ```text
-projects/<slug>/          one folder per game, maintained on its own
-  index.md                project page; front matter drives the site (status, platforms, help wanted)
-  notes/                  behavior specs written from REA findings
-  play/                   the browser rebuild, served at /projects/<slug>/play/
-projects/_template/       copy this to start a new project
-guide.md                  the rebuild workflow (/guide/)
-CONTRIBUTING.md           how to contribute + ground rules (/contribute/)
-_layouts, _includes,      site chrome (Jekyll, no JS framework)
-assets/
-_plugins/                 build-time validation of project front matter
+index.html                 home: how it works, project grid (rendered from projects.json)
+guide/index.html           the REA rebuild workflow
+contribute/index.html      how to contribute + ground rules
+projects/projects.json     one entry per game: status, facts, help wanted
+projects/<slug>/
+  index.html               project page (hand-written)
+  notes/                   behavior specs written from REA findings
+  play/                    the browser rebuild, served at /projects/<slug>/play/
+projects/_template/        copy this to start a new project
+assets/                    shared CSS, JS, favicon
+scripts/check.ts           Bun script run by CI: validates projects.json, blocks game files
 ```
 
 ## Contributing
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md), especially the **ground rules**. In short: never commit original game
+See [CONTRIBUTING.md](CONTRIBUTING.md), especially the **ground rules**. In short: never commit original game
 files, commit specs and not decompiled code, and rebuilds load assets from the player's own copy.
 
 ```sh
-cp -r projects/_template projects/my-game
-bundle install && bundle exec jekyll serve --livereload
+cp -r projects/_template projects/my-game   # then add it to projects/projects.json
+bun run dev                                 # http://localhost:3000
+bun run check
 ```
 
 ## Deployment
 
-Every push to `main` is built and deployed to GitHub Pages by `.github/workflows/pages.yml`.
-Pull requests run the same build, which also validates project front matter and checks for game binaries.
+GitHub Pages serves the `main` branch as-is (`.nojekyll`), on the custom domain in `CNAME`.
+`.github/workflows/check.yml` runs `bun run check` on every push and pull request.
 
 ## License
 

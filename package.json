@@ -1,0 +1,9 @@
+{
+  "name": "ai-rebuilds",
+  "private": true,
+  "description": "Abandoned games, rebuilt for the open web. Plain HTML site, no build step.",
+  "scripts": {
+    "dev": "bunx serve@14.2.4 . -l 3000",
+    "check": "bun scripts/check.ts"
+  }
+}

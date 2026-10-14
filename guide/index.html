@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rebuild guide · AI Rebuilds</title>
+    <meta name="description" content="How to take a game from &quot;won't run anymore&quot; to &quot;playable in the browser&quot; with an AI agent and REA." />
+    <meta property="og:title" content="Rebuild guide · AI Rebuilds" />
+    <meta property="og:url" content="https://ai-rebuilds.com/guide/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Silkscreen&display=swap" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+    <script src="/assets/js/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">&#9654;</span>AI&nbsp;Rebuilds</a>
+        <nav class="nav" aria-label="Main">
+          <a href="/#projects">Projects</a>
+          <a href="/guide/" aria-current="page">Guide</a>
+          <a href="/contribute/">Contribute</a>
+          <a href="https://github.com/a-barzanti/ai-rebuilds">GitHub</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode"><span aria-hidden="true">&#9680;</span></button>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <article class="wrap page">
+        <header class="page-head">
+          <h1>Rebuild guide</h1>
+          <p class="lede">How to take a game from "won't run anymore" to "playable in the browser" with an AI agent and REA.</p>
+        </header>
+        <div class="prose">
+          <p>
+            This is how every project here works. Each project can choose its own tools, stack and pace, but they all
+            go through the same steps. The rule that matters most is to <strong>study the original, write down what it
+            does, and then build a new version from what you wrote down.</strong>
+          </p>
+
+          <h2 id="setup">1. Set up REA</h2>
+          <p>
+            <a href="https://github.com/morluto/rea">REA</a> ("Reverse Engineer Anything") is an open-source MCP server.
+            It gives an AI agent such as Claude Code, Codex, Cursor or Gemini CLI tools to inspect software, and every
+            finding comes with its evidence. Analysis runs on your machine.
+          </p>
+          <p>You need Node.js 22.19+, 24.11+ or 26+ (or Bun, using <code>bunx</code> instead of <code>npx</code>). Then:</p>
+<pre><code># Register REA with your agent(s) and install its workflow instructions
+npx rea-agents setup        # or: bunx rea-agents@latest setup
+
+# Optional: install the CLI globally
+npm install --global rea-agents
+rea --help</code></pre>
+          <p>
+            Native binaries (DOS/Windows EXEs, native mobile libraries, console executables) need a disassembler that
+            REA can drive: <a href="https://ghidra-sre.org/">Ghidra</a> (free), Hopper or IDA. JavaScript, Electron, WASM,
+            .NET, Android APKs and websites can be analyzed without one. Some formats need extra tools. See the REA README
+            for the full list.
+          </p>
+          <blockquote>Only get REA from its official sources: the <code>morluto/rea</code> repository, rea.tools, or the <code>rea-agents</code> npm package.</blockquote>
+
+          <h2 id="starting-point">2. Pick the right starting point</h2>
+          <p>Different games need different tools. Start from whatever the game was built with:</p>
+          <table>
+            <thead><tr><th>Original</th><th>Where to start</th></tr></thead>
+            <tbody>
+              <tr><td>Android APK (Java/Kotlin)</td><td><code>inspect_android_package</code>, <code>search_android_classes</code>, <code>inspect_android_method</code>, <code>decode_android_resources</code></td></tr>
+              <tr><td>Native EXE / ELF / Mach-O</td><td><code>binary_overview</code>, <code>list_procedures</code>, <code>procedure_pseudo_code</code>, <code>get_call_graph</code></td></tr>
+              <tr><td>.NET / Unity (Mono)</td><td><code>inspect_managed_artifact</code>, <code>inspect_managed_members</code></td></tr>
+              <tr><td>Flash-era / HTML5 / Electron</td><td><code>analyze_javascript_application</code>, <code>analyze_web_bundle</code>, <code>recover_javascript_sources</code></td></tr>
+              <tr><td>Unknown container or data file</td><td><code>inspect_artifact</code>, <code>extract_artifact</code>, <code>list_strings</code>, <code>read_bytes</code></td></tr>
+            </tbody>
+          </table>
+          <p>You can also run a quick check from the terminal without an agent:</p>
+<pre><code>npx -y rea-agents@latest analyze-javascript-application /absolute/path/to/app --json</code></pre>
+
+          <h2 id="analyze">3. Analyze: ask questions, write specs</h2>
+          <p>Work one system at a time. Good prompts to give your agent:</p>
+          <ul>
+            <li><em>"Using REA, find the main game loop in this APK. What is the tick rate, and what does each tick update?"</em></li>
+            <li><em>"Trace what happens when the player places a building. Which checks run, and what state changes?"</em></li>
+            <li><em>"Work out the layout of <code>assets/l0_0</code>. Give me a table of the header fields and how entries are indexed."</em></li>
+            <li><em>"List every network call the game makes at startup, and what the game does when each one fails."</em></li>
+            <li><em>"Record anything you couldn't resolve as an unknown so we can come back to it."</em></li>
+          </ul>
+          <p>
+            REA can keep a list of what a rebuild needs to cover and check the rebuild against it, with tools such as
+            <code>record_unknown</code>, <code>build_reconstruction_obligation_ledger</code> and
+            <code>evaluate_reconstruction_coverage</code>. Use them to track what's left.
+          </p>
+          <p>
+            Turn the answers into specs under <code>projects/&lt;slug&gt;/notes/</code>, one Markdown file per system.
+            A spec describes <strong>behavior</strong> (rules, timings, formats, edge cases) and cites the evidence behind
+            each claim. <strong>Do not commit decompiled code.</strong> Constants, struct layouts and file-format tables are fine.
+          </p>
+
+          <h2 id="rebuild">4. Rebuild for the web</h2>
+          <p>Write the new version from the specs, in whatever stack fits the game:</p>
+          <ul>
+            <li><strong>Small 2D games:</strong> plain HTML5 Canvas + JavaScript. The project template has a no-build starter in <code>play/</code>.</li>
+            <li><strong>Bigger games:</strong> a separate repository with its own build (Bun, Vite, Phaser, PixiJS, Rust→WASM, …). Set <code>repo</code> and <code>play</code> in <code>projects.json</code> so the site links to it, or commit the built output to <code>play/</code>.</li>
+            <li><strong>Assets:</strong> load them in the browser from the player's own copy of the original (File API, never uploaded), or make new ones. Never commit the original assets.</li>
+          </ul>
+
+          <h2 id="verify">5. Verify</h2>
+          <p>
+            Record the original (screenshots, input/output traces, save files) and compare it to the rebuild. REA's capture
+            and compare tools (<code>capture_browser_scenario</code>, <code>compare_web_captures</code>,
+            <code>compare_web_screenshots</code>, <code>verify_reconstruction</code>) help when both run somewhere it can
+            observe. When the rebuild matches well enough to play, set the project's status to <code>playable</code>.
+          </p>
+
+          <h2 id="layout">Project layout</h2>
+<pre><code>projects/projects.json   # one entry per game: status, facts, help wanted (drives the site)
+projects/&lt;slug&gt;/
+├── index.html           # the project page (copy from projects/_template/)
+├── notes/               # behavior specs written from REA findings
+├── evidence/            # optional: exported REA evidence bundles (no copyrighted code or assets)
+└── play/                # the browser rebuild, served at /projects/&lt;slug&gt;/play/</code></pre>
+
+          <p><a class="btn btn-primary" href="/contribute/#start-a-new-project">Start a project &rarr;</a></p>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-row">
+        <p>Community-run. Analysis powered by <a href="https://github.com/morluto/rea">REA</a>. No original game files are hosted here.</p>
+        <p>
+          <a href="/contribute/#ground-rules">Ground rules</a> ·
+          <a href="https://github.com/a-barzanti/ai-rebuilds/issues/new/choose">Open an issue</a> ·
+          <a href="https://github.com/a-barzanti/ai-rebuilds">Source</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
