@@ -92,7 +92,7 @@ and s16 when it is set. "size" means u8 or s16 in the same way.
 | bounds | coord x, coord y, size w, size h | |
 | alignment | u8 | Bit flags: TOP 1, LEFT 2, VCENTER 4, BOTTOM 8, HCENTER 16, RIGHT 32 |
 | frame sharing | u8 × frame count | `255` = the frame has its own data. Otherwise the index of the frame whose data it reuses. **[sh]** Every frame in 1.0.33 has its own data. |
-| durations | (u8 or u16) × frame count | Per-frame duration. `0` = hold forever, which makes the animation's length infinite. **[inf]** Milliseconds, the same unit as the game's `dt`. |
+| durations | (u8 or u16) × frame count | Per-frame duration in milliseconds **[obs]** (`E-spriteUpdate`: the player advances by the frame's `dt`). `0` = hold forever, which makes the animation's length infinite. |
 | has timeline | u8 | Bool |
 | timeline | see below | Only if *has timeline* |
 | frames | see below | Only for frames with their own data, in order |
@@ -114,8 +114,7 @@ size, size), then six channels in this fixed order:
 | 5 | rotation | s32 |
 
 Each channel is `[u8 key count]`, then for each key `[s32 time][u8 easing][value]`. Easing: 0 linear, 1 constant,
-2 quad in, 3 quad out, 4 quad in-out. **[sh]** 376 animations have a timeline. **[?]** Units for scale, rotation and
-color.
+2 quad in, 3 quad out, 4 quad in-out. **[sh]** 376 animations have a timeline. Units are in *Drawing* below.
 
 ### Frame
 
@@ -149,6 +148,47 @@ position, fixed particle life. Then 13 × s16: id, max particles, gravity x, gra
 min/max angle, spread step, min/max start velocity, min/max end velocity. Then 4 × s32: min/max particle life,
 duration, emission interval.
 
+## Drawing
+
+**[obs]** How the game draws an animation (`E-spriteDraw`, `E-animDoDraw`, `E-frameDoDraw`, `E-drawTexture`).
+`lib/render.js` follows these rules.
+
+**Time.** A sprite keeps an elapsed time in ms (`E-spriteUpdate`). Drawing at time *t* first wraps *t* by the
+animation's length, then picks the last frame whose start time is ≤ *t*. Nested animations get the time since their
+parent frame started, or the parent's full time when *continuous nested* is set.
+
+**Timeline** (only when the animation has one), applied around the anchor in this order:
+
+- color channel: alpha is the top byte. Alpha 0 skips the whole sprite. RGB is a tint where `0x80` per channel is
+  neutral: above it brightens, below it darkens (`E-blending`).
+- x/y offset: added to the anchor (`E-timelineX`).
+- rotation: in 1/65536 of a full turn (`E-angle`). Scale: 1024 = 1× (`E-scale`).
+- Channels without keys use neutral values: color `0xFF808080`, scale 1024, others 0 (`E-neutral`). Before the first
+  key a channel returns −1.
+- Interpolation uses integer math: linear is `a + (b − a)·dt / span`, the quad easings are the usual
+  Penner formulas with truncating division (`E-lerp`, `E-ease`). After the last key, looping animations ease back to
+  the first key across the remaining length, and others hold the last value (`E-timelineValue2`).
+
+**Frame.** Renderables are drawn in order, relative to the anchor:
+
+- **image:** the region's top-left corner goes at (x, y) (`E-drawTexture`). The image's own flip flags mirror it
+  inside its own rectangle. Mirroring the whole sprite negates the scale, so positions mirror around the anchor.
+- **clip rect:** clips everything after it in the frame, at (anchor + x, anchor + y), without rotation or scale. A
+  second clip rect replaces the first. The clip is restored at the end of the frame.
+- **nested animation:** drawn at (x, y), negated on mirrored axes, with the parent's mirroring.
+- **primitives:** colors are opaque RGB (`E-colorRGB`). When the sprite is mirrored horizontally, rects and ellipses
+  with x ≠ 0 are moved to `−x − w`. Lines are not mirrored.
+- **Alignment** is applied by the caller, not the animation. It shifts the draw position by the full or half box
+  size for BOTTOM/RIGHT or VCENTER/HCENTER (`E-drawAligned`).
+
+**Blending by bundle color depth** (`E-blending`): depth 1 is premultiplied (`ONE, ONE_MINUS_SRC_ALPHA`), depth 3
+is opaque, and the others use normal alpha. **[sh]** Sampled depth-1 PNGs have only fully opaque or fully transparent
+pixels, and their transparent pixels are black, so normal browser drawing gives the same result.
+
+**Names.** **[sh]** In `ResourceIDs`, the suffixes `_IPHONE`, `_IPAD` and `_VGA` mark the default (SD), HD and VGA
+variants. The unsuffixed name is the link entry. Path renderables appear in animations named `*_COLLISION` and
+`FLOOR*`, so **[inf]** they are mostly hit areas and floor outlines.
+
 ## Server-only bundles
 
 **[obs]** (`E-serverAssets`, `E-textureInit`, `E-bundleLoadFile`) `r1` entry 18,692 lists the bundles that were
@@ -170,8 +210,6 @@ name-to-ID table with `tools/dex-consts.ts` to label animations in a viewer.
 
 ## For the rebuild
 
-- The browser loader reads the player's APK, slices out the PNGs and region lists, and draws image renderables with
-  `drawImage(atlas, x, y, w, h, …)`, using `scale(-1, 1)`/`scale(1, -1)` for flips.
-- An animation player needs: frame lookup by elapsed time (hold-forever frames), optional looping, timeline
-  tweening with the five easing modes, nested animations and clip rects. Particle emitters are rare (6 frames) and
-  can come last.
+Done: [`lib/`](../lib/) reads the APK in the browser (`zip.js`, `dex.js`), parses these formats (`formats.js`,
+`assets.js`) and draws animations (`render.js`). The [asset viewer](https://ai-rebuilds.com/projects/zombie-lane/viewer/)
+uses it. Still missing: particle emitters (6 frames in the whole game) and timeline RGB tints.

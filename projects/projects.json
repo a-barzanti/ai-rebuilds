@@ -15,6 +15,12 @@
     },
     "target": "HTML5 Canvas + TypeScript",
     "play": null,
+    "tools": [
+      {
+        "label": "Asset viewer",
+        "href": "viewer/"
+      }
+    ],
     "repo": null,
     "maintainers": [
       "a-barzanti"
@@ -26,11 +32,11 @@
       "mobile"
     ],
     "help_wanted": [
-      "Build an in-browser asset viewer: unzip the player's APK, read `r1`, and draw animations from the bundle atlases (format in `notes/sprites-and-animations.md`)",
-      "Decode the item, shop and mission tables in `r1` by tracing `ItemManager.init`, `MissionManager` and their definition classes",
       "Decode the scene format (`SceneLoader.load`): it covers both the default home layout (GAMEFIELDSETUP) and the save file",
+      "Decode the item, shop and mission tables in `r1` by tracing `ItemManager.init`, `MissionManager` and their definition classes",
       "Trace a frame of home-scene play: scene update order, zombie spawning (SPAWNINGDEFINITIONS, ZOMBIEBEHAVIOR), missions",
-      "Record reference footage: the APK starts offline, so play the first missions on an Android device or emulator",
+      "Record reference footage: the APK starts offline, so play the first missions on an Android device or emulator, and compare animations with the asset viewer",
+      "Asset viewer: add particle emitters and timeline color tints (see `lib/render.js`)",
       "Confirm the rights status of Digital Chocolate's catalogue today"
     ]
   }

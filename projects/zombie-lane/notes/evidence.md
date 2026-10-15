@@ -71,6 +71,26 @@ with the same SHA-256 to reproduce them.
 | `E-serverAssets` | inspect_android_method | `ServerAssetLoader.init` | `ev_9ccd2163f4b6d95df79073664461d88d37450726a63a8143c1b8c08266066b85` |
 | `E-bundleLoadFile` | inspect_android_method | `ServerBundle.loadFile` | `ev_799bd6b7141bd638e1eacd7de71e9b114fc14189669af696458583b3af2a7414` |
 
+### Third pass: drawing (2026-10-15)
+
+| Ref | Operation | Subject | Evidence ID |
+| --- | --------- | ------- | ----------- |
+| `E-spriteDraw` | inspect_android_method | `SpriteObject.draw` (overload 1) | `ev_3ba1b4d1c98d2cb25e154d09b26d0fed4c95b74ce4705816a0a3a6e783739b01` |
+| `E-spriteUpdate` | inspect_android_method | `SpriteObject.logicUpdate` | `ev_44a59cfef2526b8461f5fa3a156f433ad8aed2b84e40c3584169f1b7bc2d9d68` |
+| `E-timelineX` | inspect_android_method | `SpriteObject.getTimelineX` | `ev_66c035bc457bc23383de8324880dde5c715132695e9fab96d12bf6c66b675d57` |
+| `E-drawAligned` | inspect_android_method | `SpriteObject.drawAligned` | `ev_17cb87bc023d870ac4bbd07effdba7fba56f98f76e31c866d8f957c541aa9395` |
+| `E-animDoDraw` | inspect_android_method | `Animation.doDraw` | `ev_e843eebca1a9ef3bc4572c10ddff1045a3ff6365744209e1edd60ac39f7927b8` |
+| `E-frameDoDraw` | inspect_android_method | `AnimationFrame.doDraw` | `ev_88d1dcdb6a2a9470a5e1ea8efb78a0701d37df7c035f298e646c232083fe6c51` |
+| `E-timelineValue2` | inspect_android_method | `TimelineChannel.getValue` | `ev_8b9a60a138a2115b928995c0b89338a60487ebeeac601073ddcef242e71b0c90` |
+| `E-neutral` | inspect_android_method | `TimelineChannel.getNeutralValue` | `ev_3fd89fb9c3e67e81eebde03bb8e63319337cd62f4b50d8f01cdaee9479304640` |
+| `E-ease` | inspect_android_method | `TimelineChannel.easeInOutQuad` (and `easeInQuad`, `easeOutQuad`) | `ev_b4ba3f1f347209b3044881aad4a1d5f3cc7fa23cbf36c546cd658246ae43fdb5` |
+| `E-lerp` | inspect_android_method | `DavinciUtilities.interpolateValue` | `ev_2b48a8f9178630e115a8fb355a55d4a46b8283ae1c6818eca3409494999a70ee` |
+| `E-drawTexture` | inspect_android_method | `OGL.drawTexture` (overload 1) | `ev_ee692db24483b058c16c8a776cf07d84e4e326ab282e521cb1de49a57abaf117` |
+| `E-angle` | inspect_android_method | `OGLParameters.setAngleInt` | `ev_112712e97bed4f53042720ad067048c2743f817fa761cccc3498cfa7ea7c3e38` |
+| `E-scale` | inspect_android_method | `OGLParameters.setScaleInt` | `ev_fec421f63a6e033c93b94805813ec640dde47ad2bd29faa2495daf2dcf00a7f9` |
+| `E-blending` | inspect_android_method | `OGL.setBlending` | `ev_997c0ada717101af5200005d1013828a8afbacb0b740383cbdb37db029c4be32` |
+| `E-colorRGB` | inspect_android_method | `OGL.setColorRGB` | `ev_65036ed0ed86b27e5aae39fc186444c3c3afd2038aa7141df40ff7f211c74ce0` |
+
 ## Static-analysis limits
 
 These apply to everything above:

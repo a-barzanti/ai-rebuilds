@@ -23,6 +23,7 @@ type Project = {
   original: { developer?: string | null; publisher?: string | null; year?: number | null; platforms: string[] };
   target?: string | null;
   play?: string | null;
+  tools?: { label: string; href: string }[];
   repo?: string | null;
   maintainers: string[];
   tags: string[];
@@ -63,6 +64,12 @@ for (const [i, p] of projects.entries()) {
     const html = await Bun.file(page).text();
     if (!html.includes(`data-project="${p.slug}"`)) fail(`projects/${p.slug}/index.html: needs data-project="${p.slug}"`);
     if (!html.includes(`<h1>${p.title}</h1>`)) fail(`projects/${p.slug}/index.html: <h1> should match the title "${p.title}"`);
+  }
+  if (p.tools !== undefined && !Array.isArray(p.tools)) fail(`${at}: "tools" must be a list`);
+  for (const tool of p.tools ?? []) {
+    if (!isText(tool?.label) || !isText(tool?.href)) fail(`${at}: each tool needs a "label" and an "href"`);
+    else if (!/:\/\//.test(tool.href) && !existsSync(join(ROOT, "projects", p.slug, tool.href.replace(/^\.?\//, ""))))
+      fail(`${at}: tool "${tool.label}" points to ${tool.href}, which doesn't exist in projects/${p.slug}/`);
   }
   if (p.play && !/:\/\//.test(p.play) && !existsSync(join(ROOT, "projects", p.slug, p.play.replace(/^\.?\//, ""))))
     fail(`${at}: "play" points to ${p.play}, which doesn't exist in projects/${p.slug}/`);

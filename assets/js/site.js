@@ -145,6 +145,10 @@
         var href = /:\/\//.test(p.play) ? p.play : "/" + dir + "/" + p.play.replace(/^\.?\//, "");
         actions.push('<a class="btn btn-primary" href="' + esc(href) + '">Play in browser</a>');
       }
+      (p.tools || []).forEach(function (tool) {
+        var link = /:\/\//.test(tool.href) ? tool.href : "/" + dir + "/" + tool.href.replace(/^\.?\//, "");
+        actions.push('<a class="btn' + (p.play ? "" : " btn-primary") + '" href="' + esc(link) + '">' + esc(tool.label) + "</a>");
+      });
       if (p.repo) actions.push('<a class="btn" href="' + esc(p.repo) + '">Project repository</a>');
       actions.push('<a class="btn" href="' + gh + "/tree/" + BRANCH + "/" + dir + '">Project files</a>');
       actions.push('<a class="btn" href="' + gh + "/edit/" + BRANCH + "/" + dir + '/index.html">Edit this page</a>');

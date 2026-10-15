@@ -1,7 +1,8 @@
 # Tools
 
-Small Bun scripts that check the format specs in [../notes](../notes) against your own copy of the game. They
-are written from the specs and contain no code from the game. Extract the APK first; it's a ZIP, so
+Small Bun scripts that check the format specs in [../notes](../notes) against your own copy of the game. The
+browser-side readers the rebuild uses are in [../lib](../lib). Both are written from the specs and contain no code
+from the game. Extract the APK first; it's a ZIP, so
 `unzip zombie-lane.apk -d zl` works.
 
 | Script | What it does |
