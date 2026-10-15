@@ -155,12 +155,15 @@ So each table's layout has to be recovered from its reader class. Done so far:
 | 20 | mission that unlocks building upgrades | 2065 |
 | – | two more ints this version doesn't read | 4, 30 |
 
-**[?]** Whether 2311 and 2065 are mission IDs in a different numbering, or "never" sentinels. Check them against
-MISSIONS.
+**[?]** Whether 2311 and 2065 are real missions. **[sh]** Layout rows gate on mission IDs up to 3114
+([scenes-and-saves.md](scenes-and-saves.md)), so IDs in the thousands exist; check them against MISSIONS.
 
-**[?]** All other tables. Readers to trace: `ItemManager.init` (items, shops, tabs), `MissionManager`
-(missions/objectives/events), `SpawningManager` (SPAWNINGDEFINITIONS, ZOMBIEBEHAVIOR), `LevelDefinition`,
-`ComboDefinition`, and `SceneLoader.load` (GAMEFIELDSETUP, also the save-file format).
+**Scene item tables and layouts** (DESTRUCTIBLE, ZOMBIE, FENCE, CONSTRUCTION, DECORATION, FARMING and PLAYER
+items, GAMEFIELDSETUP and GAMEFIELDSETUPTUTOR) are decoded in [scenes-and-saves.md](scenes-and-saves.md).
+
+**[?]** All other tables. Readers to trace: the remaining item classes (payment, avatar, edible, weapon,
+collectible, crafting, gift) and shop tabs, `MissionManager` (missions/objectives/events), `SpawningManager`
+(SPAWNINGDEFINITIONS, ZOMBIEBEHAVIOR), `LevelDefinition` and `ComboDefinition`.
 
 ## `bundle_<id>/`: sprite bundles
 

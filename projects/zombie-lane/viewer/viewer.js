@@ -3,6 +3,7 @@
 import { GameAssets, KNOWN_SHA256, sha256 } from "../lib/assets.js";
 import { AnimationRenderer, measure } from "../lib/render.js";
 import { FIRST_ANIMATION, LAST_ANIMATION, PROFILE, frameAt } from "../lib/formats.js";
+import { SceneView } from "./scene-view.js";
 
 const $ = (id) => document.getElementById(id);
 const els = {
@@ -13,6 +14,11 @@ const els = {
   speed: $("speed"), zoom: $("zoom"), variant: $("variant"), variantLabel: $("variant-label"),
   loop: $("loop"), flip: $("flip"), shapes: $("shapes"), boxes: $("boxes"), anchor: $("anchor"), bg: $("bg"),
   info: $("info"),
+  tabs: $("mode-tabs"), tabAnims: $("tab-anims"), tabScenes: $("tab-scenes"),
+  animPanel: $("anim-panel"), animControls: $("anim-controls"), animToggles: $("anim-toggles"),
+  scenePanel: $("scene-panel"), sceneControls: $("scene-controls"), scene: $("scene"), scenePlay: $("scene-play"),
+  sceneZoom: $("scene-zoom"), sceneMissions: $("scene-missions"), sceneGrid: $("scene-grid"), sceneShadows: $("scene-shadows"),
+  sceneCount: $("scene-count"), sceneList: $("scene-list"),
 };
 const LIST_LIMIT = 400;
 const params = new URLSearchParams(location.search); // ?apk=… (local testing), ?t=… (start paused at a time)
@@ -25,6 +31,9 @@ let filtered = [];
 let current = null; // { index, name, entry, resolved, box, missing }
 let selectToken = 0;
 let t = 0, playing = true, last = performance.now();
+let mode = "anims"; // or "scenes"
+/** @type {SceneView | null} */ let sceneView = null;
+let sceneTime = 0, scenePlaying = true;
 
 function setStatus(text, kind = "") {
   els.status.textContent = text;
@@ -54,6 +63,17 @@ async function open(file) {
     els.workspace.hidden = false;
     els.openPanel.classList.add("loaded");
     els.dropTitle.textContent = "Open another APK";
+    els.tabs.hidden = false;
+    sceneView = new SceneView(assets, renderer, {
+      list: els.sceneList, count: els.sceneCount, info: els.info, missions: els.sceneMissions,
+      grid: els.sceneGrid, shadows: els.sceneShadows, zoom: els.sceneZoom,
+    });
+    const sceneHash = /^scene=(\w+)$/.exec(location.hash.slice(1));
+    if (sceneHash && sceneHash[1] in { home: 1, rob: 1 }) {
+      els.scene.value = sceneHash[1];
+      await setMode("scenes");
+      return;
+    }
     const start = byName(decodeURIComponent(location.hash.slice(1))) ?? all.find((a) => a.name === "ANM_ZOMBIE_SUPERMART_WALK_DOWN") ?? all[0];
     if (start.variant) els.variants.checked = true;
     els.family.value = start.family;
@@ -66,6 +86,41 @@ async function open(file) {
 }
 
 const byName = (name) => all.find((a) => a.name === name);
+
+async function setMode(next) {
+  mode = next;
+  const scenes = mode === "scenes";
+  els.tabAnims.setAttribute("aria-selected", String(!scenes));
+  els.tabScenes.setAttribute("aria-selected", String(scenes));
+  els.animPanel.hidden = els.animControls.hidden = els.animToggles.hidden = scenes;
+  els.scenePanel.hidden = els.sceneControls.hidden = !scenes;
+  els.stageWrap.classList.toggle("scene-mode", scenes);
+  els.note.hidden = true;
+  if (scenes) {
+    history.replaceState(null, "", `${location.search}#scene=${els.scene.value}`);
+    if (sceneView.scene?.key !== els.scene.value) await loadScene();
+    else sceneView.fillInfo();
+  } else if (current) {
+    history.replaceState(null, "", `${location.search}#${encodeURIComponent(current.name)}`);
+    updateInfo();
+  } else {
+    const start = all.find((a) => a.name === "ANM_ZOMBIE_SUPERMART_WALK_DOWN") ?? all[0];
+    els.family.value = start.family;
+    applyFilter();
+    await select(start.index);
+  }
+}
+
+async function loadScene() {
+  els.sceneCount.textContent = "Loading…";
+  try {
+    await sceneView.load(els.scene.value);
+    history.replaceState(null, "", `${location.search}#scene=${els.scene.value}`);
+  } catch (error) {
+    console.error(error);
+    els.sceneCount.textContent = error instanceof Error ? error.message : String(error);
+  }
+}
 
 function fillFamilies() {
   const counts = new Map();
@@ -210,6 +265,11 @@ function frame(now) {
   }
   const ctx = canvas.getContext("2d");
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  if (mode === "scenes") {
+    if (scenePlaying) sceneTime += dt;
+    sceneView?.draw(ctx, w, h, sceneTime);
+    return;
+  }
   background(ctx, w, h);
 
   const a = current?.resolved.animation;
@@ -283,6 +343,14 @@ els.search.addEventListener("input", applyFilter);
 els.family.addEventListener("change", applyFilter);
 els.variants.addEventListener("change", applyFilter);
 window.addEventListener("hashchange", () => {
+  if (!assets) return;
+  const sceneHash = /^scene=(\w+)$/.exec(location.hash.slice(1));
+  if (sceneHash && sceneHash[1] in { home: 1, rob: 1 }) {
+    els.scene.value = sceneHash[1];
+    setMode("scenes");
+    return;
+  }
+  if (mode === "scenes") setMode("anims");
   const target = assets && byName(decodeURIComponent(location.hash.slice(1)));
   if (target && target.index !== current?.index) select(target.index);
 });
@@ -295,8 +363,68 @@ els.prev.addEventListener("click", () => step(-1));
 els.next.addEventListener("click", () => step(1));
 els.variant.addEventListener("change", () => current && select(current.index));
 
+els.tabAnims.addEventListener("click", () => mode !== "anims" && setMode("anims"));
+els.tabScenes.addEventListener("click", () => mode !== "scenes" && setMode("scenes"));
+els.tabs.addEventListener("keydown", (e) => {
+  if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+  e.preventDefault();
+  const next = mode === "anims" ? els.tabScenes : els.tabAnims;
+  next.focus();
+  next.click();
+});
+els.scene.addEventListener("change", loadScene);
+els.sceneMissions.addEventListener("change", loadScene);
+els.scenePlay.addEventListener("click", () => { scenePlaying = !scenePlaying; els.scenePlay.textContent = scenePlaying ? "Pause" : "Play"; });
+els.sceneZoom.addEventListener("change", () => { if (sceneView) sceneView.view = null; });
+els.sceneList.addEventListener("click", (e) => {
+  const button = e.target instanceof Element ? e.target.closest("button[data-key]") : null;
+  if (!button || !sceneView) return;
+  sceneView.highlight = sceneView.highlight === button.dataset.key ? null : button.dataset.key;
+  for (const b of els.sceneList.querySelectorAll("button")) b.setAttribute("aria-current", String(b.dataset.key === sceneView.highlight));
+});
+
+// Scene pan, zoom and hover
+const pointers = new Map();
+let pinch = 0;
+const stageSize = () => [els.stageWrap.clientWidth, els.stageWrap.clientHeight];
+const local = (e) => { const r = els.stage.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+els.stage.addEventListener("pointerdown", (e) => {
+  if (mode !== "scenes") return;
+  els.stage.setPointerCapture(e.pointerId);
+  pointers.set(e.pointerId, local(e));
+  if (pointers.size === 2) { const [a, b] = [...pointers.values()]; pinch = Math.hypot(a[0] - b[0], a[1] - b[1]); }
+});
+els.stage.addEventListener("pointermove", (e) => {
+  if (mode !== "scenes" || !sceneView?.scene) return;
+  const [x, y] = local(e);
+  const prev = pointers.get(e.pointerId);
+  if (prev && pointers.size === 1) {
+    sceneView.panBy(x - prev[0], y - prev[1], ...stageSize());
+  } else if (prev && pointers.size === 2) {
+    pointers.set(e.pointerId, [x, y]);
+    const [a, b] = [...pointers.values()];
+    const d = Math.hypot(a[0] - b[0], a[1] - b[1]);
+    if (pinch) sceneView.zoomAt((a[0] + b[0]) / 2, (a[1] + b[1]) / 2, d / pinch, ...stageSize());
+    pinch = d;
+  }
+  if (prev) pointers.set(e.pointerId, [x, y]);
+  if (e.pointerType === "mouse" && !prev) {
+    const o = sceneView.pick(x, y, ...stageSize());
+    sceneView.hover = o;
+    els.note.hidden = !o;
+    if (o) els.note.textContent = `${o.name} · tile ${o.column}, ${o.row}${o.health !== o.item.maxHealth ? ` · health ${o.health}/${o.item.maxHealth}` : ""}${o.mission !== -1 ? ` · appears after mission ${o.mission}` : ""}`;
+  }
+});
+for (const type of ["pointerup", "pointercancel"]) els.stage.addEventListener(type, (e) => { pointers.delete(e.pointerId); pinch = 0; });
+els.stage.addEventListener("pointerleave", () => { if (mode === "scenes" && sceneView) { sceneView.hover = null; els.note.hidden = true; } });
+els.stage.addEventListener("wheel", (e) => {
+  if (mode !== "scenes" || !sceneView?.scene) return;
+  e.preventDefault();
+  sceneView.zoomAt(...local(e), Math.exp(-e.deltaY * 0.0015), ...stageSize());
+}, { passive: false });
+
 document.addEventListener("keydown", (e) => {
-  if (!current || e.target instanceof HTMLInputElement && e.target.type === "search" && e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+  if (!current || mode !== "anims" || e.target instanceof HTMLInputElement && e.target.type === "search" && e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
   if (e.target instanceof HTMLSelectElement) return;
   if (e.key === " " && !(e.target instanceof HTMLButtonElement)) { e.preventDefault(); playing = !playing; updatePlayButton(); }
   else if (e.key === "ArrowLeft") { e.preventDefault(); step(-1); }

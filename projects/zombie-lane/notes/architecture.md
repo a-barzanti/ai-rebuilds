@@ -78,8 +78,9 @@ game's simulation timing then matches the original at any frame rate.
 | 11 | Exit/restart pending. |
 
 Other per-frame work in states other than 6/10/11 **[obs]**: if a save was requested, the game state is saved
-first. Saves go through J2ME **RecordStore** records (`Toolkit.writeRecordByteArray`), such as
-`RMS_GAMEFIELD` for the scene and `RMS_MISSIONS` for missions.
+first. Saves go through named records (`Toolkit.writeRecordByteArray`, stored in an SQLite table on Android):
+`RMS_PROFILE`, `RMS_GAMEFIELD` for the scene and `RMS_MISSIONS` for missions. Nothing is saved before the
+tutorial is completed. Formats and storage: [scenes-and-saves.md](scenes-and-saves.md).
 
 ### Startup (state 0)
 
@@ -135,7 +136,8 @@ layer.
 ## Unknowns and next probes
 
 - **[?]** What happens in state 2 per frame: scene update order, spawning, missions. Trace
-  `IsometricScene`, `SpawningManager` and `MissionManager` updates.
+  `IsometricScene.logicUpdate`, `SpawningManager` and `MissionManager` updates. Scene layout, projection and draw
+  order are in [scenes-and-saves.md](scenes-and-saves.md).
 - **[?]** Screen size and scaling: the reference resolution and letterboxing (`DChocMIDlet` has `LETTERBOX_*`
   constants and `drawLetterBox`).
 - **[?]** Input mapping: touch, drag and pinch gestures (`GESTURE_INDEX_*`).

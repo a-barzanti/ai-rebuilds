@@ -12,7 +12,8 @@ export const splitId = (id) => ({ file: id >>> 16, index: id & 0xffff });
 /** Image reference → bundle, PNG number (1-based) and region index. */
 export const splitImageRef = (ref) => ({ bundle: ref >>> 20, png: (ref & 0xfffff) >>> 14, region: ref & 0x3fff });
 
-class Reader {
+/** Big-endian cursor over a byte array (Java DataInputStream semantics). */
+export class Reader {
   /** @param {Uint8Array} bytes */
   constructor(bytes) {
     this.bytes = bytes;
@@ -24,6 +25,8 @@ class Reader {
   s8() { this.need(1); return this.dv.getInt8(this.p++); }
   s16() { this.need(2); const v = this.dv.getInt16(this.p); this.p += 2; return v; }
   s32() { this.need(4); const v = this.dv.getInt32(this.p); this.p += 4; return v; }
+  bool() { return this.u8() !== 0; }
+  utf() { this.need(2); const n = this.dv.getUint16(this.p); this.need(2 + n); const s = readUTF(this.bytes, this.p); this.p += 2 + n; return s; }
   get done() { return this.p === this.bytes.length; }
 }
 

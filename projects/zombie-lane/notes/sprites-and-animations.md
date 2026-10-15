@@ -178,6 +178,9 @@ parent frame started, or the parent's full time when *continuous nested* is set.
 - **nested animation:** drawn at (x, y), negated on mirrored axes, with the parent's mirroring.
 - **primitives:** colors are opaque RGB (`E-colorRGB`). When the sprite is mirrored horizontally, rects and ellipses
   with x ≠ 0 are moved to `−x − w`. Lines are not mirrored.
+- **filled polygon (6) and path (8):** both are drawn the same way, as a **triangle list**: every three points
+  make one filled triangle (`E-ogl-fillBezier`, `E-ogl-fillPolygon`). The floor (`ANM_FLOOR02`) draws the ground
+  this way.
 - **Alignment** is applied by the caller, not the animation. It shifts the draw position by the full or half box
   size for BOTTOM/RIGHT or VCENTER/HCENTER (`E-drawAligned`).
 
@@ -187,7 +190,8 @@ pixels, and their transparent pixels are black, so normal browser drawing gives 
 
 **Names.** **[sh]** In `ResourceIDs`, the suffixes `_IPHONE`, `_IPAD` and `_VGA` mark the default (SD), HD and VGA
 variants. The unsuffixed name is the link entry. Path renderables appear in animations named `*_COLLISION` and
-`FLOOR*`, so **[inf]** they are mostly hit areas and floor outlines.
+`FLOOR*`, so **[inf]** they are mostly hit areas (drawn only when the collision sprite itself is drawn) and the
+ground. **[obs]** The floor's paths fill the ground and its edges (see *Drawing*).
 
 ## Server-only bundles
 

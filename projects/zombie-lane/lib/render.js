@@ -125,11 +125,16 @@ function drawShape(ctx, item, flip) {
       break;
     }
     case "polygon":
-    case "path": {
+    case "path": { // both are drawn as a triangle list: every three points make one filled triangle
       const sx = flip & 1 ? -1 : 1;
+      const p = item.points;
       ctx.beginPath();
-      for (let i = 0; i < item.points.length; i += 2) ctx.lineTo(item.points[i] * sx, item.points[i + 1]);
-      ctx.closePath();
+      for (let i = 0; i + 5 < p.length; i += 6) {
+        ctx.moveTo(p[i] * sx, p[i + 1]);
+        ctx.lineTo(p[i + 2] * sx, p[i + 3]);
+        ctx.lineTo(p[i + 4] * sx, p[i + 5]);
+        ctx.closePath();
+      }
       ctx.fill();
       break;
     }
@@ -148,6 +153,7 @@ export function measure(assets, animation) {
         if (r) add(item.x, item.y, r.w, r.h);
       } else if (item.type === "nested") add(item.x, item.y);
       else if (item.type === "line") { add(item.x1, item.y1); add(item.x2, item.y2); }
+      else if (item.points) for (let i = 0; i + 1 < item.points.length; i += 2) add(item.points[i], item.points[i + 1]);
       else if ("w" in item) add(item.x, item.y, item.w, item.h);
     }
   }

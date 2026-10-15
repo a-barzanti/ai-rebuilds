@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Zombie Lane asset viewer · AI Rebuilds</title>
-    <meta name="description" content="Open your own Zombie Lane APK and play its sprites and animations in the browser. Nothing is uploaded." />
+    <meta name="description" content="Open your own Zombie Lane APK and play its sprites, animations and starting scenes in the browser. Nothing is uploaded." />
     <meta property="og:title" content="Zombie Lane asset viewer · AI Rebuilds" />
     <meta property="og:url" content="https://ai-rebuilds.com/projects/zombie-lane/viewer/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,7 +38,7 @@
     <main id="main" class="wrap viewer">
       <p class="crumbs"><a href="../">&larr; Zombie Lane</a></p>
       <h1>Asset viewer</h1>
-      <p class="lede">Open your own copy of the Zombie Lane APK to browse and play its 18,670 animations. The file is read in your browser and never uploaded.</p>
+      <p class="lede">Open your own copy of the Zombie Lane APK to browse and play its 18,670 animations and see its starting scenes. The file is read in your browser and never uploaded.</p>
 
       <section class="open-panel" id="open-panel">
         <label class="drop" id="drop">
@@ -49,8 +49,26 @@
         <p class="status" id="status" role="status" aria-live="polite"></p>
       </section>
 
+      <div class="mode-tabs" id="mode-tabs" role="tablist" aria-label="View" hidden>
+        <button type="button" role="tab" id="tab-anims" aria-selected="true" aria-controls="workspace">Animations</button>
+        <button type="button" role="tab" id="tab-scenes" aria-selected="false" aria-controls="workspace">Scenes</button>
+      </div>
+
       <section class="workspace" id="workspace" hidden>
-        <aside class="browser" aria-label="Animations">
+        <aside class="browser" aria-label="Scene" id="scene-panel" hidden>
+          <label class="field">Scene
+            <select id="scene">
+              <option value="home">Home, first launch (GAMEFIELDSETUP)</option>
+              <option value="rob">Rob's place (GAMEFIELDSETUPTUTOR)</option>
+            </select>
+          </label>
+          <label class="check"><input type="checkbox" id="scene-missions" /> Treat all missions as completed (shows mission-gated objects)</label>
+          <label class="check"><input type="checkbox" id="scene-grid" /> Tile grid</label>
+          <label class="check"><input type="checkbox" id="scene-shadows" checked /> Shadows</label>
+          <p class="muted count-line" id="scene-count"></p>
+          <ol class="anim-list scene-list" id="scene-list" aria-label="Objects in this scene"></ol>
+        </aside>
+        <aside class="browser" aria-label="Animations" id="anim-panel">
           <div class="browser-filters">
             <input type="search" id="search" class="search" placeholder="Search names, e.g. zombie walk" aria-label="Search animations" />
             <select id="family" aria-label="Family"><option value="">All families</option></select>
@@ -66,7 +84,7 @@
             <p class="stage-note" id="stage-note" hidden></p>
           </div>
 
-          <div class="controls" role="group" aria-label="Playback">
+          <div class="controls" role="group" aria-label="Playback" id="anim-controls">
             <button class="btn" id="prev" type="button" title="Previous frame (←)" aria-label="Previous frame">&#9664;&#9664;</button>
             <button class="btn btn-primary" id="play" type="button" title="Play / pause (space)">Pause</button>
             <button class="btn" id="next" type="button" title="Next frame (→)" aria-label="Next frame">&#9654;&#9654;</button>
@@ -81,7 +99,14 @@
               <select id="variant"><option value="0">Default (SD)</option><option value="2">HD</option><option value="1">VGA</option></select>
             </label>
           </div>
-          <div class="controls toggles" role="group" aria-label="Display">
+          <div class="controls" role="group" aria-label="Scene playback" id="scene-controls" hidden>
+            <button class="btn btn-primary" id="scene-play" type="button">Pause</button>
+            <label>Zoom
+              <select id="scene-zoom"><option value="fit" selected>Fit</option><option>0.5</option><option>1</option><option>2</option></select>
+            </label>
+            <span class="muted scene-hint">Drag to pan, scroll or pinch to zoom.</span>
+          </div>
+          <div class="controls toggles" role="group" aria-label="Display" id="anim-toggles">
             <label><input type="checkbox" id="loop" checked /> Loop</label>
             <label><input type="checkbox" id="flip" /> Mirror</label>
             <label><input type="checkbox" id="shapes" checked /> Vector shapes</label>
@@ -104,7 +129,12 @@
           The formats are documented in <a href="https://github.com/a-barzanti/ai-rebuilds/blob/main/projects/zombie-lane/notes/sprites-and-animations.md">sprites-and-animations.md</a>,
           and the code in <a href="https://github.com/a-barzanti/ai-rebuilds/tree/main/projects/zombie-lane/lib"><code>lib/</code></a> will be reused by the rebuild.
         </p>
-        <p class="muted">Not yet supported: particle emitters (6 frames in the whole game) and timeline color tints (only transparency is applied).</p>
+        <p>
+          <strong>Scenes</strong> places the game's own layout tables on the isometric grid: the home a new player starts
+          with, and Rob's place. Placement, projection, draw order and each object's idle animation follow
+          <a href="https://github.com/a-barzanti/ai-rebuilds/blob/main/projects/zombie-lane/notes/scenes-and-saves.md">scenes-and-saves.md</a>.
+        </p>
+        <p class="muted">Not yet supported: particle emitters (6 frames in the whole game), timeline color tints (only transparency is applied), the player's avatar in scenes, and the game's draw deferral for objects that overlap several tiles.</p>
       </section>
     </main>
 
