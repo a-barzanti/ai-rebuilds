@@ -25,15 +25,17 @@ contact it.
 (`E-ServletsMgr`). **[inf]** Requests move forward once per logic update. Each request
 (`ServletRequest`) has a service name, URL parameters, an optional "add user info" flag, and a signature
 (`SIGNATURE_PREFIX`/`SIGNATURE_LENGTH`) (`E-ServletReq`). **[inf]** Responses are XML, since there is a
-`ServletRequestWithXml` class and the engine has an XML parser. **[?]** How the signature is computed (the
-`network` package has `MD5` and `Base64`).
+`ServletRequestWithXml` class and the engine has an XML parser. **[obs]** The signature is an MD5 hash of
+the parameter string, the session ID and a fixed key from the text table. Before a session exists it's an MD5 of
+the key alone (`E-sr-execute`). Requests also carry the game version and platform. This only matters to someone
+building a compatible server, which is out of scope.
 
 **[obs]** Services (`E-Servlets`):
 
 | Service | Purpose (from its name and parameters) | Rebuild |
 | ------- | -------------------------------------- | ------- |
 | `CreateNewSession`, `GetAccountInformation`, `UpdateAccountInformation`, `BindPlatformAccount`, `UpdateDeviceToken` | Account, session, cloud backup. Parameters include `gamefield` and `missions`, so the server kept a copy of the save. | Local profile only. Optional export/import of the save file. |
-| `GetTimers` | Timers from the server | **[?]** Find out whether crop and construction timers depend on server time. If they do, use the local clock. |
+| `GetTimers` | **[obs]** Social timers only: neighbor-hire countdown, hires left and per-day maximum, neighbor action resets, gift cooldowns (`E-gt-endElement`). Requested only after account information, hiring or gifting (`E-refs-timers`). | Not needed. **[obs]** The game's timestamp is the device clock (`E-timestamp`). |
 | `CollectDailyRewards` | Daily bonus | Compute it locally from the local clock. |
 | `VisitNeighbor`, `AddNeighborRequest(s)`, `AcceptNeighborRequest`, `AddNeighborActions`, `AcceptNeighborActions`, `HireNeighbor` | Visiting friends and helping them | The built-in neighbor **Rob** (type 2514) loads locally and is kept. Other neighbors are out of scope at first. |
 | `SendGift`, `AcceptGift`, `RequestGift` | Gifts | Out of scope at first. Could be replaced by a local "gift box". |
@@ -52,10 +54,10 @@ None of these are needed for gameplay. **[inf]** In the rebuild they become stub
 | Twitter, Game Center | `SocialTwitter`, `SocialGameCenter` | Removed. |
 | AllJoyn local multiplayer | `AlljoynBridge`/`Connection`/`SyncInterface`, `AllJoynService` | Out of scope. Could become a WebRTC visit feature much later. |
 
-## Open questions
+## Answered questions
 
-- **[?]** Does the first launch need a successful `CreateNewSession`? Trace `GameEngine.load(step)` and the
-  servlet response handling. This decides whether the original APK can still be started offline to record
-  reference behavior.
-- **[?]** Does `GetTimers` change game rules, or only sync the clock?
-- **[?]** Where is the asset server, and which bundles came from it (`spriteobject.AssetServer*`)?
+- **Does the first launch need the server?** No. See *Offline behavior* in [architecture.md](architecture.md).
+  The original APK should therefore start offline, which makes it usable for recording reference behavior.
+- **Does `GetTimers` change game rules?** Only social ones (hiring neighbors, gifts). See the table above.
+- **Was any art only on the asset server?** Only HD variants: 133 bundles. See
+  [sprites-and-animations.md](sprites-and-animations.md#server-only-bundles).

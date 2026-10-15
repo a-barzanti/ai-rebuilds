@@ -82,8 +82,10 @@
           <ul>
             <li><strong>Main loop:</strong> one logic update per rendered frame, with a variable time step. <code>dt</code> is the average of the last 8 frame times, each capped at 500&nbsp;ms. <a href="https://github.com/a-barzanti/ai-rebuilds/blob/main/projects/zombie-lane/notes/architecture.md">architecture.md</a></li>
             <li><strong>Rendering:</strong> everything draws through a J2ME-style 2D <code>Graphics</code> API in an orthographic projection, so it maps directly onto Canvas 2D.</li>
-            <li><strong>Saves are local:</strong> the home scene and missions are stored as J2ME RecordStore records, and the built-in neighbor "Rob" loads locally. The core game likely works offline (still to confirm).</li>
+            <li><strong>Runs offline:</strong> the session request at startup is asynchronous. If it fails, the game only shows an NPC message when you open the neighbors window. A first launch loads a built-in default home layout, saves are local, and Rob is local. <a href="https://github.com/a-barzanti/ai-rebuilds/blob/main/projects/zombie-lane/notes/architecture.md#offline-behavior">architecture.md</a></li>
             <li><strong>Data formats decoded:</strong> an indexed table container (u32 size, u32 count, u32 offsets), 32-bit resource/text IDs (file number + index), and <code>readUTF</code> strings. <a href="https://github.com/a-barzanti/ai-rebuilds/blob/main/projects/zombie-lane/notes/resource-formats.md">resource-formats.md</a></li>
+            <li><strong>Art decoded:</strong> texture bundles (PNG atlases plus region lists) and the animation format (frames, timelines, nested animations, particles). Our parser reads all 18,670 animations exactly. Every standard-definition sprite ships in the APK. Only some HD extras were server downloads. <a href="https://github.com/a-barzanti/ai-rebuilds/blob/main/projects/zombie-lane/notes/sprites-and-animations.md">sprites-and-animations.md</a></li>
+            <li><strong>Game data mapped:</strong> all 18,766 entries in <code>r1</code> are identified, including 73 named data tables (missions, zombies, items, shops, levels). GAMESETUP is fully decoded.</li>
             <li><strong>Online:</strong> the game's own XML "servlet" API on a now-gone EC2 host only handled sessions, cloud save, timers and social features. Facebook, payments, ads and analytics become stubs. <a href="https://github.com/a-barzanti/ai-rebuilds/blob/main/projects/zombie-lane/notes/online-dependencies.md">online-dependencies.md</a></li>
           </ul>
 
@@ -96,6 +98,7 @@
 
           <h2>Log</h2>
           <ul>
+            <li>2026-10-15: Second REA pass: confirmed offline startup, decoded the sprite and animation formats, mapped <code>r1</code>, and added validation scripts in <code>tools/</code>.</li>
             <li>2026-10-14: First REA pass: package, class map, main loop, rendering, resource formats, online dependencies. Status: analysis.</li>
             <li>2026-10-14: Project proposed. First look at APK 1.0.33.</li>
           </ul>

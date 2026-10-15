@@ -15,7 +15,10 @@ contain no copyrighted code or assets.
 
 | Spec | Covers |
 | ---- | ------ |
-| [architecture.md](architecture.md) | Code layers, main loop and time step, game-engine states, rendering model |
-| [resource-formats.md](resource-formats.md) | Indexed table container, resource/text IDs, text tables, config, bundles, audio |
+| [architecture.md](architecture.md) | Code layers, main loop and time step, game-engine states, startup steps, offline behavior, rendering model |
+| [resource-formats.md](resource-formats.md) | Indexed table container, resource/text IDs, text tables, config, the `r1` map, data-table encoding, audio |
+| [sprites-and-animations.md](sprites-and-animations.md) | Texture bundles, image references, animation/frame/timeline layout, HD/SD variants, server-only art |
 | [online-dependencies.md](online-dependencies.md) | Game server API, third-party SDKs, what the rebuild replaces |
 | [evidence.md](evidence.md) | REA evidence IDs behind every claim |
+
+The scripts in [../tools](../tools/) check these specs against your own APK.

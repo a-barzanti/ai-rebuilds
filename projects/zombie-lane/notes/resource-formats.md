@@ -71,21 +71,101 @@ and numeric fields. **[?]** The exact record layout. Decode it only if the rebui
 
 ## `r1`: game data
 
-**[sh]** 18,766 binary entries, 8 bytes to 42 KB each (median 36 B). Many neighboring entries have the same
-length (for example, a run of 2,917-byte entries). **[inf]** These are typed records: tuner/level definitions,
-items, animations and scene templates. **[?]** Their layouts. Next probes: `toolkit.ResourceIDs` constants, then
-the readers in `idead.tuner.Tuner`, `idead.items.ItemManager`, `idead.isometric.SceneLoader`/`ObjectLoader` and
-`spriteobject.AnimationStore`.
+**[sh]** 18,766 binary entries, 8 bytes to 42 KB each.
+
+### r1 map
+
+**[sh]** Every resource name in `toolkit.ResourceIDs` and its value, read from the DEX constants with
+`tools/dex-consts.ts` (`E-ResourceIDs` lists the names). The value's low 16 bits give the `r1` index:
+
+| Entries | What | Names |
+| ------- | ---- | ----- |
+| 0 | Menu flow | `RID_MENU_FLOW` |
+| 1–21 | 7 bitmap fonts × 3 sizes (SD, `_IPAD`, `_VGA`) | `RID_DAT_FONT_*` |
+| 22–18,691 | 18,670 animations | `ANM_*`, see [sprites-and-animations.md](sprites-and-animations.md) |
+| 18,692 | Server-only bundle list | `RID_SERVER_BUNDLES` |
+| 18,693–18,765 | 73 data tables | `RID_CSV_BINARY_*` |
+
+Data tables by index (18,693 + offset):
+
+| Index | Table | Index | Table | Index | Table |
+| ----- | ----- | ----- | ----- | ----- | ----- |
+| 18693 | GAMESETUP | 18718 | UPGRADES | 18743 | BUILDINGUPGRADEITEMS |
+| 18694 | CURRENCIES | 18719 | COLLECTIONS | 18744 | MISSIONS |
+| 18695 | PLAYERSTARTVALUES | 18720 | GAMEFIELDSETUPEDITOR | 18745 | TUTORIALSETUP |
+| 18696 | RECOVERYSETUP | 18721 | NPC | 18746 | MISSIONSETUP |
+| 18697 | FENCESANDCROPSDECAYINGPARAMETERS | 18722 | BUILDING | 18747 | MISSINGITEMSFORCONTENTUPDATES |
+| 18698 | TUTORVALUES | 18723 | GAMEFIELDSETUP | 18748 | DEFAULTMISSIONEVENTS |
+| 18699 | DEFAULTMALEITEMS | 18724 | GAMEFIELDSETUPTUTOR | 18749 | POSTMISSIONEVENTS |
+| 18700 | DEFAULTFEMALEITEMS | 18725 | ITEMTYPES | 18750 | MISSIONOBJECTIVES |
+| 18701 | DEFAULTDOGITEMS | 18726 | DEFAULTITEMS | 18751 | OBJECTIVEPROGRESSEVENTS |
+| 18702 | DEFAULTGIFTITEMS | 18727 | PAYMENTITEMS | 18752 | LIFESTRIPS |
+| 18703 | AVATARS | 18728 | PLAYERITEMS | 18753 | MAINSHOP |
+| 18704 | PLAYERRECHARGEINTERVALS | 18729 | EDIBLEITEMS | 18754 | ENERGYTAB |
+| 18705 | EVENTS | 18730 | FARMINGITEMS | 18755 | BUILDINGTAB |
+| 18706 | NEIGHBORSETUP | 18731 | CONSTRUCTIONITEMS | 18756 | FARMINGTAB |
+| 18707 | VISITNEIGHBORREWARDS | 18732 | CRAFTINGITEMS | 18757 | DECOTAB |
+| 18708 | HIDEATNEIGHBORS | 18733 | DECORATIONITEMS | 18758 | WEAPONTAB |
+| 18709 | COMBOMETER | 18734 | FENCEITEMS | 18759 | FOODSHOP |
+| 18710 | ZOMBIEBEHAVIOR | 18735 | ZOMBIEITEMS | 18760 | FOODTAB |
+| 18711 | LEVELS | 18736 | DESTRUCTIBLEITEMS | 18761 | EDITORSHOP |
+| 18712 | ACHIEVEMENTLEVELS | 18737 | COLLECTIBLEITEMS | 18762 | EDITORTAB |
+| 18713 | ACHIEVEMENTS | 18738 | GIFTITEMS | 18763 | SPAWNINGDEFINITIONS |
+| 18714 | ACHIEVEMENTTARGETS | 18739 | BUNDLEITEMS | 18764 | LOCATIONDEFINITIONS |
+| 18715 | WEIGHTS | 18740 | WEAPONITEMS | 18765 | NOTIFICATIONS |
+| 18716 | BOOSTERS | 18741 | AVATARITEMSUBTYPES | | |
+| 18717 | DAILYREWARDS | 18742 | AVATARITEMS | | |
+
+**[sh]** Rows refer to each other by **CSV IDs**. `toolkit.CsvIDs` names 3,262 of them (for example
+`CSVID_PICKETFENCE_*`, `CSVID_ZOMBIEPINEMART_*`).
+
+### Data table encoding
+
+**[obs]** (`E-Tuner-init`, `E-readIntArray`) The tables have **no header and no column schema**. Each one is a
+stream of fields that its reader consumes in a fixed order:
+
+- int: s32. bool: u8 (non-zero = true).
+- int array: s32 count, then that many s32. A count ≤ 0 means "none".
+- Tables with many rows (for example LEVELS and COMBOMETER) are read record by record until the data runs out.
+
+So each table's layout has to be recovered from its reader class. Done so far:
+
+**GAMESETUP** (entry 18693, 85 bytes) **[obs]** field order from `Tuner.init`, **[sh]** values from 1.0.33:
+
+| # | Field | Value |
+| - | ----- | ----- |
+| 1 | max levels | 100 |
+| 2 | max daily rewards | 5 |
+| 3–4 | initial area width × height (tiles) | 50 × 50 |
+| 5 | sell value % | 30 |
+| 6 | cash-to-coins rate | 100 |
+| 7 | level-up points | 2 |
+| 8 | max attack % points | 50 |
+| 9 | max wish-list items | 5 |
+| 10 | mission that completes the tutorial | 1 |
+| 11 | mission that unlocks visiting Rob | 2 |
+| 12 | mission that unlocks fences | 2 |
+| 13 | default spawning interval | 5 |
+| 14 | level that unlocks achievements | 8 |
+| 15 | (bool) decrease ammo at neighbors | true |
+| 16 | mission that unlocks building parts | 2311 |
+| 17 | mission that unlocks crafting | 4 |
+| 18 | mission that unlocks tutor helping | 5 |
+| 19 | mission that unlocks the daily bonus | 6 |
+| 20 | mission that unlocks building upgrades | 2065 |
+| – | two more ints this version doesn't read | 4, 30 |
+
+**[?]** Whether 2311 and 2065 are mission IDs in a different numbering, or "never" sentinels. Check them against
+MISSIONS.
+
+**[?]** All other tables. Readers to trace: `ItemManager.init` (items, shops, tabs), `MissionManager`
+(missions/objectives/events), `SpawningManager` (SPAWNINGDEFINITIONS, ZOMBIEBEHAVIOR), `LevelDefinition`,
+`ComboDefinition`, and `SceneLoader.load` (GAMEFIELDSETUP, also the save-file format).
 
 ## `bundle_<id>/`: sprite bundles
 
-**[sh]** The descriptor `0` starts with a big-endian u32. In `bundle_224` it equals the bundle id (224). In
-`bundle_0` it is 1523, which is one more than the highest bundle id. **[?]** The rest of the descriptor (frames,
-regions, animation timelines). Next probes: `spriteobject.ServerBundle`, `AnimationStore`, `SpriteObject`,
-`AssetServerPackageLoader`.
-
-**[?]** Were any bundles downloaded from an asset server at runtime rather than shipped in the APK? The
-`AssetServer*` classes exist. If some art was only ever on the server, it is lost and would need to be recreated.
+Decoded. See [sprites-and-animations.md](sprites-and-animations.md). **[sh]** The art for every standard-definition
+animation ships in the APK. Only 133 HD-only bundles were server downloads, and they are gone.
 
 ## For the rebuild
 

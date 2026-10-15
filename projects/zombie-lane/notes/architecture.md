@@ -67,7 +67,7 @@ game's simulation timing then matches the original at any frame rate.
 
 | State | Behavior observed |
 | ----- | ----------------- |
-| 0 | Loading. Runs one numbered load step per frame (`load(step++)`), spreading startup over several frames. |
+| 0 | Loading. Runs one numbered load step per frame (`load(step++)`). See *Startup* below. |
 | 1 | Load the **home scene** from the local saved record `SceneLoader.RMS_GAMEFIELD`, refresh neighbors, then go to 2. |
 | 2 | **[inf]** Playing at home (not yet traced). |
 | 3 | Loading a neighbor. Neighbor type **2514** is the built-in neighbor "Rob" (`RobsPlace`), loaded locally. Other neighbors wait for the `VisitNeighbor` server response. |
@@ -81,9 +81,42 @@ Other per-frame work in states other than 6/10/11 **[obs]**: if a save was reque
 first. Saves go through J2ME **RecordStore** records (`Toolkit.writeRecordByteArray`), such as
 `RMS_GAMEFIELD` for the scene and `RMS_MISSIONS` for missions.
 
-**[inf]** The home game loads from **local** save data, and Rob's place is local too. The core single-player game
-should therefore work without the server. Only the social features (other neighbors, gifts) need it. This is
-**not** yet confirmed for startup: see unknowns.
+### Startup (state 0)
+
+**[obs]** `GameEngine.load(step)` runs once per frame with the step increasing by 1. Only these steps do anything
+(`E-ge-load`):
+
+| Step | Work |
+| ---- | ---- |
+| 0 | Show the activity spinner. `Tuner.init`: reads GAMESETUP, DEFAULTGIFTITEMS, LEVELS and COMBOMETER. |
+| 10 | Create the Facebook, Game Center and Twitter wrappers |
+| 20 | Animations manager |
+| 30 | Item manager |
+| 50 | Player profile. **Sends `CreateNewSession` without waiting for the reply.** Scene init. |
+| 60 | Events, spawning, missions |
+| 70 | HUD |
+| 80 | Load the home scene from the saved record `RMS_GAMEFIELD`. If there is none (first launch), load the default layout `RID_CSV_BINARY_GAMEFIELDSETUP` (`r1` entry 18723). Flag the "AZL237" fix if needed. |
+| 85 | Load missions. Set up payments. |
+| 90 | Tutorial flow. If mission 5 is completed (or its mission state is 2), add Rob. |
+| 99 | Loading done: analytics events, then go to state 5 (intro) or 2 (playing), wait for textures, start the background music `sound_file_bg`. |
+
+**[inf]** Loading therefore takes about 100 frames whatever the device speed.
+
+### Offline behavior
+
+**[obs]** The game **starts and plays without the server**:
+
+- `CreateNewSession` is sent asynchronously and loading carries on (`E-sr-execute`, `E-ge-load`). If the reply isn't
+  HTTP 200, the request only sets an "offline mode" flag (`E-cns-response`).
+- That flag is used in exactly one place (`E-refs-offline`, `E-hud-callback`): the first time the player opens the
+  neighbors window from the HUD, an NPC dialog (#3) is shown first, then the window opens. The flag is cleared
+  after it has been shown once (`E-cns-offline`).
+- A session ID, and with it account information and timers, only arrives in a successful reply
+  (`E-cns-endElement`). Without it, `isConnected()` stays false.
+- The home scene and missions come from local records. Rob's place is local.
+
+**For the rebuild:** treat the game as permanently offline and show the same NPC message where social features
+would be.
 
 ## Rendering
 
@@ -101,8 +134,6 @@ layer.
 
 ## Unknowns and next probes
 
-- **[?]** Does startup block on the server? Look at `GameEngine.load(step)` and the `CreateNewSession` /
-  `GetAccountInformation` / `GetTimers` servlets.
 - **[?]** What happens in state 2 per frame: scene update order, spawning, missions. Trace
   `IsometricScene`, `SpawningManager` and `MissionManager` updates.
 - **[?]** Screen size and scaling: the reference resolution and letterboxing (`DChocMIDlet` has `LETTERBOX_*`

@@ -26,11 +26,11 @@
       "mobile"
     ],
     "help_wanted": [
-      "Decode the sprite bundle descriptor (`assets/bundle_<id>/0`) by tracing `spriteobject.ServerBundle` and `AnimationStore`",
-      "Map the 18,766 records in `assets/r1` to their readers (`ResourceIDs`, `Tuner`, `ItemManager`, `SceneLoader`)",
-      "Find out whether first launch needs the server (`GameEngine.load`, `CreateNewSession`, `GetTimers`)",
-      "Trace a frame of home-scene play: scene update order, zombie spawning, missions",
-      "Write the in-browser APK reader: unzip, indexed-table reader, `readUTF` decoder",
+      "Build an in-browser asset viewer: unzip the player's APK, read `r1`, and draw animations from the bundle atlases (format in `notes/sprites-and-animations.md`)",
+      "Decode the item, shop and mission tables in `r1` by tracing `ItemManager.init`, `MissionManager` and their definition classes",
+      "Decode the scene format (`SceneLoader.load`): it covers both the default home layout (GAMEFIELDSETUP) and the save file",
+      "Trace a frame of home-scene play: scene update order, zombie spawning (SPAWNINGDEFINITIONS, ZOMBIEBEHAVIOR), missions",
+      "Record reference footage: the APK starts offline, so play the first missions on an Android device or emulator",
       "Confirm the rights status of Digital Chocolate's catalogue today"
     ]
   }

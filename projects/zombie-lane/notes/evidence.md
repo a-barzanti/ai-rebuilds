@@ -8,7 +8,7 @@ with the same SHA-256 to reproduce them.
   `39b93f6f5409a3e9f84a47efdd23e3067333117bc5edad6c27887091ebda0ad6`
 - **Tools:** REA `rea-agents@6.4.0` (CLI and MCP), JADX provider `jadx-headless-mcp` 0.7.1 (JAR SHA-256
   `6e5eacf5…ff75`, source revision `5844800a`), Temurin JDK 26
-- **Date:** 2026-10-14
+- **Date:** 2026-10-14 (first pass), 2026-10-15 (second pass)
 
 | Ref | Operation | Subject | Evidence ID |
 | --- | --------- | ------- | ----------- |
@@ -40,6 +40,37 @@ with the same SHA-256 to reproduce them.
 | `E-ServletReq` | inspect_android_class | `idead.servlets.ServletRequest` | `ev_af316f136f171e362ade1b41b7b2a28993642e328457b95ad1eced1e92c40605` |
 | `E-Servlets` | inspect_android_class | `idead.servlets.Servlets` | `ev_72270808bd160b4363fa0bf9253f59f1ad6af17f4c48ae574184fcf1534307c2` |
 
+### Second pass (2026-10-15)
+
+| Ref | Operation | Subject | Evidence ID |
+| --- | --------- | ------- | ----------- |
+| `E-ge-load` | inspect_android_method | `GameEngine.load` (startup steps) | `ev_fcf00b7f15889c8f97ee852ce32cb0afdd3cdde948af1b1e796daeba0b4d8c91` |
+| `E-sr-execute` | inspect_android_method | `ServletRequest.execute` (async send, signature) | `ev_942998be0f050761faae5fd9274e9af8cac11cae9e83ddf04ba75ea92c40ea6b` |
+| `E-cns-response` | inspect_android_method | `CreateNewSession.processResponse` | `ev_f48f4b843bbd831962749d3db65f48267a6bee362532c1197ce18e97672a2da7` |
+| `E-cns-offline` | inspect_android_method | `CreateNewSession.showOfflineMode` | `ev_b8b433b3d69a1b6041f435b6a9e3e021167994242958f4bbb5693adee5721490` |
+| `E-cns-endElement` | inspect_android_method | `CreateNewSession.endElement` (session ID, user ID) | `ev_bb7ae9f874ce98b9e98906714e6870863a87ffebe8a435e4e33826a3300b942b` |
+| `E-refs-offline` | trace_android_references | callers of `showOfflineMode` (1, complete) | `ev_8c50067d0561721ecb2c48b41aa4a52dfdcc65b4f21eb91e72efc599238e6928` |
+| `E-hud-callback` | inspect_android_method | `HUDFoldable.callback` | `ev_3622db25c8f11f1f9d01222c86ea65a2f8a61848eec47c25b1799c75ed50b2a6` |
+| `E-gt-endElement` | inspect_android_method | `GetTimers.endElement` (overload 1) | `ev_5e596962f2e6a3eebf3688a3ada84959470e6339103ba0424b89cef524dfe39b` |
+| `E-refs-timers` | trace_android_references | callers of `GameEngine.setGetTimers` (3, complete) | `ev_0d42b629aaed4df134094099f1a036dfa0182b07d78395f44549a2db27ff6f82` |
+| `E-timestamp` | inspect_android_method | `Timing.getTimestamp` | `ev_11744324863253484951fbbd8e03b1d71172e5e06e40b6d3652a37ab8d7f2f37` |
+| `E-ResourceIDs` | inspect_android_class | `toolkit.ResourceIDs` (21,015 field names) | `ev_286dd94c81b5546373b9a9dd555390e133eede840f5e26d84f6169bfc02a74d2` |
+| `E-Tuner-init` | inspect_android_method | `Tuner.init` (GAMESETUP field order) | `ev_7456282320a179de54dc005f74872a0abd05a9bebbb09e193dbf4dee88508a99` |
+| `E-readIntArray` | inspect_android_method | `ToolkitHelpers.readIntArray` | `ev_ae51eaf398e4a46bfffd0da323e6736f8b3a5fc93ba10751ffc4d2ac32ddaaa6` |
+| `E-textureInit` | inspect_android_method | `DavinciUtilities.textureInit` | `ev_ea4b9a6ffefed7def7162ee195d98e5aea4d706ab7f05c49d1123d5ce7e46d15` |
+| `E-readBundle` | inspect_android_method | `DavinciUtilities.readTextureBundleData` | `ev_0e1e2d0ef9f1232c0f27335eed43dab607adb0e277c5d24b5b66ca49192d07e8` |
+| `E-readTexture` | inspect_android_method | `DavinciUtilities.readTextureData` | `ev_0b3287443a0d576f530f689acc121cfe06a231131c27e4d7cff37f1d3eead56a` |
+| `E-loadTextureImage` | inspect_android_method | `DavinciUtilities.loadTextureImage` (image reference bits) | `ev_b284bc1af77a02f414ca2df13c4d3cce0280b201c693c187d8aef42dff4c79e2` |
+| `E-versionText` | inspect_android_method | `DavinciUtilities.getVersionText` | `ev_1cf623a067f8825ced1bee2d3f4b8c4c1dd3aaac47e046841dd01aaa625013a8` |
+| `E-createAnimation` | inspect_android_method | `Animation.createAnimation` (link entries, variant choice) | `ev_9681f112d97d56465fb0eaa3a0d732651fdc940de58d0941e4e99327d4d8bdd9` |
+| `E-initAnimation` | inspect_android_method | `Animation.initAnimation` (header, durations, timeline) | `ev_1964238e262aeef55a2da94007aa83bba0e8e7ad7425a5b0e6a041ab5a6fa48b` |
+| `E-isFrameRef` | inspect_android_method | `Animation.isFrameReference` | `ev_5346cfc205eff4401829d20367aef70ae7d0751b14503449be63cf48b2b5c257` |
+| `E-loadFrame` | inspect_android_method | `AnimationFrame.loadFrameData` (renderables) | `ev_a3410f752c8da2eac8e50c2bfe58262936fb60fb41a1f7634f5d214770655a82` |
+| `E-timelineLoad` | inspect_android_method | `TimelineChannel.load` | `ev_1311bdd6f7d7da7f7c59eb9c78e82055dfeafe40e29f7ba50533ab2ec38eddae` |
+| `E-timelineValue` | inspect_android_method | `Animation.getTimelineValue` | `ev_e82acc0a6facc28cfa445fded8172bfa6fb05f70b62b7fbcb81bade211ef2974` |
+| `E-serverAssets` | inspect_android_method | `ServerAssetLoader.init` | `ev_9ccd2163f4b6d95df79073664461d88d37450726a63a8143c1b8c08266066b85` |
+| `E-bundleLoadFile` | inspect_android_method | `ServerBundle.loadFile` | `ev_799bd6b7141bd638e1eacd7de71e9b114fc14189669af696458583b3af2a7414` |
+
 ## Static-analysis limits
 
 These apply to everything above:
@@ -48,3 +79,6 @@ These apply to everything above:
 - Calls through interfaces or reflection don't show up as static references. That is why `Game.logicUpdate` has
   no static callers.
 - APK signatures were not verified, and the native AllJoyn libraries were not analyzed.
+- Constant **values** (resource IDs, enum values) are not part of REA's class output. They were read straight from
+  `classes.dex` with `tools/dex-consts.ts`, so they are tagged **[sh]**.
+- Format layouts marked **[sh]** were checked by parsing every entry with the scripts in [../tools](../tools/).
