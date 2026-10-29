@@ -1039,3 +1039,7 @@ pre code {
   font-weight: 800;
   margin: 36px 0 0;
 }
+
+.chip-empty:not([aria-pressed="true"]) {
+  opacity: 0.45;
+}

@@ -81,6 +81,7 @@
     var ai = aiFilter.value;
     var sortFn = SORTS[sortSel.value] || SORTS.stars;
     var total = 0;
+    var matches = { all: 0 }; // per category, ignoring the category filter itself
     groups.forEach(function (g) {
       var list = g.querySelector(".entries");
       var items = Array.prototype.slice.call(list.children);
@@ -101,11 +102,19 @@
         el.hidden = !ok;
         if (ok) shown++;
       });
+      matches[g.id] = shown;
+      matches.all += shown;
+      g.querySelector(".group-count").textContent = shown;
       g.hidden = shown === 0 || (category !== "all" && g.id !== category);
       if (!g.hidden) total += shown;
     });
     empty.hidden = total !== 0;
-    chips.forEach(function (c) { c.setAttribute("aria-pressed", String(c.dataset.category === category)); });
+    chips.forEach(function (c) {
+      var n = matches[c.dataset.category] || 0;
+      c.setAttribute("aria-pressed", String(c.dataset.category === category));
+      c.querySelector(".chip-n").textContent = n;
+      c.classList.toggle("chip-empty", n === 0);
+    });
 
     var next = new URLSearchParams();
     if (q) next.set("q", q);
