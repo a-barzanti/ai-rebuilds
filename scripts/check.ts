@@ -56,6 +56,7 @@ if (data) {
   }
   if (newest && data.updated < newest) fail(`"updated" (${data.updated}) is older than the newest "added" date (${newest}); set it to ${newest}`);
   for (const s of data.sources) if (!isText(s.name) || !isUrl(s.url) || !isText(s.by) || !isText(s.used_for)) fail(`source ${s.name}: needs name, by, url and used_for`);
+  for (const r of data.related ?? []) if (!isText(r.name) || !isUrl(r.url) || !isText(r.by) || !isText(r.note)) fail(`related ${r.name}: needs name, by, url and note`);
 
   if (!errors.length) {
     const stale = await sync(data, true);

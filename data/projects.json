@@ -1583,5 +1583,55 @@
       "licence": null,
       "used_for": "ArtCraft Crafting Apps"
     }
+  ],
+  "related": [
+    {
+      "name": "Remade",
+      "by": "replicraft",
+      "url": "https://remade.wiki",
+      "note": "Community directory of open-source reimplementations of closed-source apps, mostly creative and productivity tools."
+    },
+    {
+      "name": "Awesome REA",
+      "by": "reacher-z",
+      "url": "https://awesomerea.org",
+      "note": "Bilingual, searchable catalog of reverse-engineering tools, reconstruction projects, case studies and research."
+    },
+    {
+      "name": "Awesome Reverse Engineering",
+      "by": "morluto",
+      "url": "https://github.com/morluto/awesome-reverse-engineering",
+      "note": "Task-oriented list of reverse-engineering tools and learning resources, by REA's maintainer."
+    },
+    {
+      "name": "Awesome Decomp Games",
+      "by": "SubmitGame",
+      "url": "https://submitgame.github.io/awesome-decomp-games/",
+      "note": "Rated index of game decompilations, recompilations, source ports and engine remakes."
+    },
+    {
+      "name": "awesome-game-decompilations",
+      "by": "CharlotteCross1998",
+      "url": "https://github.com/CharlotteCross1998/awesome-game-decompilations",
+      "note": "Hundreds of game decompilation and recompilation projects, grouped by console."
+    },
+    {
+      "name": "awesome-unofficial-pc-ports",
+      "by": "Sebastrion",
+      "url": "https://github.com/Sebastrion/awesome-unofficial-pc-ports",
+      "note": "Player-friendly guide to unofficial PC ports of console games."
+    },
+    {
+      "name": "Awesome REA Cases",
+      "by": "songshikang0111",
+      "url": "https://github.com/songshikang0111/awesome-REA-cases",
+      "note": "AI-assisted reverse-engineering case studies, separating reported from reproduced results."
+    },
+    {
+      "name": "awesome-rea",
+      "by": "yibie",
+      "url": "https://github.com/yibie/awesome-rea",
+      "note": "AI-assisted game decompilations and ports organized around their stated acceptance checks, plus practitioner write-ups."
+    }
   ]
 }

@@ -159,6 +159,19 @@ We found many of these projects through the lists below. The descriptions here a
 - [decomp.dev](https://decomp.dev) by encounter. Used for: Decompilation progress.
 - [clean-room-reimplementation topic](https://github.com/topics/clean-room-reimplementation) by GitHub. Used for: Software rebuilt with AI.
 - [AI makes open-source clean-room implementations of Photoshop and Premiere](https://www.phoronix.com/news/Photocraft-Filmcraft-AI) by Phoronix. Used for: ArtCraft Crafting Apps.
+
+### Related directories
+
+Other lists that track rebuilds, reimplementations and decompilations. Worth browsing and starring.
+
+- [Remade](https://remade.wiki) by replicraft. Community directory of open-source reimplementations of closed-source apps, mostly creative and productivity tools.
+- [Awesome REA](https://awesomerea.org) by reacher-z. Bilingual, searchable catalog of reverse-engineering tools, reconstruction projects, case studies and research.
+- [Awesome Reverse Engineering](https://github.com/morluto/awesome-reverse-engineering) by morluto. Task-oriented list of reverse-engineering tools and learning resources, by REA's maintainer.
+- [Awesome Decomp Games](https://submitgame.github.io/awesome-decomp-games/) by SubmitGame. Rated index of game decompilations, recompilations, source ports and engine remakes.
+- [awesome-game-decompilations](https://github.com/CharlotteCross1998/awesome-game-decompilations) by CharlotteCross1998. Hundreds of game decompilation and recompilation projects, grouped by console.
+- [awesome-unofficial-pc-ports](https://github.com/Sebastrion/awesome-unofficial-pc-ports) by Sebastrion. Player-friendly guide to unofficial PC ports of console games.
+- [Awesome REA Cases](https://github.com/songshikang0111/awesome-REA-cases) by songshikang0111. AI-assisted reverse-engineering case studies, separating reported from reproduced results.
+- [awesome-rea](https://github.com/yibie/awesome-rea) by yibie. AI-assisted game decompilations and ports organized around their stated acceptance checks, plus practitioner write-ups.
 <!-- list:end -->
 
 ## Contributing

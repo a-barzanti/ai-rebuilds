@@ -23,7 +23,8 @@ export type Project = {
 };
 export type Category = { id: string; title: string; blurb: string };
 export type Source = { name: string; by: string; url: string; licence: string | null; used_for: string };
-export type Data = { updated: string; refreshed: string | null; categories: Category[]; projects: Project[]; sources: Source[] };
+export type Related = { name: string; by: string; url: string; note: string };
+export type Data = { updated: string; refreshed: string | null; categories: Category[]; projects: Project[]; sources: Source[]; related: Related[] };
 
 export const AI_LABEL: Record<AI, string> = { built: "AI-built", assisted: "AI-assisted", none: "No AI", unknown: "AI use not stated" };
 export const METHOD_LABEL: Record<Method, string> = {
@@ -143,6 +144,12 @@ export function renderCredits(data: Data) {
     .join("\n");
 }
 
+export function renderRelated(data: Data) {
+  return data.related
+    .map((r) => `<li><a href="${esc(r.url)}">${esc(r.name)}</a> <span class="quiet">by ${esc(r.by)}. ${esc(r.note)}</span></li>`)
+    .join("\n");
+}
+
 export function renderReadmeList(data: Data) {
   const lines = [
     `_${data.projects.length} projects. List updated ${formatDate(data.updated)}${
@@ -163,6 +170,8 @@ export function renderReadmeList(data: Data) {
   }
   lines.push("", "### Sources and credits", "", "We found many of these projects through the lists below. The descriptions here are our own.", "");
   for (const s of data.sources) lines.push(`- [${s.name}](${s.url}) by ${s.by}${s.licence ? ` (${s.licence})` : ""}. Used for: ${s.used_for}.`);
+  lines.push("", "### Related directories", "", "Other lists that track rebuilds, reimplementations and decompilations. Worth browsing and starring.", "");
+  for (const r of data.related) lines.push(`- [${r.name}](${r.url}) by ${r.by}. ${r.note}`);
   return lines.join("\n");
 }
 
@@ -178,6 +187,7 @@ export function renderIndex(html: string, data: Data) {
   html = splice(html, "chips", renderChips(data));
   html = splice(html, "directory", renderDirectory(data));
   html = splice(html, "credits", renderCredits(data));
+  html = splice(html, "related", renderRelated(data));
   return html;
 }
 

@@ -1033,3 +1033,9 @@ pre code {
   font-variant-numeric: tabular-nums;
   font-size: 13px;
 }
+
+.credits-sub {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 36px 0 0;
+}
