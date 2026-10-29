@@ -1,3 +1,5 @@
+<p align="center"><a href="https://ai-rebuilds.com"><img src="assets/logo-512.png" width="96" height="96" alt="AI Rebuilds"></a></p>
+
 # AI Rebuilds
 
 **A tracked list of software and games rebuilt from the outside in.** It covers apps written by AI agents, game
