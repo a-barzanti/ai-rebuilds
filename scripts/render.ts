@@ -39,8 +39,14 @@ export const METHOD_LABEL: Record<Method, string> = {
 const esc = (s: unknown) =>
   String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const byText = (a: string, b: string) => (a.toLowerCase() < b.toLowerCase() ? -1 : a.toLowerCase() > b.toLowerCase() ? 1 : 0);
+const grouped = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
 export function formatDate(iso: string) {
-  return new Date(iso + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+  // Built by hand so the output is identical on every machine, whatever ICU data it has.
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${d} ${MONTHS[m - 1]} ${y}`;
 }
 
 export function formatStars(n: number) {
@@ -54,7 +60,7 @@ const primaryLink = (p: Project) => p.url ?? p.repo ?? p.writeup!;
 
 export function sorted(projects: Project[]) {
   return [...projects].sort(
-    (a, b) => Number(!!b.featured) - Number(!!a.featured) || (b.github?.stars ?? -1) - (a.github?.stars ?? -1) || a.name.localeCompare(b.name),
+    (a, b) => Number(!!b.featured) - Number(!!a.featured) || (b.github?.stars ?? -1) - (a.github?.stars ?? -1) || byText(a.name, b.name),
   );
 }
 
@@ -67,7 +73,7 @@ function entry(p: Project) {
   ].filter(Boolean);
   const gh = p.github;
   const stats = [
-    gh && `<span class="stars" title="${gh.stars.toLocaleString("en-US")} GitHub stars"><span aria-hidden="true">★</span> ${formatStars(gh.stars)}<span class="sr"> GitHub stars</span></span>`,
+    gh && `<span class="stars" title="${grouped(gh.stars)} GitHub stars"><span aria-hidden="true">★</span> ${formatStars(gh.stars)}<span class="sr"> GitHub stars</span></span>`,
     gh && (gh.archived
       ? `<span class="quiet">Archived</span>`
       : `<span>Last commit <time class="ago" datetime="${gh.pushed}">${formatDate(gh.pushed)}</time></span>`),

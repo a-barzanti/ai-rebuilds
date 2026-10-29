@@ -11,16 +11,20 @@ export async function loadData(): Promise<Data> {
   return Bun.file(DATA).json();
 }
 
+const RENDERERS = { "index.html": renderIndex, "README.md": renderReadme } as const;
+
+/** The full text a generated file should have. */
+export async function renderFile(file: keyof typeof RENDERERS, data: Data) {
+  return RENDERERS[file](await Bun.file(join(ROOT, file)).text(), data);
+}
+
 /** Returns the files whose generated content changed (and writes them unless `dryRun`). */
 export async function sync(data: Data, dryRun = false) {
-  const changed: string[] = [];
-  for (const [file, render] of [
-    ["index.html", renderIndex],
-    ["README.md", renderReadme],
-  ] as const) {
+  const changed: (keyof typeof RENDERERS)[] = [];
+  for (const file of Object.keys(RENDERERS) as (keyof typeof RENDERERS)[]) {
     const path = join(ROOT, file);
     const before = await Bun.file(path).text();
-    const after = render(before, data);
+    const after = await renderFile(file, data);
     if (after !== before) {
       changed.push(file);
       if (!dryRun) await Bun.write(path, after);

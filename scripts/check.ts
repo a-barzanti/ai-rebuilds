@@ -4,7 +4,7 @@
 import { existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { AI_LABEL, METHOD_LABEL, type Data } from "./render.ts";
-import { ROOT, loadData, sync } from "./sync.ts";
+import { ROOT, loadData, renderFile, sync } from "./sync.ts";
 
 const errors: string[] = [];
 const fail = (msg: string) => errors.push(msg);
@@ -59,7 +59,12 @@ if (data) {
 
   if (!errors.length) {
     const stale = await sync(data, true);
-    if (stale.length) fail(`${stale.join(" and ")} out of date: run \`bun run sync\` and commit the result`);
+    for (const file of stale) {
+      const now = (await Bun.file(join(ROOT, file)).text()).split("\n");
+      const want = (await renderFile(file, data)).split("\n");
+      const i = want.findIndex((line, n) => line !== now[n]);
+      fail(`${file} out of date: run \`bun run sync\` and commit the result (first difference at line ${i + 1}: expected ${JSON.stringify(want[i]?.slice(0, 160))})`);
+    }
   }
 }
 
