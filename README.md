@@ -195,6 +195,7 @@ scripts/sync.ts          writes the generated parts (bun run sync)
 scripts/check.ts         validates the data, checks the generated parts are current (bun run check)
 scripts/refresh.ts       updates GitHub stars and activity, checks links (bun run refresh)
 guide/  contribute/  privacy/
+docs/promotion.md        promotion plan, status and ready-to-paste posts
 ```
 
 `.github/workflows/site.yml` checks and deploys to GitHub Pages on every push to `main`.
