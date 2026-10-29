@@ -116,14 +116,28 @@
     history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
   }
 
+  // After the list changes under the reader, jump back to its start (just below the sticky
+  // header) so they don't land in the middle of a different set of entries.
+  var listSection = document.getElementById("list");
+  var header = document.querySelector(".site-header");
+  function toListStart() {
+    var top = listSection.getBoundingClientRect().top + window.scrollY +
+      parseFloat(getComputedStyle(listSection).paddingTop) - (header ? header.offsetHeight : 0);
+    if (window.scrollY > top + 1) window.scrollTo({ top: top });
+  }
+  function applyAndRewind() {
+    apply();
+    toListStart();
+  }
+
   chips.forEach(function (chip) {
     chip.addEventListener("click", function () {
       category = chip.dataset.category;
-      apply();
+      applyAndRewind();
     });
   });
   search.addEventListener("input", apply);
-  aiFilter.addEventListener("change", apply);
-  sortSel.addEventListener("change", apply);
+  aiFilter.addEventListener("change", applyAndRewind);
+  sortSel.addEventListener("change", applyAndRewind);
   if (params.toString()) apply();
 })();
