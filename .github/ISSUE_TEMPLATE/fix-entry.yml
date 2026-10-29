@@ -1,0 +1,25 @@
+name: Fix or remove an entry
+description: A dead link, a wrong description, or a request from a project's maintainer or a rights holder.
+title: "[Fix] "
+labels: ["fix"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Which entry?
+      description: The project name, or its link on ai-rebuilds.com (for example https://ai-rebuilds.com/#openrct2).
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What's wrong?
+      options: [Dead or moved link, Wrong or outdated description, Wrong AI or method label, "I maintain this project and want it changed", "I hold rights to the original and want it removed", Something else]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+    validations:
+      required: true

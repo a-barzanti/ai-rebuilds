@@ -5,6 +5,10 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  # Pushes made by the weekly refresh don't trigger `push`, so deploy when it finishes.
+  workflow_run:
+    workflows: [Refresh]
+    types: [completed]
 
 permissions:
   contents: read
@@ -15,10 +19,13 @@ concurrency:
 
 jobs:
   check:
-    name: Validate projects & forbid game files
+    name: Validate the list
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && 'main' || '' }}
       - uses: oven-sh/setup-bun@v2
       - run: bun run check
 
@@ -35,6 +42,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && 'main' || '' }}
       # Plain static files, published as-is. No build step.
       - uses: actions/upload-pages-artifact@v3
         with:

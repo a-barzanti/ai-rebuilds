@@ -2,131 +2,131 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Contribute · AI Rebuilds</title>
-    <meta name="description" content="How to propose a game, analyze it with REA, and rebuild it for the web. Plus the ground rules." />
-    <meta property="og:title" content="Contribute · AI Rebuilds" />
-    <meta property="og:url" content="https://ai-rebuilds.com/contribute/" />
+    <title>Add a project · AI Rebuilds</title>
+    <meta name="description" content="How to suggest or add a rebuild, clean-room reimplementation or engine recreation to the AI Rebuilds list." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:type" content="website" />
+    <meta property="og:title" content="Add a project · AI Rebuilds" />
+    <meta property="og:description" content="How to suggest or add a rebuild, clean-room reimplementation or engine recreation to the AI Rebuilds list." />
+    <meta property="og:image" content="https://ai-rebuilds.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Silkscreen&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" />
     <link rel="stylesheet" href="/assets/css/site.css" />
     <script>
       try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
     </script>
     <script src="/assets/js/site.js" defer></script>
+    <script src="/assets/js/analytics.js" defer></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-row">
-        <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">&#9654;</span>AI&nbsp;Rebuilds</a>
+        <a class="logo" href="/" aria-label="AI Rebuilds, home"><span class="logo-from">AI</span><span class="logo-arrow" aria-hidden="true">→</span><span class="logo-to">Rebuilds</span></a>
         <nav class="nav" aria-label="Main">
-          <a href="/#projects">Projects</a>
-          <a href="/guide/">Guide</a>
-          <a href="/contribute/" aria-current="page">Contribute</a>
-          <a href="https://github.com/a-barzanti/ai-rebuilds">GitHub</a>
-          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode"><span aria-hidden="true">&#9680;</span></button>
+          <a href="/#list">The list</a>
+          <a href="/guide/">Rebuild with REA</a>
+          <a href="/contribute/" aria-current="page">Add a project</a>
+          <a class="star-link" href="https://github.com/a-barzanti/ai-rebuilds" data-star-count><span aria-hidden="true">★</span> Star on GitHub</a>
+          <button class="theme-toggle" type="button" aria-label="Switch between light and dark" title="Switch between light and dark"><span aria-hidden="true">◐</span></button>
         </nav>
       </div>
     </header>
     <main id="main">
       <article class="wrap page">
         <header class="page-head">
-          <h1>Contribute</h1>
-          <p class="lede">Thanks for helping bring old games back. Everyone can take part, whether you reverse engineer, write web code, make art, research history, or just remember how a game played.</p>
+          <h1>Add a project to the list</h1>
+          <p class="lede">
+            The whole list is one JSON file in our public repository,
+            <a href="https://github.com/a-barzanti/ai-rebuilds">github.com/a-barzanti/ai-rebuilds</a>. You can suggest a project
+            without touching code, or add it yourself with a pull request.
+          </p>
         </header>
         <div class="prose">
-          <h2 id="ways-to-help">Ways to help</h2>
-          <ul>
-            <li><strong>Propose a game.</strong> Open a <a href="https://github.com/a-barzanti/ai-rebuilds/issues/new?template=new-project.yml">new project issue</a> or send the project as a pull request.</li>
-            <li><strong>Analyze.</strong> Run <a href="https://github.com/morluto/rea">REA</a> on a game you own and write up what you find as specs in a project's <code>notes/</code>.</li>
-            <li><strong>Rebuild.</strong> Implement specs in a project's <code>play/</code> folder, or in its own repository.</li>
-            <li><strong>Verify.</strong> Play the original and the rebuild next to each other and report differences.</li>
-            <li><strong>Research.</strong> Fill in history, versions and rights status on project pages.</li>
-          </ul>
-          <p>Every project page has a <strong>Help wanted</strong> list. Those are good first tasks.</p>
-
-          <h2 id="start-a-new-project">Start a new project</h2>
-          <ol>
-            <li>Search the <a href="/#projects">projects</a> and <a href="https://github.com/a-barzanti/ai-rebuilds/issues">issues</a> to make sure the game isn't already covered.</li>
-            <li>Fork the repo and copy the template:
-<pre><code>cp -r projects/_template projects/your-game-slug</code></pre>
-              Use a lowercase slug with dashes, such as <code>zombie-lane</code> or <code>dark-reign-2</code>.</li>
-            <li>Add an entry to <code>projects/projects.json</code> (see below), then fill in <code>projects/your-game-slug/index.html</code>.</li>
-            <li>Add yourself to <code>maintainers</code> if you plan to lead it. You can also leave it empty for someone else to pick up.</li>
-            <li>Run <code>bun run check</code>, then open a pull request. Once it merges, the project gets its own page and a card on the home page.</li>
-          </ol>
+          <h2 id="suggest">The quick way: suggest it</h2>
           <p>
-            Each project is self-contained. Maintainers decide their stack, structure and roadmap. Changes outside a
-            project folder (styles, scripts, docs) are reviewed by the site maintainers.
+            Open the <a href="https://github.com/a-barzanti/ai-rebuilds/issues/new?template=suggest-project.yml">suggestion form</a>
+            on GitHub. It asks for a link, what the project rebuilds and how. A maintainer checks it and adds it, usually within a week.
           </p>
 
-          <h3 id="projects-json">The <code>projects.json</code> entry</h3>
+          <h2 id="add">Add it yourself</h2>
+          <ol>
+            <li>Open <a href="https://github.com/a-barzanti/ai-rebuilds/edit/main/data/projects.json"><code>data/projects.json</code></a> on GitHub, or fork and clone the repository.</li>
+            <li>Add an object to <code>"projects"</code>, using the fields below. Set <code>"added"</code> to today's date, and set <code>"updated"</code> at the top of the file to the same date.</li>
+            <li>If you're working locally, run <code>bun run sync</code>. It regenerates the list in <code>index.html</code> and <code>README.md</code>. Then run <code>bun run check</code>.</li>
+            <li>Open a pull request. If you edited on GitHub and can't run Bun, say so in the pull request and a maintainer will run the sync for you.</li>
+          </ol>
 <pre><code>{
-  "slug": "your-game-slug",
-  "title": "Game Title",
-  "summary": "One sentence.",
-  "status": "proposed",            // proposed | analysis | rebuilding | playable | complete
-  "original": {
-    "developer": "Studio",
-    "publisher": null,             // optional
-    "year": 1999,
-    "platforms": ["Windows"]
-  },
-  "target": "HTML5 Canvas + JavaScript",
-  "play": null,                    // "play/" once something runs, or a full URL
-  "tools": [],                     // optional pages, e.g. [{ "label": "Asset viewer", "href": "viewer/" }]
-  "repo": null,                    // optional separate repository
-  "maintainers": ["your-github-username"],
-  "tags": ["strategy"],
-  "help_wanted": ["A task someone could pick up"]
+  "id": "openrct2",
+  "name": "OpenRCT2",
+  "category": "game-engines",
+  "rebuilds": "RollerCoaster Tycoon 2",
+  "summary": "A full reimplementation of the game. Uses the data files from your copy.",
+  "ai": "none",
+  "method": "reimplementation",
+  "url": "https://openrct2.io",
+  "repo": "https://github.com/OpenRCT2/OpenRCT2",
+  "added": "2026-10-29"
 }</code></pre>
-          <p class="muted">The comments above are only for explanation. JSON doesn't allow comments, so leave them out.</p>
 
-          <h2 id="ground-rules">Ground rules</h2>
-          <p>These rules protect the project and the people who made the original games. Pull requests that break them will be closed.</p>
-          <ol>
-            <li><strong>Never commit original game files.</strong> That means binaries, ROMs, APKs, ISOs, extracted art, audio, maps or text. <code>.gitignore</code> blocks common formats and CI rejects them, but you are still responsible.</li>
-            <li><strong>Commit specs, not decompiled code.</strong> Notes describe behavior and file formats in your own words, with evidence references. Short identifiers, constants and format tables are fine. Pages of decompiled functions are not.</li>
-            <li><strong>Write rebuilds from scratch.</strong> Implement from the specs. Do not translate decompiled code line by line.</li>
-            <li><strong>Bring your own copy.</strong> A rebuild either loads original assets locally from the player's own files (in the browser, never uploaded) or uses new assets with a compatible license.</li>
-            <li><strong>"Abandonware" has no legal meaning.</strong> Record what is known about each game's rights status. If a rights holder asks for a project to be removed, it will be removed promptly, without argument. Get in touch through a <a href="https://github.com/a-barzanti/ai-rebuilds/issues">GitHub issue</a> or privately via the repository owner's profile.</li>
-            <li><strong>No cheating, piracy or DRM-bypass tools.</strong> The goal is preservation and playability, not getting around protections on games that are still sold.</li>
-            <li><strong>Be kind.</strong> Critique work, not people. Harassment of any kind is not tolerated.</li>
-          </ol>
+          <h3 id="fields">Fields</h3>
+          <table>
+            <thead><tr><th>Field</th><th>What to put</th></tr></thead>
+            <tbody>
+              <tr><td><code>id</code></td><td>Lowercase with dashes. It becomes the link anchor, for example <code>ai-rebuilds.com/#openrct2</code>.</td></tr>
+              <tr><td><code>name</code></td><td>The project's own name.</td></tr>
+              <tr><td><code>category</code></td><td>One of <code>craft</code>, <code>ai-software</code>, <code>ai-games</code>, <code>game-engines</code>, <code>decomp</code>, <code>clean-room</code>, <code>tools</code>. If none fits, propose a new one in your pull request.</td></tr>
+              <tr><td><code>rebuilds</code></td><td>What the original is, for example "Adobe Photoshop" or "Super Mario 64 DS (Nintendo DS, 2004)".</td></tr>
+              <tr><td><code>summary</code></td><td>One or two plain sentences in your own words, under 280 characters. Don't paste the project's README.</td></tr>
+              <tr><td><code>ai</code></td><td><code>built</code> if agents wrote most of it, <code>assisted</code> if people did and AI helped, <code>none</code> if no AI was used, <code>unknown</code> if the authors don't say.</td></tr>
+              <tr><td><code>method</code></td><td><code>clean-room</code>, <code>reimplementation</code>, <code>decompilation</code>, <code>recompilation</code>, <code>port</code>, <code>rewrite</code> or <code>tool</code>.</td></tr>
+              <tr><td><code>url</code>, <code>repo</code>, <code>writeup</code></td><td>Optional https links to the website, source code, and the best article about it. At least one is required. GitHub repos get stars and activity filled in automatically.</td></tr>
+              <tr><td><code>year</code>, <code>by</code></td><td>Optional. The year it started and who made it.</td></tr>
+              <tr><td><code>added</code></td><td>Today, as <code>YYYY-MM-DD</code>.</td></tr>
+            </tbody>
+          </table>
+          <p>Leave out <code>github</code>. The weekly refresh fills it in.</p>
 
-          <h2 id="running-locally">Running the site locally</h2>
-          <p>The site is plain HTML, CSS and JavaScript. There is no build step. Serve the repo root with any static server:</p>
-<pre><code>bun run dev          # bunx serve . → http://localhost:3000
-bun run check        # validate projects.json and look for forbidden files</code></pre>
-
-          <h2 id="ai">Using AI responsibly</h2>
-          <p>AI agents do most of the analysis here, and they can be wrong. Before you commit a finding:</p>
+          <h2 id="criteria">What gets in</h2>
           <ul>
-            <li>Make sure every claim in a spec points to REA evidence (an address, method, capture or file offset).</li>
-            <li>Mark guesses as guesses, and keep open questions in the spec's "Unknowns" section.</li>
-            <li>Read and understand the code you commit. You are its author.</li>
+            <li><strong>It rebuilds something that already exists:</strong> an app, an engine, a protocol or a game. Projects that are only "inspired by" something belong elsewhere.</li>
+            <li><strong>It's public.</strong> There is source code, a usable build or at least a detailed write-up.</li>
+            <li><strong>It doesn't distribute the original.</strong> Leave out projects that host the original's code, binaries, ROMs or assets, or link to pirated copies. Decompilations and engines that need your own copy are fine.</li>
+            <li><strong>It's honest about AI.</strong> Label AI involvement the way the authors describe it, and link to their write-up if there is one.</li>
           </ul>
-
-          <h2 id="license">License</h2>
-          <p>
-            Site code and docs are MIT-licensed. Each project's code is MIT by default unless its folder includes a
-            different <code>LICENSE</code>. Contributors keep the copyright to their contributions. Original games and
-            their assets belong to their rights holders and are never distributed here.
+          <p class="note">
+            Being listed doesn't mean we endorse a project or have checked whether it's legal. If you hold the rights to an original,
+            or maintain a listed project, and want an entry changed or removed,
+            <a href="https://github.com/a-barzanti/ai-rebuilds/issues/new?template=fix-entry.yml">open an issue</a>. We act on it promptly.
           </p>
+
+          <h2 id="refresh">How the list stays current</h2>
+          <p>
+            A GitHub Action runs every Monday. It updates stars, last-commit dates and archive status for every listed repository,
+            follows repositories that have moved, checks the other links, and republishes the site. The date at the top of the home
+            page shows when the list itself last changed.
+          </p>
+
+          <h2 id="local">Running the site locally</h2>
+          <p>The site is plain HTML, CSS and JavaScript with no build step. You need <a href="https://bun.sh">Bun</a> for the scripts.</p>
+<pre><code>bun run dev       # http://localhost:3000
+bun run sync      # regenerate index.html and README.md from the data
+bun run check     # validate the data, check the generated files are up to date
+GITHUB_TOKEN=$(gh auth token) bun run refresh   # what the weekly job does</code></pre>
         </div>
       </article>
+
     </main>
     <footer class="site-footer">
       <div class="wrap footer-row">
-        <p>Community-run. Analysis powered by <a href="https://github.com/morluto/rea">REA</a>. No original game files are hosted here.</p>
+        <p>AI Rebuilds links to other people's projects and hosts no software. Each project belongs to its authors.</p>
         <p>
-          <a href="/contribute/#ground-rules">Ground rules</a> ·
-          <a href="https://github.com/a-barzanti/ai-rebuilds/issues/new/choose">Open an issue</a> ·
-          <a href="https://github.com/a-barzanti/ai-rebuilds">Source</a>
+          <a href="https://github.com/a-barzanti/ai-rebuilds">Source on GitHub</a>
+          <a href="/contribute/">Add a project</a>
+          <a href="/privacy/">Privacy</a>
         </p>
       </div>
     </footer>

@@ -1,36 +1,34 @@
 # Contributing to AI Rebuilds
 
-The full guide is on the site: **[ai-rebuilds.com/contribute](https://ai-rebuilds.com/contribute/)**
-(source: [`contribute/index.html`](contribute/index.html)). The essentials are below.
+The full guide is on the site: **[ai-rebuilds.com/contribute](https://ai-rebuilds.com/contribute/)**.
 
-## Start a new project
+## Suggest a project (no code)
 
-1. Check the [projects](https://ai-rebuilds.com/#projects) and [issues](https://github.com/a-barzanti/ai-rebuilds/issues) to make sure the game isn't already covered.
-2. `cp -r projects/_template projects/your-game-slug` (lowercase, dashes)
-3. Add an entry to [`projects/projects.json`](projects/projects.json). The home page cards and each project's
-   status, facts and help-wanted list are rendered from it.
-4. Fill in `projects/your-game-slug/index.html`: replace `your-game-slug` and `Game Title`, then write the history and build details.
-5. `bun run check`, then open a pull request.
+Open the [suggestion form](https://github.com/a-barzanti/ai-rebuilds/issues/new?template=suggest-project.yml).
 
-Each project folder belongs to its maintainers. They choose the stack, structure and roadmap.
+## Add a project yourself
 
-## Ground rules
+1. Add an object to `"projects"` in [`data/projects.json`](data/projects.json). See the
+   [field reference](https://ai-rebuilds.com/contribute/#fields).
+2. Set `"added"` on your entry, and `"updated"` at the top of the file, to today's date (`YYYY-MM-DD`).
+3. `bun run sync` regenerates the list in `index.html` and `README.md`.
+4. `bun run check`, then open a pull request.
 
-1. **Never commit original game files.** That includes binaries, ROMs, APKs, ISOs and extracted assets. CI rejects common formats.
-2. **Commit specs, not decompiled code.** Describe behavior and formats in your own words and cite REA evidence.
-3. **Write rebuilds from scratch**, working from the specs.
-4. **Bring your own copy.** Rebuilds load original assets from the player's own files in the browser, or use new assets.
-5. **"Abandonware" has no legal meaning.** If a rights holder asks, the project is removed promptly.
-6. **No cheating, piracy or DRM-bypass tools.**
-7. **Be kind.**
+If you can't run Bun, open the pull request anyway and say so. A maintainer will run the sync for you.
+
+## What gets in
+
+- It rebuilds something that already exists: an app, an engine, a protocol or a game.
+- It's public: source code, a usable build, or a detailed write-up.
+- It doesn't distribute the original's code, binaries, ROMs or assets, or link to pirated copies.
+- AI involvement is labelled the way its authors describe it.
+
+Listing is not endorsement. Rights holders and project maintainers can ask for changes or removal through the
+[fix an entry](https://github.com/a-barzanti/ai-rebuilds/issues/new?template=fix-entry.yml) form.
 
 ## Local preview
 
-The site is plain HTML/CSS/JS with no build step. You only need [Bun](https://bun.sh) for the dev server and checks:
-
 ```sh
 bun run dev     # http://localhost:3000
-bun run check   # validate projects.json, forbid game files
+bun run check
 ```
-
-Any static server works too, e.g. `python3 -m http.server`.

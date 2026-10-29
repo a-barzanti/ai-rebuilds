@@ -1,0 +1,54 @@
+name: Suggest a project
+description: Suggest a rebuild, clean-room reimplementation or engine recreation for the list.
+title: "[Add] "
+labels: ["suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! Check [the list](https://ai-rebuilds.com/) first. Projects that host the original's code, binaries or assets, or link to pirated copies, can't be listed.
+  - type: input
+    id: name
+    attributes:
+      label: Project name
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: Repository, website or write-up.
+      placeholder: https://github.com/...
+    validations:
+      required: true
+  - type: input
+    id: rebuilds
+    attributes:
+      label: What does it rebuild?
+      placeholder: Adobe Photoshop / RollerCoaster Tycoon 2 / Super Mario 64 DS (Nintendo DS, 2004)
+    validations:
+      required: true
+  - type: dropdown
+    id: ai
+    attributes:
+      label: Was AI involved?
+      options: ["Mostly written by AI agents", "People wrote it, AI helped", "No AI", "Not sure"]
+    validations:
+      required: true
+  - type: dropdown
+    id: method
+    attributes:
+      label: How was it rebuilt?
+      options: [Clean-room, Reimplementation, Decompilation, Recompilation, Port, Rewrite, Tool for rebuilders, Not sure]
+  - type: textarea
+    id: why
+    attributes:
+      label: Anything else?
+      description: A sentence on what makes it interesting, and a link to the best write-up about it.
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Check
+      options:
+        - label: The project doesn't distribute the original's code, binaries or assets.
+          required: true

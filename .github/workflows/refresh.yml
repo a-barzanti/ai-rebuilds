@@ -1,0 +1,33 @@
+name: Refresh
+
+# Every Monday: update GitHub stars, last-commit dates and archive status, check links,
+# regenerate the page and README, and commit. The Site workflow deploys when this finishes.
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun run refresh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: bun run check
+      - name: Commit
+        run: |
+          if git diff --quiet; then echo "No changes."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Refresh GitHub stats ($(date -u +%F))"
+          git push

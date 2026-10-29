@@ -1,97 +1,78 @@
 #!/usr/bin/env bun
-// Validates projects/projects.json against the project folders and makes sure no
-// original game files are tracked. Run with `bun run check`. CI runs it on every push and PR.
-import { existsSync, readdirSync, statSync } from "node:fs";
+// Validates data/projects.json, makes sure index.html and README.md were re-synced after an edit,
+// and keeps binaries out of the repo. `bun run check`; CI runs it on every push and pull request.
+import { existsSync, statSync } from "node:fs";
 import { join } from "node:path";
-
-const ROOT = join(import.meta.dir, "..");
-const STATUSES = ["proposed", "analysis", "rebuilding", "playable", "complete"];
-const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const FORBIDDEN =
-  /\.(apk|xapk|aab|ipa|obb|exe|dll|msi|dmg|pkg|iso|bin|cue|img|rom|nes|sfc|smc|gb|gbc|gba|nds|n64|z64|swf|unity3d|assets|pak|wad|grp|dex|so|zip|7z|rar)$/i;
-const MAX_BYTES = 5 * 1024 * 1024;
+import { AI_LABEL, METHOD_LABEL, type Data } from "./render.ts";
+import { ROOT, loadData, sync } from "./sync.ts";
 
 const errors: string[] = [];
 const fail = (msg: string) => errors.push(msg);
-
-// ---------- projects.json ----------
-type Project = {
-  slug: string;
-  title: string;
-  summary: string;
-  status: string;
-  original: { developer?: string | null; publisher?: string | null; year?: number | null; platforms: string[] };
-  target?: string | null;
-  play?: string | null;
-  tools?: { label: string; href: string }[];
-  repo?: string | null;
-  maintainers: string[];
-  tags: string[];
-  help_wanted: string[];
-};
-
-let projects: Project[] = [];
-try {
-  projects = await Bun.file(join(ROOT, "projects/projects.json")).json();
-  if (!Array.isArray(projects)) throw new Error("top level must be an array");
-} catch (e) {
-  fail(`projects/projects.json: invalid JSON (${(e as Error).message})`);
-}
-
 const isText = (v: unknown) => typeof v === "string" && v.trim() !== "";
-const isList = (v: unknown) => Array.isArray(v) && v.every(isText);
-const seen = new Set<string>();
+const isDate = (v: unknown) => typeof v === "string" && /^\d{4}-\d{2}-\d{2}$/.test(v) && !Number.isNaN(Date.parse(v));
+const isUrl = (v: unknown) => typeof v === "string" && /^https:\/\/[^\s]+$/.test(v);
+const ID = /^[a-z0-9]+(?:[.-][a-z0-9]+)*$/;
+const KEYS = new Set(["id", "name", "category", "rebuilds", "summary", "ai", "method", "year", "by", "url", "repo", "writeup", "featured", "added", "github"]);
 
-for (const [i, p] of projects.entries()) {
-  const at = `projects.json[${i}]${p?.slug ? ` (${p.slug})` : ""}`;
-  if (!isText(p.slug) || !SLUG.test(p.slug)) fail(`${at}: "slug" must be kebab-case, e.g. "zombie-lane"`);
-  if (seen.has(p.slug)) fail(`${at}: duplicate slug`);
-  seen.add(p.slug);
-  for (const key of ["title", "summary"] as const) if (!isText(p[key])) fail(`${at}: "${key}" is required`);
-  if (!STATUSES.includes(p.status)) fail(`${at}: "status" must be one of ${STATUSES.join(", ")}`);
-  if (!p.original || typeof p.original !== "object") fail(`${at}: "original" is required`);
-  else if (!isList(p.original.platforms) || p.original.platforms.length === 0)
-    fail(`${at}: "original.platforms" must be a non-empty list of strings`);
-  for (const key of ["maintainers", "tags", "help_wanted"] as const)
-    if (!isList(p[key])) fail(`${at}: "${key}" must be a list of strings (use [] if empty)`);
-  for (const m of p.maintainers ?? []) if (m.startsWith("@")) fail(`${at}: maintainer "${m}" should not start with @`);
-  if (p.repo && !/^https:\/\//.test(p.repo)) fail(`${at}: "repo" must be an https URL`);
-
-  const page = join(ROOT, "projects", p.slug ?? "", "index.html");
-  if (!existsSync(page)) {
-    fail(`${at}: missing projects/${p.slug}/index.html (copy projects/_template/)`);
-  } else {
-    const html = await Bun.file(page).text();
-    if (!html.includes(`data-project="${p.slug}"`)) fail(`projects/${p.slug}/index.html: needs data-project="${p.slug}"`);
-    if (!html.includes(`<h1>${p.title}</h1>`)) fail(`projects/${p.slug}/index.html: <h1> should match the title "${p.title}"`);
-  }
-  if (p.tools !== undefined && !Array.isArray(p.tools)) fail(`${at}: "tools" must be a list`);
-  for (const tool of p.tools ?? []) {
-    if (!isText(tool?.label) || !isText(tool?.href)) fail(`${at}: each tool needs a "label" and an "href"`);
-    else if (!/:\/\//.test(tool.href) && !existsSync(join(ROOT, "projects", p.slug, tool.href.replace(/^\.?\//, ""))))
-      fail(`${at}: tool "${tool.label}" points to ${tool.href}, which doesn't exist in projects/${p.slug}/`);
-  }
-  if (p.play && !/:\/\//.test(p.play) && !existsSync(join(ROOT, "projects", p.slug, p.play.replace(/^\.?\//, ""))))
-    fail(`${at}: "play" points to ${p.play}, which doesn't exist in projects/${p.slug}/`);
+let data: Data | null = null;
+try {
+  data = await loadData();
+} catch (e) {
+  fail(`data/projects.json: invalid JSON (${(e as Error).message})`);
 }
 
-// Every project folder must be listed.
-for (const dir of readdirSync(join(ROOT, "projects"))) {
-  if (dir.startsWith("_") || dir.startsWith(".")) continue;
-  if (!statSync(join(ROOT, "projects", dir)).isDirectory()) continue;
-  if (!seen.has(dir)) fail(`projects/${dir}/ has no entry in projects/projects.json`);
+if (data) {
+  const today = new Date().toISOString().slice(0, 10);
+  if (!isDate(data.updated)) fail(`"updated" must be a YYYY-MM-DD date`);
+  if (data.refreshed !== null && !isDate(data.refreshed)) fail(`"refreshed" must be a YYYY-MM-DD date or null`);
+  const categories = new Set(data.categories.map((c) => c.id));
+  for (const c of data.categories) if (!ID.test(c.id) || !isText(c.title) || !isText(c.blurb)) fail(`category ${c.id}: needs an id, title and blurb`);
+
+  const ids = new Set<string>();
+  const repos = new Map<string, string>();
+  let newest = "";
+  for (const [i, p] of data.projects.entries()) {
+    const at = `projects[${i}]${p?.id ? ` (${p.id})` : ""}`;
+    for (const k of Object.keys(p)) if (!KEYS.has(k)) fail(`${at}: unknown field "${k}"`);
+    if (!isText(p.id) || !ID.test(p.id)) fail(`${at}: "id" must be lowercase with dashes, e.g. "open-rct2"`);
+    if (ids.has(p.id)) fail(`${at}: duplicate id`);
+    ids.add(p.id);
+    for (const k of ["name", "rebuilds", "summary"] as const) if (!isText(p[k])) fail(`${at}: "${k}" is required`);
+    if (p.summary && p.summary.length > 280) fail(`${at}: keep "summary" under 280 characters`);
+    if (!categories.has(p.category)) fail(`${at}: "category" must be one of ${[...categories].join(", ")}`);
+    if (!(p.ai in AI_LABEL)) fail(`${at}: "ai" must be one of ${Object.keys(AI_LABEL).join(", ")}`);
+    if (!(p.method in METHOD_LABEL)) fail(`${at}: "method" must be one of ${Object.keys(METHOD_LABEL).join(", ")}`);
+    if (p.year !== undefined && (!Number.isInteger(p.year) || p.year < 1950 || p.year > 2100)) fail(`${at}: "year" must be a year`);
+    for (const k of ["url", "repo", "writeup"] as const) if (p[k] !== undefined && !isUrl(p[k])) fail(`${at}: "${k}" must be an https URL`);
+    if (!p.url && !p.repo && !p.writeup) fail(`${at}: needs at least one of "url", "repo" or "writeup"`);
+    if (p.repo) {
+      const key = p.repo.toLowerCase();
+      if (repos.has(key)) fail(`${at}: same repo as ${repos.get(key)}`);
+      repos.set(key, p.id);
+    }
+    if (!isDate(p.added)) fail(`${at}: "added" must be today's date as YYYY-MM-DD`);
+    else if (p.added > today) fail(`${at}: "added" is in the future`);
+    else if (p.added > newest) newest = p.added;
+  }
+  if (newest && data.updated < newest) fail(`"updated" (${data.updated}) is older than the newest "added" date (${newest}); set it to ${newest}`);
+  for (const s of data.sources) if (!isText(s.name) || !isUrl(s.url) || !isText(s.by) || !isText(s.used_for)) fail(`source ${s.name}: needs name, by, url and used_for`);
+
+  if (!errors.length) {
+    const stale = await sync(data, true);
+    if (stale.length) fail(`${stale.join(" and ")} out of date: run \`bun run sync\` and commit the result`);
+  }
 }
 
-// ---------- No original game files ----------
+// Nothing binary or huge belongs in a list of links.
+const FORBIDDEN = /\.(apk|xapk|aab|ipa|obb|exe|dll|msi|dmg|pkg|iso|bin|cue|img|rom|nes|sfc|smc|gb|gbc|gba|nds|n64|z64|swf|unity3d|assets|pak|wad|grp|dex|so|zip|7z|rar)$/i;
 const tracked = (await Bun.$`git ls-files -z`.cwd(ROOT).quiet().text()).split("\0").filter(Boolean);
 for (const file of tracked) {
-  if (FORBIDDEN.test(file)) fail(`${file}: game binaries and archives must not be committed (see /contribute/#ground-rules)`);
-  else if (existsSync(join(ROOT, file)) && statSync(join(ROOT, file)).size > MAX_BYTES)
-    fail(`${file}: larger than 5 MB. Original assets must not be committed`);
+  if (FORBIDDEN.test(file)) fail(`${file}: binaries and archives must not be committed`);
+  else if (existsSync(join(ROOT, file)) && statSync(join(ROOT, file)).size > 2 * 1024 * 1024) fail(`${file}: larger than 2 MB`);
 }
 
 if (errors.length) {
   console.error(`✗ ${errors.length} problem(s):\n  - ${errors.join("\n  - ")}`);
   process.exit(1);
 }
-console.log(`✓ ${projects.length} project(s) OK, ${tracked.length} tracked files clean`);
+console.log(`✓ ${data!.projects.length} projects OK, page and README in sync, ${tracked.length} tracked files clean`);

@@ -1,11 +1,10 @@
 ## What does this change?
 
-<!-- Project slug(s) touched, and a short summary. -->
+<!-- Projects added or changed, and a short reason. -->
 
 ## Checklist
 
-- [ ] No original game files (binaries, ROMs, APKs, extracted assets) are included
-- [ ] Notes describe behavior in my own words and cite REA evidence. No decompiled source is pasted in
-- [ ] Rebuild code was written from the specs, not translated from decompiled code
-- [ ] I've checked any AI-generated code and findings, and I understand them
-- [ ] `bun run check` passes
+- [ ] Each new entry rebuilds something that exists, is public, and doesn't distribute the original's code, binaries or assets
+- [ ] Summaries are in my own words, and the AI label matches what the authors say
+- [ ] `"added"` and the top-level `"updated"` are today's date
+- [ ] I ran `bun run sync` and `bun run check` (or I've said below that I couldn't)

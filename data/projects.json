@@ -1,0 +1,1587 @@
+{
+  "updated": "2026-10-29",
+  "refreshed": "2026-10-29",
+  "categories": [
+    {
+      "id": "craft",
+      "title": "ArtCraft Crafting Apps",
+      "blurb": "A suite of desktop apps, each rebuilding a well-known creative or office tool from scratch in Rust. The authors describe them as clean-room reimplementations written predominantly by Claude Code and other AI agents."
+    },
+    {
+      "id": "ai-software",
+      "title": "Software rebuilt with AI",
+      "blurb": "Frameworks, compilers, parsers and engines that were rebuilt, ported or rewritten mostly by coding agents, with the people directing them."
+    },
+    {
+      "id": "ai-games",
+      "title": "Games rebuilt with AI",
+      "blurb": "Decompilations, recompilations and reconstructions of games where AI agents did much of the work. Every one needs your own copy of the game."
+    },
+    {
+      "id": "game-engines",
+      "title": "Game engine reimplementations",
+      "blurb": "Long-running community engines that play classic games on modern systems. Most load the data files from a copy you own."
+    },
+    {
+      "id": "decomp",
+      "title": "Decompilations and recompilations",
+      "blurb": "Human-led projects that turned console games back into buildable source code or native PC programs. They ship no game assets."
+    },
+    {
+      "id": "clean-room",
+      "title": "Clean-room classics",
+      "blurb": "Famous independent reimplementations, from the BIOS that made PC clones possible to a Photoshop-compatible editor in the browser."
+    },
+    {
+      "id": "tools",
+      "title": "Tools for rebuilders",
+      "blurb": "What people use to study the original and check the rebuild against it: decompilers, AI bridges, matching and diffing tools."
+    }
+  ],
+  "projects": [
+    {
+      "id": "artcraft",
+      "name": "ArtCraft",
+      "category": "craft",
+      "rebuilds": "Adobe Creative Cloud and Microsoft Office",
+      "summary": "The umbrella project and launcher for the Crafting Apps below.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "url": "https://getartcraft.com",
+      "repo": "https://github.com/storytold/artcraft",
+      "writeup": "https://www.phoronix.com/news/Photocraft-Filmcraft-AI",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 37509,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "photocraft",
+      "name": "PhotoCraft",
+      "category": "craft",
+      "rebuilds": "Adobe Photoshop",
+      "summary": "A layer-based photo editor written from scratch in Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/photocraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 74573,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "filmcraft",
+      "name": "FilmCraft",
+      "category": "craft",
+      "rebuilds": "Adobe Premiere Pro",
+      "summary": "A nonlinear video editor written from scratch in Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/filmcraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 16779,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "lightcraft",
+      "name": "LightCraft",
+      "category": "craft",
+      "rebuilds": "Adobe Lightroom",
+      "summary": "A non-destructive photo developer and organizer written from scratch in Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/lightcraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 15006,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "vectorcraft",
+      "name": "VectorCraft",
+      "category": "craft",
+      "rebuilds": "Adobe Illustrator",
+      "summary": "A vector art tool written from scratch in Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/vectorcraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 10960,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "effectcraft",
+      "name": "EffectCraft",
+      "category": "craft",
+      "rebuilds": "Adobe After Effects",
+      "summary": "Motion graphics and compositing, written from scratch in Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/effectcraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 8121,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "designcraft",
+      "name": "DesignCraft",
+      "category": "craft",
+      "rebuilds": "Adobe InDesign",
+      "summary": "A page layout and publishing editor written from scratch in Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/designcraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 4911,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "pdfcraft",
+      "name": "PdfCraft",
+      "category": "craft",
+      "rebuilds": "Adobe Acrobat",
+      "summary": "A PDF reader and editor written from scratch in Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/pdfcraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 18528,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "anicraft",
+      "name": "AniCraft",
+      "category": "craft",
+      "rebuilds": "Adobe Animate",
+      "summary": "A 2D animation editor written from scratch in Rust. The newest app in the suite.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/AniCraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 61,
+        "pushed": "2026-10-14",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "figcraft",
+      "name": "FigCraft",
+      "category": "craft",
+      "rebuilds": "Figma",
+      "summary": "Interface design and prototyping, a clean-room take on collaborative design tools in Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/figcraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 3760,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "wordcraft",
+      "name": "WordCraft",
+      "category": "craft",
+      "rebuilds": "Microsoft Word",
+      "summary": "A word processor, described as a clean-room reimplementation in pure Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/wordcraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 16513,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "gridcraft",
+      "name": "GridCraft",
+      "category": "craft",
+      "rebuilds": "Microsoft Excel",
+      "summary": "A spreadsheet, described as a clean-room reimplementation in pure Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/gridcraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 6755,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "deckcraft",
+      "name": "DeckCraft",
+      "category": "craft",
+      "rebuilds": "Microsoft PowerPoint",
+      "summary": "Presentations and slide shows, described as a clean-room reimplementation in pure Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/deckcraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 4392,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "cadcraft",
+      "name": "CADCraft",
+      "category": "craft",
+      "rebuilds": "AutoCAD",
+      "summary": "Computer-aided design and drafting, described as a clean-room AutoCAD-style app in Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/cadcraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 7141,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "soundcraft",
+      "name": "SoundCraft",
+      "category": "craft",
+      "rebuilds": "Avid Pro Tools",
+      "summary": "A digital audio workstation, described as a clean-room reimplementation in pure Rust.",
+      "ai": "built",
+      "method": "clean-room",
+      "year": 2026,
+      "by": "storytold",
+      "repo": "https://github.com/storytold/soundcraft",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 3878,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "vinext",
+      "name": "vinext",
+      "category": "ai-software",
+      "rebuilds": "Next.js",
+      "summary": "Cloudflare reimplemented the Next.js API surface on Vite in about a week, with one engineer directing AI models.",
+      "ai": "built",
+      "method": "reimplementation",
+      "year": 2026,
+      "by": "Cloudflare",
+      "repo": "https://github.com/cloudflare/vinext",
+      "writeup": "https://blog.cloudflare.com/vinext/",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 9264,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "MIT"
+      }
+    },
+    {
+      "id": "claudes-c-compiler",
+      "name": "Claude's C Compiler",
+      "category": "ai-software",
+      "rebuilds": "GCC, as a C compiler",
+      "summary": "Sixteen parallel Claude agents wrote a dependency-free C compiler in Rust that can build the Linux kernel. Not validated for production use.",
+      "ai": "built",
+      "method": "reimplementation",
+      "year": 2026,
+      "by": "Anthropic",
+      "repo": "https://github.com/anthropics/claudes-c-compiler",
+      "writeup": "https://www.anthropic.com/engineering/building-c-compiler",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 2823,
+        "pushed": "2026-02-05",
+        "archived": false,
+        "licence": "CC0-1.0"
+      }
+    },
+    {
+      "id": "fastrender",
+      "name": "FastRender",
+      "category": "ai-software",
+      "rebuilds": "A web browser engine",
+      "summary": "An experimental browser engine written by thousands of parallel agents in Cursor's research on long-running autonomous coding.",
+      "ai": "built",
+      "method": "reimplementation",
+      "year": 2026,
+      "by": "Wilson Lin (Cursor)",
+      "repo": "https://github.com/wilsonzlin/fastrender",
+      "writeup": "https://simonwillison.net/2026/Jan/23/fastrender/",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 1577,
+        "pushed": "2026-01-18",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "ladybird-libjs-rust",
+      "name": "Ladybird LibJS in Rust",
+      "category": "ai-software",
+      "rebuilds": "Ladybird's C++ JavaScript engine frontend",
+      "summary": "Andreas Kling ported LibJS's lexer, parser, AST and bytecode generator from C++ to Rust in about two weeks, using Claude Code and Codex.",
+      "ai": "assisted",
+      "method": "port",
+      "year": 2026,
+      "by": "Ladybird",
+      "repo": "https://github.com/LadybirdBrowser/ladybird",
+      "writeup": "https://ladybird.org/posts/adopting-rust/",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 66745,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": "BSD-2-Clause"
+      }
+    },
+    {
+      "id": "justhtml",
+      "name": "JustHTML",
+      "category": "ai-software",
+      "rebuilds": "html5lib",
+      "summary": "A pure-Python HTML5 parser built with coding agents against the official html5lib test suite, which it passes in full.",
+      "ai": "built",
+      "method": "reimplementation",
+      "year": 2025,
+      "by": "Emil Stenström",
+      "repo": "https://github.com/EmilStenstrom/justhtml",
+      "writeup": "https://emilstenstrom.github.io/justhtml/correctness.html",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 1161,
+        "pushed": "2026-10-26",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "justjshtml",
+      "name": "justjshtml",
+      "category": "ai-software",
+      "rebuilds": "JustHTML, in JavaScript",
+      "summary": "Simon Willison had a coding agent port JustHTML to JavaScript, using the same test suite as the referee.",
+      "ai": "built",
+      "method": "port",
+      "year": 2025,
+      "by": "Simon Willison",
+      "repo": "https://github.com/simonw/justjshtml",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 174,
+        "pushed": "2026-01-11",
+        "archived": false,
+        "licence": "MIT"
+      }
+    },
+    {
+      "id": "chardet-7",
+      "name": "chardet 7",
+      "category": "ai-software",
+      "rebuilds": "chardet 6 (LGPL)",
+      "summary": "An AI-driven rewrite of the Python encoding detector that changed its licence from LGPL to MIT, then 0BSD. The project's original author disputes the relicensing. It became the test case for AI clean-room claims.",
+      "ai": "built",
+      "method": "rewrite",
+      "year": 2026,
+      "by": "Dan Blanchard",
+      "repo": "https://github.com/chardet/chardet",
+      "writeup": "https://simonw.substack.com/p/can-coding-agents-relicense-open",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 2680,
+        "pushed": "2026-10-24",
+        "archived": false,
+        "licence": "0BSD"
+      }
+    },
+    {
+      "id": "snowboardkids2-decomp",
+      "name": "Snowboard Kids 2 decompilation",
+      "category": "ai-games",
+      "rebuilds": "Snowboard Kids 2 (N64, 1999)",
+      "summary": "Chris Lewis ran Claude in an unattended loop, one function at a time, and reached a 100% matching decompilation. His blog posts made the method famous.",
+      "ai": "built",
+      "method": "decompilation",
+      "year": 2026,
+      "by": "Chris Lewis",
+      "repo": "https://github.com/cdlewis/snowboardkids2-decomp",
+      "writeup": "https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 197,
+        "pushed": "2026-10-23",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "snowboardkids-decomp",
+      "name": "Snowboard Kids decompilation",
+      "category": "ai-games",
+      "rebuilds": "Snowboard Kids (N64, 1998)",
+      "summary": "The same approach applied to the first game, again reaching 100% matching code, with several AI models.",
+      "ai": "built",
+      "method": "decompilation",
+      "year": 2026,
+      "by": "Chris Lewis",
+      "repo": "https://github.com/cdlewis/snowboardkids-decomp",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 58,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "sm64ds-decomp",
+      "name": "Super Mario 64 DS decompilation",
+      "category": "ai-games",
+      "rebuilds": "Super Mario 64 DS (Nintendo DS, 2004)",
+      "summary": "A from-scratch, byte-matching decompilation into C and C++, nearly complete, made with Claude, Codex and other models.",
+      "ai": "built",
+      "method": "decompilation",
+      "year": 2026,
+      "by": "tangosdev",
+      "repo": "https://github.com/tangosdev/sm64ds-decomp",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 233,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": "MIT"
+      }
+    },
+    {
+      "id": "melee-decomp",
+      "name": "Super Smash Bros. Melee decompilation",
+      "category": "ai-games",
+      "rebuilds": "Super Smash Bros. Melee (GameCube, 2001)",
+      "summary": "A human-led project since 2020 that finished matching all functions in 2026. AI tools proposed candidates, and some commits credit AI co-authors.",
+      "ai": "assisted",
+      "method": "decompilation",
+      "year": 2020,
+      "by": "doldecomp",
+      "repo": "https://github.com/doldecomp/melee",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 2443,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "kl-eod-decomp",
+      "name": "Klonoa: Empire of Dreams decompilation",
+      "category": "ai-games",
+      "rebuilds": "Klonoa: Empire of Dreams (GBA, 2001)",
+      "summary": "A matching decompilation in progress since March 2026, with Claude Code credited in its commits.",
+      "ai": "assisted",
+      "method": "decompilation",
+      "year": 2026,
+      "by": "Dream Atelier",
+      "repo": "https://github.com/Dream-Atelier/kl-eod-decomp",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 17,
+        "pushed": "2026-10-05",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "bfm-decomp",
+      "name": "Brave Fencer Musashi decompilation",
+      "category": "ai-games",
+      "rebuilds": "Brave Fencer Musashi (PlayStation, 1998)",
+      "summary": "A matching decompilation whose rebuilt binaries are byte-identical to the originals. The repo documents how AI was used.",
+      "ai": "assisted",
+      "method": "decompilation",
+      "year": 2026,
+      "by": "Druthulu",
+      "repo": "https://github.com/Druthulu/BFM-decomp",
+      "writeup": "https://github.com/Druthulu/BFM-decomp/blob/main/docs/story.md",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 86,
+        "pushed": "2026-10-17",
+        "archived": false,
+        "licence": "AGPL-3.0"
+      }
+    },
+    {
+      "id": "dx-ball",
+      "name": "DX-Ball reconstruction",
+      "category": "ai-games",
+      "rebuilds": "DX-Ball 1.07 (Windows, 1996)",
+      "summary": "A coding agent driving REA reconstructs the game, checked against the original x86 with differential tests and a pinned MSVC toolchain.",
+      "ai": "built",
+      "method": "reimplementation",
+      "year": 2026,
+      "by": "N0zoM1z0",
+      "repo": "https://github.com/N0zoM1z0/dx-ball",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 78,
+        "pushed": "2026-10-22",
+        "archived": false,
+        "licence": "MIT"
+      }
+    },
+    {
+      "id": "littleplanet",
+      "name": "Little Planet",
+      "category": "ai-games",
+      "rebuilds": "Sonic CD (Mega-CD, 1993)",
+      "summary": "A static recompilation of Sonic CD into a native PC program.",
+      "ai": "assisted",
+      "method": "recompilation",
+      "year": 2026,
+      "by": "carl0srmz",
+      "repo": "https://github.com/carl0srmz/littleplanet",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 50,
+        "pushed": "2026-10-19",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "openrct2",
+      "name": "OpenRCT2",
+      "category": "game-engines",
+      "rebuilds": "RollerCoaster Tycoon 2",
+      "summary": "A full reimplementation of the game with multiplayer, bigger maps and modern display support. Uses the data files from your copy.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/OpenRCT2/OpenRCT2",
+      "url": "https://openrct2.io",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 16516,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "GPL-3.0"
+      }
+    },
+    {
+      "id": "openttd",
+      "name": "OpenTTD",
+      "category": "game-engines",
+      "rebuilds": "Transport Tycoon Deluxe",
+      "summary": "Started as a reimplementation and grew into its own game. It runs on free replacement graphics and sound, so you don't need the original.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/OpenTTD/OpenTTD",
+      "url": "https://www.openttd.org",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 8436,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "openmw",
+      "name": "OpenMW",
+      "category": "game-engines",
+      "rebuilds": "The Elder Scrolls III: Morrowind",
+      "summary": "A new open-world RPG engine that plays Morrowind from your own data files.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/OpenMW/openmw",
+      "url": "https://openmw.org",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 6685,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": "GPL-3.0"
+      }
+    },
+    {
+      "id": "scummvm",
+      "name": "ScummVM",
+      "category": "game-engines",
+      "rebuilds": "LucasArts SCUMM and hundreds of other adventure engines",
+      "summary": "A collection of reimplemented point-and-click engines. Several games it supports are legally free to download.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/scummvm/scummvm",
+      "url": "https://www.scummvm.org",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 2870,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": "GPL-3.0"
+      }
+    },
+    {
+      "id": "openra",
+      "name": "OpenRA",
+      "category": "game-engines",
+      "rebuilds": "Command & Conquer, Red Alert and Dune 2000",
+      "summary": "A modern engine for early Westwood strategy games, with online play.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/OpenRA/OpenRA",
+      "url": "https://www.openra.net",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 17681,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "GPL-3.0"
+      }
+    },
+    {
+      "id": "openage",
+      "name": "openage",
+      "category": "game-engines",
+      "rebuilds": "Age of Empires II",
+      "summary": "A free engine clone of Age of Empires and its successors.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/SFTtech/openage",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 14564,
+        "pushed": "2026-10-20",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "devilutionx",
+      "name": "DevilutionX",
+      "category": "game-engines",
+      "rebuilds": "Diablo and Hellfire",
+      "summary": "Diablo for modern systems, built from reconstructed source code. Needs the data file from your copy.",
+      "ai": "none",
+      "method": "port",
+      "repo": "https://github.com/diasurgical/DevilutionX",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 9961,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "fheroes2",
+      "name": "fheroes2",
+      "category": "game-engines",
+      "rebuilds": "Heroes of Might and Magic II",
+      "summary": "A recreation of the Heroes II engine with modern resolutions and quality-of-life fixes.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/ihhub/fheroes2",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 3693,
+        "pushed": "2026-10-27",
+        "archived": false,
+        "licence": "GPL-2.0"
+      }
+    },
+    {
+      "id": "vcmi",
+      "name": "VCMI",
+      "category": "game-engines",
+      "rebuilds": "Heroes of Might and Magic III",
+      "summary": "An open engine for Heroes III with mod support and new features.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/vcmi/vcmi",
+      "url": "https://vcmi.eu",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 5995,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "GPL-2.0"
+      }
+    },
+    {
+      "id": "julius",
+      "name": "Julius",
+      "category": "game-engines",
+      "rebuilds": "Caesar III",
+      "summary": "Reimplements Caesar III exactly, keeping the original gameplay.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/bvschaik/julius",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 3428,
+        "pushed": "2026-09-12",
+        "archived": false,
+        "licence": "AGPL-3.0"
+      }
+    },
+    {
+      "id": "augustus",
+      "name": "Augustus",
+      "category": "game-engines",
+      "rebuilds": "Caesar III",
+      "summary": "A fork of Julius that adds gameplay changes and new features.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/Keriew/augustus",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 2138,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "AGPL-3.0"
+      }
+    },
+    {
+      "id": "corsixth",
+      "name": "CorsixTH",
+      "category": "game-engines",
+      "rebuilds": "Theme Hospital",
+      "summary": "An open-source clone of Theme Hospital's engine, using the original game's data.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/CorsixTH/CorsixTH",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 4624,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "openxcom",
+      "name": "OpenXcom",
+      "category": "game-engines",
+      "rebuilds": "UFO: Enemy Unknown (X-COM) and Terror from the Deep",
+      "summary": "An open-source clone of the original X-COM, with a large modding scene.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/OpenXcom/OpenXcom",
+      "url": "https://openxcom.org",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 2245,
+        "pushed": "2026-09-28",
+        "archived": false,
+        "licence": "GPL-3.0"
+      }
+    },
+    {
+      "id": "gemrb",
+      "name": "GemRB",
+      "category": "game-engines",
+      "rebuilds": "BioWare's Infinity Engine (Baldur's Gate, Planescape: Torment)",
+      "summary": "A portable implementation of the Infinity Engine.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/gemrb/gemrb",
+      "url": "https://gemrb.org",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 1266,
+        "pushed": "2026-10-27",
+        "archived": false,
+        "licence": "GPL-2.0"
+      }
+    },
+    {
+      "id": "exult",
+      "name": "Exult",
+      "category": "game-engines",
+      "rebuilds": "Ultima VII",
+      "summary": "Recreates Ultima VII and its expansion for modern systems from the original data files.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/exult/exult",
+      "url": "https://exult.info",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 702,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": "GPL-2.0"
+      }
+    },
+    {
+      "id": "openlara",
+      "name": "OpenLara",
+      "category": "game-engines",
+      "rebuilds": "Tomb Raider (1996)",
+      "summary": "A classic Tomb Raider engine that runs on everything from browsers to old consoles.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/XProger/OpenLara",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 5142,
+        "pushed": "2026-07-26",
+        "archived": false,
+        "licence": "BSD-2-Clause"
+      }
+    },
+    {
+      "id": "opensage",
+      "name": "OpenSAGE",
+      "category": "game-engines",
+      "rebuilds": "EA's SAGE engine (Command & Conquer: Generals)",
+      "summary": "A reimplementation of the 3D strategy engine behind Generals and its successors.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/OpenSAGE/OpenSAGE",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 1659,
+        "pushed": "2026-03-30",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "falltergeist",
+      "name": "Falltergeist",
+      "category": "game-engines",
+      "rebuilds": "Fallout 2",
+      "summary": "A cross-platform Fallout 2 engine in C++. Development has been quiet since 2023.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/falltergeist/falltergeist",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 886,
+        "pushed": "2023-01-05",
+        "archived": false,
+        "licence": "GPL-3.0"
+      }
+    },
+    {
+      "id": "openfodder",
+      "name": "Open Fodder",
+      "category": "game-engines",
+      "rebuilds": "Cannon Fodder",
+      "summary": "An open-source engine for Cannon Fodder that also runs the free demo data.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/OpenFodder/openfodder",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 614,
+        "pushed": "2026-10-20",
+        "archived": false,
+        "licence": "GPL-3.0"
+      }
+    },
+    {
+      "id": "freedoom",
+      "name": "Freedoom",
+      "category": "game-engines",
+      "rebuilds": "Doom's game data",
+      "summary": "Complete free replacement art, sound and levels for any Doom engine. It shows how a project can avoid the original assets altogether.",
+      "ai": "none",
+      "method": "reimplementation",
+      "repo": "https://github.com/freedoom/freedoom",
+      "url": "https://freedoom.github.io",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 1372,
+        "pushed": "2026-10-02",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "sm64",
+      "name": "Super Mario 64 decompilation",
+      "category": "decomp",
+      "rebuilds": "Super Mario 64 (N64, 1996)",
+      "summary": "The landmark matching decompilation that started the modern decomp scene and led to PC ports.",
+      "ai": "none",
+      "method": "decompilation",
+      "repo": "https://github.com/n64decomp/sm64",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 8935,
+        "pushed": "2024-02-04",
+        "archived": false,
+        "licence": "CC0-1.0"
+      }
+    },
+    {
+      "id": "oot",
+      "name": "Ocarina of Time decompilation",
+      "category": "decomp",
+      "rebuilds": "The Legend of Zelda: Ocarina of Time (N64, 1998)",
+      "summary": "A matching decompilation by the zeldaret team.",
+      "ai": "none",
+      "method": "decompilation",
+      "repo": "https://github.com/zeldaret/oot",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 5630,
+        "pushed": "2026-10-18",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "shipwright",
+      "name": "Ship of Harkinian",
+      "category": "decomp",
+      "rebuilds": "The Legend of Zelda: Ocarina of Time (N64, 1998)",
+      "summary": "A PC port built on the Ocarina of Time decompilation. It reads the assets from your own ROM.",
+      "ai": "none",
+      "method": "port",
+      "repo": "https://github.com/HarbourMasters/Shipwright",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 5787,
+        "pushed": "2026-10-24",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "2ship2harkinian",
+      "name": "2 Ship 2 Harkinian",
+      "category": "decomp",
+      "rebuilds": "The Legend of Zelda: Majora's Mask (N64, 2000)",
+      "summary": "A PC port of Majora's Mask built on its decompilation.",
+      "ai": "none",
+      "method": "port",
+      "repo": "https://github.com/2ship2harkinian/2ship2harkinian",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 2394,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": "CC0-1.0"
+      }
+    },
+    {
+      "id": "zelda64recomp",
+      "name": "Zelda64Recomp",
+      "category": "decomp",
+      "rebuilds": "The Legend of Zelda: Majora's Mask (N64, 2000)",
+      "summary": "A static recompilation into a native PC program, with high frame rates and widescreen support.",
+      "ai": "none",
+      "method": "recompilation",
+      "repo": "https://github.com/Zelda64Recomp/Zelda64Recomp",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 7557,
+        "pushed": "2026-09-25",
+        "archived": false,
+        "licence": "GPL-3.0"
+      }
+    },
+    {
+      "id": "perfect-dark-port",
+      "name": "Perfect Dark PC port",
+      "category": "decomp",
+      "rebuilds": "Perfect Dark (N64, 2000)",
+      "summary": "A port of the Perfect Dark decompilation to modern platforms.",
+      "ai": "none",
+      "method": "port",
+      "repo": "https://github.com/perfect-dark-pc-port/perfect_dark",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 2090,
+        "pushed": "2026-10-27",
+        "archived": false,
+        "licence": "MIT"
+      }
+    },
+    {
+      "id": "phoenix-bios",
+      "name": "Phoenix BIOS",
+      "category": "clean-room",
+      "rebuilds": "The IBM PC BIOS",
+      "summary": "The textbook clean-room project. One team described the IBM BIOS and a separate team that had never seen it wrote new code. That made PC clones possible. Compaq did the same for its own machines a year earlier.",
+      "ai": "none",
+      "method": "clean-room",
+      "year": 1984,
+      "by": "Phoenix Technologies",
+      "url": "https://en.wikipedia.org/wiki/Clean-room_design",
+      "added": "2026-10-29"
+    },
+    {
+      "id": "photopea",
+      "name": "Photopea",
+      "category": "clean-room",
+      "rebuilds": "Adobe Photoshop",
+      "summary": "One developer's browser-based editor that opens and saves PSD files. It began as a PSD viewer and is written from scratch in plain JavaScript.",
+      "ai": "none",
+      "method": "reimplementation",
+      "year": 2013,
+      "by": "Ivan Kutskir",
+      "url": "https://www.photopea.com",
+      "repo": "https://github.com/photopea/photopea",
+      "writeup": "https://blog.photopea.com/creating-photopea.html",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 8515,
+        "pushed": "2025-06-30",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "wine",
+      "name": "Wine",
+      "category": "clean-room",
+      "rebuilds": "The Windows API",
+      "summary": "Runs Windows programs on Linux and macOS by reimplementing Windows itself. It is also what Steam's Proton is built on.",
+      "ai": "none",
+      "method": "clean-room",
+      "year": 1993,
+      "url": "https://www.winehq.org",
+      "repo": "https://github.com/wine-mirror/wine",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 4273,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "reactos",
+      "name": "ReactOS",
+      "category": "clean-room",
+      "rebuilds": "Windows NT",
+      "summary": "A free Windows-compatible operating system. It audited its own code to keep it clean-room.",
+      "ai": "none",
+      "method": "clean-room",
+      "year": 1998,
+      "url": "https://reactos.org",
+      "repo": "https://github.com/reactos/reactos",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 18391,
+        "pushed": "2026-10-25",
+        "archived": false,
+        "licence": "GPL-2.0"
+      }
+    },
+    {
+      "id": "samba",
+      "name": "Samba",
+      "category": "clean-room",
+      "rebuilds": "Windows file sharing (SMB) and Active Directory",
+      "summary": "Reimplemented Microsoft's networking protocols by watching them on the wire.",
+      "ai": "none",
+      "method": "clean-room",
+      "year": 1992,
+      "url": "https://www.samba.org",
+      "repo": "https://github.com/samba-team/samba",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 1146,
+        "pushed": "2026-10-27",
+        "archived": false,
+        "licence": "GPL-3.0"
+      }
+    },
+    {
+      "id": "haiku",
+      "name": "Haiku",
+      "category": "clean-room",
+      "rebuilds": "BeOS",
+      "summary": "An operating system that reimplements BeOS and runs its applications.",
+      "ai": "none",
+      "method": "reimplementation",
+      "year": 2001,
+      "url": "https://www.haiku-os.org",
+      "repo": "https://github.com/haiku/haiku",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 2370,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "freedos",
+      "name": "FreeDOS",
+      "category": "clean-room",
+      "rebuilds": "MS-DOS",
+      "summary": "A complete DOS-compatible operating system, still used to run old games and firmware tools.",
+      "ai": "none",
+      "method": "reimplementation",
+      "year": 1994,
+      "url": "https://www.freedos.org",
+      "repo": "https://github.com/FDOS/kernel",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 1063,
+        "pushed": "2026-07-05",
+        "archived": false,
+        "licence": "GPL-2.0"
+      }
+    },
+    {
+      "id": "aros",
+      "name": "AROS",
+      "category": "clean-room",
+      "rebuilds": "AmigaOS 3.1",
+      "summary": "A portable reimplementation of the AmigaOS 3.1 programming interfaces.",
+      "ai": "none",
+      "method": "reimplementation",
+      "year": 1995,
+      "url": "https://aros.sourceforge.io",
+      "repo": "https://github.com/aros-development-team/AROS",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 519,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "mono",
+      "name": "Mono",
+      "category": "clean-room",
+      "rebuilds": "Microsoft .NET Framework",
+      "summary": "An open implementation of .NET from the published ECMA standards. It is now looked after by the Wine project.",
+      "ai": "none",
+      "method": "reimplementation",
+      "year": 2001,
+      "url": "https://www.mono-project.com",
+      "repo": "https://github.com/mono/mono",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 11472,
+        "pushed": "2024-08-27",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "apache-harmony",
+      "name": "Apache Harmony",
+      "category": "clean-room",
+      "rebuilds": "Java SE",
+      "summary": "A clean-room Java class library whose code lived on in Android. The project was retired in 2011.",
+      "ai": "none",
+      "method": "clean-room",
+      "year": 2005,
+      "url": "https://harmony.apache.org",
+      "repo": "https://github.com/apache/harmony",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 95,
+        "pushed": "2026-05-15",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "asahi-linux",
+      "name": "Asahi Linux",
+      "category": "clean-room",
+      "rebuilds": "Drivers for Apple Silicon Macs",
+      "summary": "Reverse-engineered Apple's undocumented GPU and hardware to run Linux on M-series Macs.",
+      "ai": "none",
+      "method": "reimplementation",
+      "year": 2021,
+      "url": "https://asahilinux.org",
+      "repo": "https://github.com/AsahiLinux/linux",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 3039,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": null
+      }
+    },
+    {
+      "id": "nouveau",
+      "name": "Nouveau",
+      "category": "clean-room",
+      "rebuilds": "NVIDIA's graphics drivers",
+      "summary": "Open-source NVIDIA drivers, built by tracing what the proprietary driver does.",
+      "ai": "none",
+      "method": "reimplementation",
+      "url": "https://nouveau.freedesktop.org",
+      "added": "2026-10-29"
+    },
+    {
+      "id": "rea",
+      "name": "REA",
+      "category": "tools",
+      "rebuilds": "Reverse engineering for AI agents",
+      "summary": "Gives a coding agent tools to study apps and binaries, including APKs, native code, .NET, Electron and web pages. Every finding cites its evidence. The DX-Ball reconstruction above uses it.",
+      "ai": "unknown",
+      "method": "tool",
+      "by": "morluto",
+      "repo": "https://github.com/morluto/rea",
+      "featured": true,
+      "added": "2026-10-29",
+      "github": {
+        "stars": 404669,
+        "pushed": "2026-10-29",
+        "archived": false,
+        "licence": "MIT"
+      }
+    },
+    {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "category": "tools",
+      "rebuilds": "Disassembler and decompiler",
+      "summary": "The NSA's free reverse-engineering suite, with disassembly, pseudocode and scripting.",
+      "ai": "none",
+      "method": "tool",
+      "repo": "https://github.com/NationalSecurityAgency/ghidra",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 95640,
+        "pushed": "2026-10-27",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "ghidramcp",
+      "name": "GhidraMCP",
+      "category": "tools",
+      "rebuilds": "Ghidra, for AI agents",
+      "summary": "An MCP server that lets an AI model drive Ghidra.",
+      "ai": "none",
+      "method": "tool",
+      "repo": "https://github.com/LaurieWired/GhidraMCP",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 11623,
+        "pushed": "2026-10-10",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "ida-pro-mcp",
+      "name": "IDA Pro MCP",
+      "category": "tools",
+      "rebuilds": "IDA Pro, for AI agents",
+      "summary": "Connects IDA Pro to language models over MCP.",
+      "ai": "none",
+      "method": "tool",
+      "repo": "https://github.com/mrexodia/ida-pro-mcp",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 13203,
+        "pushed": "2026-09-26",
+        "archived": false,
+        "licence": "MIT"
+      }
+    },
+    {
+      "id": "ghidrassist",
+      "name": "GhidrAssist",
+      "category": "tools",
+      "rebuilds": "LLM help inside Ghidra",
+      "summary": "A Ghidra extension that explains functions and suggests names with an LLM.",
+      "ai": "none",
+      "method": "tool",
+      "repo": "https://github.com/symgraph/GhidrAssist",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 773,
+        "pushed": "2026-10-16",
+        "archived": false,
+        "licence": "MIT"
+      }
+    },
+    {
+      "id": "jadx",
+      "name": "jadx",
+      "category": "tools",
+      "rebuilds": "Android app decompiler",
+      "summary": "Decompiles DEX and APK files to readable Java.",
+      "ai": "none",
+      "method": "tool",
+      "repo": "https://github.com/skylot/jadx",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 51358,
+        "pushed": "2026-10-28",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "decomp-me",
+      "name": "decomp.me",
+      "category": "tools",
+      "rebuilds": "Shared matching decompilation",
+      "summary": "Paste a function and work with others in the browser until the compiled output matches the original.",
+      "ai": "none",
+      "method": "tool",
+      "url": "https://decomp.me",
+      "repo": "https://github.com/decompme/decomp.me",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 643,
+        "pushed": "2026-10-25",
+        "archived": false,
+        "licence": "MIT"
+      }
+    },
+    {
+      "id": "decomp-wtf",
+      "name": "decomp.wtf",
+      "category": "tools",
+      "rebuilds": "Agent-driven matching decompilation",
+      "summary": "A command-line tool that lets Claude Code and similar agents decompile GameCube and Wii games you own, function by function. Its author archived it in October 2026.",
+      "ai": "unknown",
+      "method": "tool",
+      "repo": "https://github.com/i12bp8/decomp.wtf",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 543,
+        "pushed": "2026-10-15",
+        "archived": true,
+        "licence": "MIT"
+      }
+    },
+    {
+      "id": "n64recomp",
+      "name": "N64Recomp",
+      "category": "tools",
+      "rebuilds": "N64 static recompiler",
+      "summary": "Turns N64 game code into C that compiles to a native program. Zelda64Recomp is built with it.",
+      "ai": "none",
+      "method": "tool",
+      "repo": "https://github.com/N64Recomp/N64Recomp",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 8328,
+        "pushed": "2026-05-27",
+        "archived": false,
+        "licence": "MIT"
+      }
+    },
+    {
+      "id": "objdiff",
+      "name": "objdiff",
+      "category": "tools",
+      "rebuilds": "Object file diffing",
+      "summary": "A local tool that diffs your compiled code against the original, used by most decompilation projects.",
+      "ai": "none",
+      "method": "tool",
+      "repo": "https://github.com/encounter/objdiff",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 610,
+        "pushed": "2026-10-19",
+        "archived": false,
+        "licence": "Apache-2.0"
+      }
+    },
+    {
+      "id": "splat",
+      "name": "splat",
+      "category": "tools",
+      "rebuilds": "Binary splitter",
+      "summary": "Splits a ROM into code and asset files to start a decompilation.",
+      "ai": "none",
+      "method": "tool",
+      "repo": "https://github.com/ethteck/splat",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 374,
+        "pushed": "2026-10-10",
+        "archived": false,
+        "licence": "MIT"
+      }
+    },
+    {
+      "id": "m2c",
+      "name": "m2c",
+      "category": "tools",
+      "rebuilds": "Assembly to C",
+      "summary": "A decompiler that turns MIPS, PowerPC, ARM and SuperH assembly into a first draft of C.",
+      "ai": "none",
+      "method": "tool",
+      "repo": "https://github.com/matt-kempster/m2c",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 668,
+        "pushed": "2026-10-22",
+        "archived": false,
+        "licence": "GPL-3.0"
+      }
+    },
+    {
+      "id": "decomp-permuter",
+      "name": "decomp-permuter",
+      "category": "tools",
+      "rebuilds": "Match finder",
+      "summary": "Randomly rewrites C code to find a version that compiles to the original bytes.",
+      "ai": "none",
+      "method": "tool",
+      "repo": "https://github.com/simonlindholm/decomp-permuter",
+      "added": "2026-10-29",
+      "github": {
+        "stars": 238,
+        "pushed": "2026-10-06",
+        "archived": false,
+        "licence": "MIT"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "name": "awesome-game-remakes",
+      "by": "Radek Sprta",
+      "url": "https://github.com/radek-sprta/awesome-game-remakes",
+      "licence": "CC BY-SA 4.0",
+      "used_for": "Game engine reimplementations"
+    },
+    {
+      "name": "Open Source Game Clones",
+      "by": "opengaming",
+      "url": "https://osgameclones.com",
+      "licence": null,
+      "used_for": "Game engine reimplementations"
+    },
+    {
+      "name": "open-source-games",
+      "by": "bobeff",
+      "url": "https://github.com/bobeff/open-source-games",
+      "licence": "CC0 1.0",
+      "used_for": "Game engine reimplementations"
+    },
+    {
+      "name": "List of game engine recreations",
+      "by": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_game_engine_recreations",
+      "licence": "CC BY-SA 4.0",
+      "used_for": "Game engine reimplementations"
+    },
+    {
+      "name": "AI reverse engineered games",
+      "by": "reversedwithai.com",
+      "url": "https://reversedwithai.com/ai-game-decompilation",
+      "licence": null,
+      "used_for": "Games rebuilt with AI"
+    },
+    {
+      "name": "AI-assisted decompilation for retro games",
+      "by": "Retro Reversing",
+      "url": "https://www.retroreversing.com/ai-assisted-decompilation",
+      "licence": null,
+      "used_for": "Games rebuilt with AI, tools"
+    },
+    {
+      "name": "Which games has AI decompiled? The verified list",
+      "by": "Capital and Compute",
+      "url": "https://capitalandcompute.net/md/which-games-has-ai-decompiled.md",
+      "licence": null,
+      "used_for": "Games rebuilt with AI"
+    },
+    {
+      "name": "decomp.dev",
+      "by": "encounter",
+      "url": "https://decomp.dev",
+      "licence": null,
+      "used_for": "Decompilation progress"
+    },
+    {
+      "name": "clean-room-reimplementation topic",
+      "by": "GitHub",
+      "url": "https://github.com/topics/clean-room-reimplementation",
+      "licence": null,
+      "used_for": "Software rebuilt with AI"
+    },
+    {
+      "name": "AI makes open-source clean-room implementations of Photoshop and Premiere",
+      "by": "Phoronix",
+      "url": "https://www.phoronix.com/news/Photocraft-Filmcraft-AI",
+      "licence": null,
+      "used_for": "ArtCraft Crafting Apps"
+    }
+  ]
+}

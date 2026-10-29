@@ -2,118 +2,1072 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>AI Rebuilds · Abandoned games, rebuilt for the open web</title>
-    <meta name="description" content="An open, community-run collection of projects that use AI agents and REA to study abandonware and legacy games and rebuild them to run in the browser." />
-    <meta property="og:title" content="AI Rebuilds" />
-    <meta property="og:description" content="Abandoned games, rebuilt for the open web with AI agents and REA." />
-    <meta property="og:url" content="https://ai-rebuilds.com/" />
+    <title>AI Rebuilds: a tracked list of software and games rebuilt by AI and clean-room teams</title>
+    <meta name="description" content="A maintained list of projects that rebuild existing apps and games: AI-built clean-room apps like PhotoCraft, AI-assisted game decompilations, engine reimplementations like OpenRCT2, and classics like Photopea, Wine and the Phoenix BIOS." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href="https://ai-rebuilds.com/" />
     <meta property="og:type" content="website" />
+    <meta property="og:title" content="AI Rebuilds" />
+    <meta property="og:description" content="Software and games, rebuilt from the outside in. A tracked list of AI rebuilds, clean-room reimplementations and game engine recreations." />
+    <meta property="og:url" content="https://ai-rebuilds.com/" />
+    <meta property="og:image" content="https://ai-rebuilds.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#eef2f0" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Silkscreen&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" />
     <link rel="stylesheet" href="/assets/css/site.css" />
     <script>
       try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
     </script>
     <script src="/assets/js/site.js" defer></script>
+    <script src="/assets/js/analytics.js" defer></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-row">
-        <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">&#9654;</span>AI&nbsp;Rebuilds</a>
+        <a class="logo" href="/" aria-label="AI Rebuilds, home"><span class="logo-from">AI</span><span class="logo-arrow" aria-hidden="true">→</span><span class="logo-to">Rebuilds</span></a>
         <nav class="nav" aria-label="Main">
-          <a href="/#projects">Projects</a>
-          <a href="/guide/">Guide</a>
-          <a href="/contribute/">Contribute</a>
-          <a href="https://github.com/a-barzanti/ai-rebuilds">GitHub</a>
-          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode"><span aria-hidden="true">&#9680;</span></button>
+          <a href="/#list">The list</a>
+          <a href="/guide/">Rebuild with REA</a>
+          <a href="/contribute/">Add a project</a>
+          <a class="star-link" href="https://github.com/a-barzanti/ai-rebuilds" data-star-count><span aria-hidden="true">★</span> Star on GitHub</a>
+          <button class="theme-toggle" type="button" aria-label="Switch between light and dark" title="Switch between light and dark"><span aria-hidden="true">◐</span></button>
         </nav>
       </div>
     </header>
+
     <main id="main">
-      <section class="hero">
-        <div class="wrap">
-          <p class="eyebrow">Open source · Community-run · Built with REA</p>
-          <h1>Abandoned games, <span class="accent">rebuilt for the open web.</span></h1>
+      <section class="hero wrap">
+        <div class="hero-text">
+          <h1>Software and games, rebuilt from the outside in.</h1>
           <p class="lede">
-            Many old games no longer run because their platforms, stores or servers shut down.
-            Here, contributors use AI agents and <a href="https://github.com/morluto/rea">REA</a> to work out how
-            each game behaves. Then they write a new version that runs in any browser.
+            A tracked list of projects that recreate existing software without its source code. It covers apps written by AI
+            agents in the last few weeks, game decompilations finished with Claude, and the clean-room classics that came first.
+            Each entry says what it rebuilds, how it was done and whether AI was involved.
+          </p>
+          <div class="stamp" aria-live="polite">
+<!-- stamp:start -->
+<p class="stamp-label">List updated</p>
+<p class="stamp-date"><time datetime="2026-10-29">29 Oct 2026</time></p>
+<p class="stamp-meta">81 projects in 7 categories, 1.1M GitHub stars between them.</p>
+<p class="stamp-meta">Stars and activity refreshed weekly, last on <time datetime="2026-10-29">29 Oct 2026</time>.</p>
+<!-- stamp:end -->
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#list">Browse the list</a>
+            <a class="btn" href="/contribute/">Add a project</a>
+          </div>
+        </div>
+
+        <figure class="ledger" aria-labelledby="ledger-caption">
+          <figcaption id="ledger-caption">Original, then rebuild</figcaption>
+          <ol>
+            <li><span class="from">Adobe Photoshop</span><span class="arrow" aria-hidden="true">→</span><span class="to"><a href="#photopea">Photopea</a>, <a href="#photocraft">PhotoCraft</a></span></li>
+            <li><span class="from">IBM PC BIOS</span><span class="arrow" aria-hidden="true">→</span><span class="to"><a href="#phoenix-bios">Phoenix BIOS</a></span></li>
+            <li><span class="from">RollerCoaster Tycoon 2</span><span class="arrow" aria-hidden="true">→</span><span class="to"><a href="#openrct2">OpenRCT2</a></span></li>
+            <li><span class="from">Windows</span><span class="arrow" aria-hidden="true">→</span><span class="to"><a href="#wine">Wine</a>, <a href="#reactos">ReactOS</a></span></li>
+            <li><span class="from">Next.js</span><span class="arrow" aria-hidden="true">→</span><span class="to"><a href="#vinext">vinext</a></span></li>
+            <li><span class="from">Snowboard Kids 2</span><span class="arrow" aria-hidden="true">→</span><span class="to"><a href="#snowboardkids2-decomp">a 100% match</a></span></li>
+            <li><span class="from">Microsoft Word</span><span class="arrow" aria-hidden="true">→</span><span class="to"><a href="#wordcraft">WordCraft</a></span></li>
+          </ol>
+        </figure>
+      </section>
+
+      <section id="list" class="wrap directory" aria-labelledby="list-title">
+        <div class="toolbar">
+          <h2 id="list-title" class="section-title">The list</h2>
+          <div class="controls">
+            <label class="field field-search">
+              <span class="sr">Search the list</span>
+              <input type="search" id="search" placeholder="Search names, originals, authors" autocomplete="off" />
+            </label>
+            <label class="field">
+              <span class="field-label">AI</span>
+              <select id="ai-filter">
+                <option value="all">Any</option>
+                <option value="built">AI-built</option>
+                <option value="assisted">AI-assisted</option>
+                <option value="any-ai">Built or assisted</option>
+                <option value="none">No AI</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field-label">Sort</span>
+              <select id="sort">
+                <option value="stars">Most stars</option>
+                <option value="pushed">Recently active</option>
+                <option value="added">Newest in the list</option>
+                <option value="name">Name</option>
+              </select>
+            </label>
+          </div>
+          <div class="chips" role="group" aria-label="Show one category">
+<!-- chips:start -->
+<button type="button" class="chip" data-category="all" aria-pressed="true">All <span class="chip-n">81</span></button>
+<button type="button" class="chip" data-category="craft" aria-pressed="false">ArtCraft Crafting Apps <span class="chip-n">15</span></button>
+<button type="button" class="chip" data-category="ai-software" aria-pressed="false">Software rebuilt with AI <span class="chip-n">7</span></button>
+<button type="button" class="chip" data-category="ai-games" aria-pressed="false">Games rebuilt with AI <span class="chip-n">8</span></button>
+<button type="button" class="chip" data-category="game-engines" aria-pressed="false">Game engine reimplementations <span class="chip-n">20</span></button>
+<button type="button" class="chip" data-category="decomp" aria-pressed="false">Decompilations and recompilations <span class="chip-n">6</span></button>
+<button type="button" class="chip" data-category="clean-room" aria-pressed="false">Clean-room classics <span class="chip-n">12</span></button>
+<button type="button" class="chip" data-category="tools" aria-pressed="false">Tools for rebuilders <span class="chip-n">13</span></button>
+<!-- chips:end -->
+          </div>
+        </div>
+
+        <p class="empty" id="empty" hidden>Nothing matches. Clear the search, or <a href="/contribute/">add the project you were looking for</a>.</p>
+<!-- directory:start -->
+<section class="group" id="craft" data-group aria-labelledby="craft-title">
+<header class="group-head">
+  <h2 class="group-title" id="craft-title">ArtCraft Crafting Apps <span class="group-count">15</span></h2>
+  <p class="group-blurb">A suite of desktop apps, each rebuilding a well-known creative or office tool from scratch in Rust. The authors describe them as clean-room reimplementations written predominantly by Claude Code and other AI agents.</p>
+</header>
+<ol class="entries">
+<li class="entry" id="photocraft" data-ai="built" data-stars="74573" data-pushed="2026-10-29" data-added="2026-10-29" data-name="photocraft" data-search="photocraft adobe photoshop a layer-based photo editor written from scratch in rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Adobe Photoshop</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/photocraft">PhotoCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">A layer-based photo editor written from scratch in Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/photocraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="74,573 GitHub stars"><span aria-hidden="true">★</span> 74.6k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="artcraft" data-ai="built" data-stars="37509" data-pushed="2026-10-28" data-added="2026-10-29" data-name="artcraft" data-search="artcraft adobe creative cloud and microsoft office the umbrella project and launcher for the crafting apps below. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Adobe Creative Cloud and Microsoft Office</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://getartcraft.com">ArtCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">The umbrella project and launcher for the Crafting Apps below.</p>
+    <p class="entry-links"><a href="https://getartcraft.com">Website</a> <a href="https://github.com/storytold/artcraft">Source</a> <a href="https://www.phoronix.com/news/Photocraft-Filmcraft-AI">Write-up</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="37,509 GitHub stars"><span aria-hidden="true">★</span> 37.5k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="pdfcraft" data-ai="built" data-stars="18528" data-pushed="2026-10-29" data-added="2026-10-29" data-name="pdfcraft" data-search="pdfcraft adobe acrobat a pdf reader and editor written from scratch in rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Adobe Acrobat</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/pdfcraft">PdfCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">A PDF reader and editor written from scratch in Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/pdfcraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="18,528 GitHub stars"><span aria-hidden="true">★</span> 18.5k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="filmcraft" data-ai="built" data-stars="16779" data-pushed="2026-10-28" data-added="2026-10-29" data-name="filmcraft" data-search="filmcraft adobe premiere pro a nonlinear video editor written from scratch in rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Adobe Premiere Pro</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/filmcraft">FilmCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">A nonlinear video editor written from scratch in Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/filmcraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="16,779 GitHub stars"><span aria-hidden="true">★</span> 16.8k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="wordcraft" data-ai="built" data-stars="16513" data-pushed="2026-10-28" data-added="2026-10-29" data-name="wordcraft" data-search="wordcraft microsoft word a word processor, described as a clean-room reimplementation in pure rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Microsoft Word</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/wordcraft">WordCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">A word processor, described as a clean-room reimplementation in pure Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/wordcraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="16,513 GitHub stars"><span aria-hidden="true">★</span> 16.5k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="lightcraft" data-ai="built" data-stars="15006" data-pushed="2026-10-28" data-added="2026-10-29" data-name="lightcraft" data-search="lightcraft adobe lightroom a non-destructive photo developer and organizer written from scratch in rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Adobe Lightroom</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/lightcraft">LightCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">A non-destructive photo developer and organizer written from scratch in Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/lightcraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="15,006 GitHub stars"><span aria-hidden="true">★</span> 15k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="vectorcraft" data-ai="built" data-stars="10960" data-pushed="2026-10-29" data-added="2026-10-29" data-name="vectorcraft" data-search="vectorcraft adobe illustrator a vector art tool written from scratch in rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Adobe Illustrator</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/vectorcraft">VectorCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">A vector art tool written from scratch in Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/vectorcraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="10,960 GitHub stars"><span aria-hidden="true">★</span> 11k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="effectcraft" data-ai="built" data-stars="8121" data-pushed="2026-10-29" data-added="2026-10-29" data-name="effectcraft" data-search="effectcraft adobe after effects motion graphics and compositing, written from scratch in rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Adobe After Effects</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/effectcraft">EffectCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">Motion graphics and compositing, written from scratch in Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/effectcraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="8,121 GitHub stars"><span aria-hidden="true">★</span> 8.1k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="cadcraft" data-ai="built" data-stars="7141" data-pushed="2026-10-28" data-added="2026-10-29" data-name="cadcraft" data-search="cadcraft autocad computer-aided design and drafting, described as a clean-room autocad-style app in rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>AutoCAD</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/cadcraft">CADCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">Computer-aided design and drafting, described as a clean-room AutoCAD-style app in Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/cadcraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="7,141 GitHub stars"><span aria-hidden="true">★</span> 7.1k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="gridcraft" data-ai="built" data-stars="6755" data-pushed="2026-10-28" data-added="2026-10-29" data-name="gridcraft" data-search="gridcraft microsoft excel a spreadsheet, described as a clean-room reimplementation in pure rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Microsoft Excel</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/gridcraft">GridCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">A spreadsheet, described as a clean-room reimplementation in pure Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/gridcraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="6,755 GitHub stars"><span aria-hidden="true">★</span> 6.8k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="designcraft" data-ai="built" data-stars="4911" data-pushed="2026-10-28" data-added="2026-10-29" data-name="designcraft" data-search="designcraft adobe indesign a page layout and publishing editor written from scratch in rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Adobe InDesign</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/designcraft">DesignCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">A page layout and publishing editor written from scratch in Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/designcraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="4,911 GitHub stars"><span aria-hidden="true">★</span> 4.9k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="deckcraft" data-ai="built" data-stars="4392" data-pushed="2026-10-28" data-added="2026-10-29" data-name="deckcraft" data-search="deckcraft microsoft powerpoint presentations and slide shows, described as a clean-room reimplementation in pure rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Microsoft PowerPoint</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/deckcraft">DeckCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">Presentations and slide shows, described as a clean-room reimplementation in pure Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/deckcraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="4,392 GitHub stars"><span aria-hidden="true">★</span> 4.4k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="soundcraft" data-ai="built" data-stars="3878" data-pushed="2026-10-28" data-added="2026-10-29" data-name="soundcraft" data-search="soundcraft avid pro tools a digital audio workstation, described as a clean-room reimplementation in pure rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Avid Pro Tools</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/soundcraft">SoundCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">A digital audio workstation, described as a clean-room reimplementation in pure Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/soundcraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="3,878 GitHub stars"><span aria-hidden="true">★</span> 3.9k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="figcraft" data-ai="built" data-stars="3760" data-pushed="2026-10-29" data-added="2026-10-29" data-name="figcraft" data-search="figcraft figma interface design and prototyping, a clean-room take on collaborative design tools in rust. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Figma</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/figcraft">FigCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">Interface design and prototyping, a clean-room take on collaborative design tools in Rust.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/figcraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="3,760 GitHub stars"><span aria-hidden="true">★</span> 3.8k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+<li class="entry" id="anicraft" data-ai="built" data-stars="61" data-pushed="2026-10-14" data-added="2026-10-29" data-name="anicraft" data-search="anicraft adobe animate a 2d animation editor written from scratch in rust. the newest app in the suite. storytold clean-room ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Adobe Animate</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/storytold/AniCraft">AniCraft</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">A 2D animation editor written from scratch in Rust. The newest app in the suite.</p>
+    <p class="entry-links"><a href="https://github.com/storytold/AniCraft">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="61 GitHub stars"><span aria-hidden="true">★</span> 61<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-14">14 Oct 2026</time></span><span>2026, storytold</span></p>
+</li>
+</ol>
+</section>
+<section class="group" id="ai-software" data-group aria-labelledby="ai-software-title">
+<header class="group-head">
+  <h2 class="group-title" id="ai-software-title">Software rebuilt with AI <span class="group-count">7</span></h2>
+  <p class="group-blurb">Frameworks, compilers, parsers and engines that were rebuilt, ported or rewritten mostly by coding agents, with the people directing them.</p>
+</header>
+<ol class="entries">
+<li class="entry" id="ladybird-libjs-rust" data-ai="assisted" data-stars="66745" data-pushed="2026-10-29" data-added="2026-10-29" data-name="ladybird libjs in rust" data-search="ladybird libjs in rust ladybird&#39;s c++ javascript engine frontend andreas kling ported libjs&#39;s lexer, parser, ast and bytecode generator from c++ to rust in about two weeks, using claude code and codex. ladybird port ai-assisted">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Ladybird&#39;s C++ JavaScript engine frontend</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/LadybirdBrowser/ladybird">Ladybird LibJS in Rust</a></h3>
+    <p class="entry-marks"><span class="mark mark-assisted">AI-assisted</span> <span class="mark mark-method">Port</span></p>
+    <p class="entry-summary">Andreas Kling ported LibJS&#39;s lexer, parser, AST and bytecode generator from C++ to Rust in about two weeks, using Claude Code and Codex.</p>
+    <p class="entry-links"><a href="https://github.com/LadybirdBrowser/ladybird">Source</a> <a href="https://ladybird.org/posts/adopting-rust/">Write-up</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="66,745 GitHub stars"><span aria-hidden="true">★</span> 66.7k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span><span>2026, Ladybird</span></p>
+</li>
+<li class="entry" id="vinext" data-ai="built" data-stars="9264" data-pushed="2026-10-28" data-added="2026-10-29" data-name="vinext" data-search="vinext next.js cloudflare reimplemented the next.js api surface on vite in about a week, with one engineer directing ai models. cloudflare reimplementation ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Next.js</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/cloudflare/vinext">vinext</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">Cloudflare reimplemented the Next.js API surface on Vite in about a week, with one engineer directing AI models.</p>
+    <p class="entry-links"><a href="https://github.com/cloudflare/vinext">Source</a> <a href="https://blog.cloudflare.com/vinext/">Write-up</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="9,264 GitHub stars"><span aria-hidden="true">★</span> 9.3k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2026, Cloudflare</span></p>
+</li>
+<li class="entry" id="claudes-c-compiler" data-ai="built" data-stars="2823" data-pushed="2026-02-05" data-added="2026-10-29" data-name="claude&#39;s c compiler" data-search="claude&#39;s c compiler gcc, as a c compiler sixteen parallel claude agents wrote a dependency-free c compiler in rust that can build the linux kernel. not validated for production use. anthropic reimplementation ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>GCC, as a C compiler</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/anthropics/claudes-c-compiler">Claude&#39;s C Compiler</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">Sixteen parallel Claude agents wrote a dependency-free C compiler in Rust that can build the Linux kernel. Not validated for production use.</p>
+    <p class="entry-links"><a href="https://github.com/anthropics/claudes-c-compiler">Source</a> <a href="https://www.anthropic.com/engineering/building-c-compiler">Write-up</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="2,823 GitHub stars"><span aria-hidden="true">★</span> 2.8k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-02-05">5 Feb 2026</time></span><span>2026, Anthropic</span></p>
+</li>
+<li class="entry" id="chardet-7" data-ai="built" data-stars="2680" data-pushed="2026-10-24" data-added="2026-10-29" data-name="chardet 7" data-search="chardet 7 chardet 6 (lgpl) an ai-driven rewrite of the python encoding detector that changed its licence from lgpl to mit, then 0bsd. the project&#39;s original author disputes the relicensing. it became the test case for ai clean-room claims. dan blanchard rewrite ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>chardet 6 (LGPL)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/chardet/chardet">chardet 7</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Rewrite</span></p>
+    <p class="entry-summary">An AI-driven rewrite of the Python encoding detector that changed its licence from LGPL to MIT, then 0BSD. The project&#39;s original author disputes the relicensing. It became the test case for AI clean-room claims.</p>
+    <p class="entry-links"><a href="https://github.com/chardet/chardet">Source</a> <a href="https://simonw.substack.com/p/can-coding-agents-relicense-open">Write-up</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="2,680 GitHub stars"><span aria-hidden="true">★</span> 2.7k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-24">24 Oct 2026</time></span><span>2026, Dan Blanchard</span></p>
+</li>
+<li class="entry" id="fastrender" data-ai="built" data-stars="1577" data-pushed="2026-01-18" data-added="2026-10-29" data-name="fastrender" data-search="fastrender a web browser engine an experimental browser engine written by thousands of parallel agents in cursor&#39;s research on long-running autonomous coding. wilson lin (cursor) reimplementation ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>A web browser engine</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/wilsonzlin/fastrender">FastRender</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">An experimental browser engine written by thousands of parallel agents in Cursor&#39;s research on long-running autonomous coding.</p>
+    <p class="entry-links"><a href="https://github.com/wilsonzlin/fastrender">Source</a> <a href="https://simonwillison.net/2026/Jan/23/fastrender/">Write-up</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="1,577 GitHub stars"><span aria-hidden="true">★</span> 1.6k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-01-18">18 Jan 2026</time></span><span>2026, Wilson Lin (Cursor)</span></p>
+</li>
+<li class="entry" id="justhtml" data-ai="built" data-stars="1161" data-pushed="2026-10-26" data-added="2026-10-29" data-name="justhtml" data-search="justhtml html5lib a pure-python html5 parser built with coding agents against the official html5lib test suite, which it passes in full. emil stenström reimplementation ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>html5lib</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/EmilStenstrom/justhtml">JustHTML</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A pure-Python HTML5 parser built with coding agents against the official html5lib test suite, which it passes in full.</p>
+    <p class="entry-links"><a href="https://github.com/EmilStenstrom/justhtml">Source</a> <a href="https://emilstenstrom.github.io/justhtml/correctness.html">Write-up</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="1,161 GitHub stars"><span aria-hidden="true">★</span> 1.2k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-26">26 Oct 2026</time></span><span>2025, Emil Stenström</span></p>
+</li>
+<li class="entry" id="justjshtml" data-ai="built" data-stars="174" data-pushed="2026-01-11" data-added="2026-10-29" data-name="justjshtml" data-search="justjshtml justhtml, in javascript simon willison had a coding agent port justhtml to javascript, using the same test suite as the referee. simon willison port ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>JustHTML, in JavaScript</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/simonw/justjshtml">justjshtml</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Port</span></p>
+    <p class="entry-summary">Simon Willison had a coding agent port JustHTML to JavaScript, using the same test suite as the referee.</p>
+    <p class="entry-links"><a href="https://github.com/simonw/justjshtml">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="174 GitHub stars"><span aria-hidden="true">★</span> 174<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-01-11">11 Jan 2026</time></span><span>2025, Simon Willison</span></p>
+</li>
+</ol>
+</section>
+<section class="group" id="ai-games" data-group aria-labelledby="ai-games-title">
+<header class="group-head">
+  <h2 class="group-title" id="ai-games-title">Games rebuilt with AI <span class="group-count">8</span></h2>
+  <p class="group-blurb">Decompilations, recompilations and reconstructions of games where AI agents did much of the work. Every one needs your own copy of the game.</p>
+</header>
+<ol class="entries">
+<li class="entry" id="melee-decomp" data-ai="assisted" data-stars="2443" data-pushed="2026-10-28" data-added="2026-10-29" data-name="super smash bros. melee decompilation" data-search="super smash bros. melee decompilation super smash bros. melee (gamecube, 2001) a human-led project since 2020 that finished matching all functions in 2026. ai tools proposed candidates, and some commits credit ai co-authors. doldecomp decompilation ai-assisted">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Super Smash Bros. Melee (GameCube, 2001)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/doldecomp/melee">Super Smash Bros. Melee decompilation</a></h3>
+    <p class="entry-marks"><span class="mark mark-assisted">AI-assisted</span> <span class="mark mark-method">Decompilation</span></p>
+    <p class="entry-summary">A human-led project since 2020 that finished matching all functions in 2026. AI tools proposed candidates, and some commits credit AI co-authors.</p>
+    <p class="entry-links"><a href="https://github.com/doldecomp/melee">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="2,443 GitHub stars"><span aria-hidden="true">★</span> 2.4k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2020, doldecomp</span></p>
+</li>
+<li class="entry" id="sm64ds-decomp" data-ai="built" data-stars="233" data-pushed="2026-10-29" data-added="2026-10-29" data-name="super mario 64 ds decompilation" data-search="super mario 64 ds decompilation super mario 64 ds (nintendo ds, 2004) a from-scratch, byte-matching decompilation into c and c++, nearly complete, made with claude, codex and other models. tangosdev decompilation ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Super Mario 64 DS (Nintendo DS, 2004)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/tangosdev/sm64ds-decomp">Super Mario 64 DS decompilation</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Decompilation</span></p>
+    <p class="entry-summary">A from-scratch, byte-matching decompilation into C and C++, nearly complete, made with Claude, Codex and other models.</p>
+    <p class="entry-links"><a href="https://github.com/tangosdev/sm64ds-decomp">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="233 GitHub stars"><span aria-hidden="true">★</span> 233<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span><span>2026, tangosdev</span></p>
+</li>
+<li class="entry" id="snowboardkids2-decomp" data-ai="built" data-stars="197" data-pushed="2026-10-23" data-added="2026-10-29" data-name="snowboard kids 2 decompilation" data-search="snowboard kids 2 decompilation snowboard kids 2 (n64, 1999) chris lewis ran claude in an unattended loop, one function at a time, and reached a 100% matching decompilation. his blog posts made the method famous. chris lewis decompilation ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Snowboard Kids 2 (N64, 1999)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/cdlewis/snowboardkids2-decomp">Snowboard Kids 2 decompilation</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Decompilation</span></p>
+    <p class="entry-summary">Chris Lewis ran Claude in an unattended loop, one function at a time, and reached a 100% matching decompilation. His blog posts made the method famous.</p>
+    <p class="entry-links"><a href="https://github.com/cdlewis/snowboardkids2-decomp">Source</a> <a href="https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/">Write-up</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="197 GitHub stars"><span aria-hidden="true">★</span> 197<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-23">23 Oct 2026</time></span><span>2026, Chris Lewis</span></p>
+</li>
+<li class="entry" id="bfm-decomp" data-ai="assisted" data-stars="86" data-pushed="2026-10-17" data-added="2026-10-29" data-name="brave fencer musashi decompilation" data-search="brave fencer musashi decompilation brave fencer musashi (playstation, 1998) a matching decompilation whose rebuilt binaries are byte-identical to the originals. the repo documents how ai was used. druthulu decompilation ai-assisted">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Brave Fencer Musashi (PlayStation, 1998)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/Druthulu/BFM-decomp">Brave Fencer Musashi decompilation</a></h3>
+    <p class="entry-marks"><span class="mark mark-assisted">AI-assisted</span> <span class="mark mark-method">Decompilation</span></p>
+    <p class="entry-summary">A matching decompilation whose rebuilt binaries are byte-identical to the originals. The repo documents how AI was used.</p>
+    <p class="entry-links"><a href="https://github.com/Druthulu/BFM-decomp">Source</a> <a href="https://github.com/Druthulu/BFM-decomp/blob/main/docs/story.md">Write-up</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="86 GitHub stars"><span aria-hidden="true">★</span> 86<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-17">17 Oct 2026</time></span><span>2026, Druthulu</span></p>
+</li>
+<li class="entry" id="dx-ball" data-ai="built" data-stars="78" data-pushed="2026-10-22" data-added="2026-10-29" data-name="dx-ball reconstruction" data-search="dx-ball reconstruction dx-ball 1.07 (windows, 1996) a coding agent driving rea reconstructs the game, checked against the original x86 with differential tests and a pinned msvc toolchain. n0zom1z0 reimplementation ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>DX-Ball 1.07 (Windows, 1996)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/N0zoM1z0/dx-ball">DX-Ball reconstruction</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A coding agent driving REA reconstructs the game, checked against the original x86 with differential tests and a pinned MSVC toolchain.</p>
+    <p class="entry-links"><a href="https://github.com/N0zoM1z0/dx-ball">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="78 GitHub stars"><span aria-hidden="true">★</span> 78<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-22">22 Oct 2026</time></span><span>2026, N0zoM1z0</span></p>
+</li>
+<li class="entry" id="snowboardkids-decomp" data-ai="built" data-stars="58" data-pushed="2026-10-29" data-added="2026-10-29" data-name="snowboard kids decompilation" data-search="snowboard kids decompilation snowboard kids (n64, 1998) the same approach applied to the first game, again reaching 100% matching code, with several ai models. chris lewis decompilation ai-built">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Snowboard Kids (N64, 1998)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/cdlewis/snowboardkids-decomp">Snowboard Kids decompilation</a></h3>
+    <p class="entry-marks"><span class="mark mark-built">AI-built</span> <span class="mark mark-method">Decompilation</span></p>
+    <p class="entry-summary">The same approach applied to the first game, again reaching 100% matching code, with several AI models.</p>
+    <p class="entry-links"><a href="https://github.com/cdlewis/snowboardkids-decomp">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="58 GitHub stars"><span aria-hidden="true">★</span> 58<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span><span>2026, Chris Lewis</span></p>
+</li>
+<li class="entry" id="littleplanet" data-ai="assisted" data-stars="50" data-pushed="2026-10-19" data-added="2026-10-29" data-name="little planet" data-search="little planet sonic cd (mega-cd, 1993) a static recompilation of sonic cd into a native pc program. carl0srmz recompilation ai-assisted">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Sonic CD (Mega-CD, 1993)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/carl0srmz/littleplanet">Little Planet</a></h3>
+    <p class="entry-marks"><span class="mark mark-assisted">AI-assisted</span> <span class="mark mark-method">Recompilation</span></p>
+    <p class="entry-summary">A static recompilation of Sonic CD into a native PC program.</p>
+    <p class="entry-links"><a href="https://github.com/carl0srmz/littleplanet">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="50 GitHub stars"><span aria-hidden="true">★</span> 50<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-19">19 Oct 2026</time></span><span>2026, carl0srmz</span></p>
+</li>
+<li class="entry" id="kl-eod-decomp" data-ai="assisted" data-stars="17" data-pushed="2026-10-05" data-added="2026-10-29" data-name="klonoa: empire of dreams decompilation" data-search="klonoa: empire of dreams decompilation klonoa: empire of dreams (gba, 2001) a matching decompilation in progress since march 2026, with claude code credited in its commits. dream atelier decompilation ai-assisted">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Klonoa: Empire of Dreams (GBA, 2001)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/Dream-Atelier/kl-eod-decomp">Klonoa: Empire of Dreams decompilation</a></h3>
+    <p class="entry-marks"><span class="mark mark-assisted">AI-assisted</span> <span class="mark mark-method">Decompilation</span></p>
+    <p class="entry-summary">A matching decompilation in progress since March 2026, with Claude Code credited in its commits.</p>
+    <p class="entry-links"><a href="https://github.com/Dream-Atelier/kl-eod-decomp">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="17 GitHub stars"><span aria-hidden="true">★</span> 17<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-05">5 Oct 2026</time></span><span>2026, Dream Atelier</span></p>
+</li>
+</ol>
+</section>
+<section class="group" id="game-engines" data-group aria-labelledby="game-engines-title">
+<header class="group-head">
+  <h2 class="group-title" id="game-engines-title">Game engine reimplementations <span class="group-count">20</span></h2>
+  <p class="group-blurb">Long-running community engines that play classic games on modern systems. Most load the data files from a copy you own.</p>
+</header>
+<ol class="entries">
+<li class="entry" id="openra" data-ai="none" data-stars="17681" data-pushed="2026-10-28" data-added="2026-10-29" data-name="openra" data-search="openra command &amp; conquer, red alert and dune 2000 a modern engine for early westwood strategy games, with online play.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Command &amp; Conquer, Red Alert and Dune 2000</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://www.openra.net">OpenRA</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A modern engine for early Westwood strategy games, with online play.</p>
+    <p class="entry-links"><a href="https://www.openra.net">Website</a> <a href="https://github.com/OpenRA/OpenRA">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="17,681 GitHub stars"><span aria-hidden="true">★</span> 17.7k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="openrct2" data-ai="none" data-stars="16516" data-pushed="2026-10-28" data-added="2026-10-29" data-name="openrct2" data-search="openrct2 rollercoaster tycoon 2 a full reimplementation of the game with multiplayer, bigger maps and modern display support. uses the data files from your copy.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>RollerCoaster Tycoon 2</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://openrct2.io">OpenRCT2</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A full reimplementation of the game with multiplayer, bigger maps and modern display support. Uses the data files from your copy.</p>
+    <p class="entry-links"><a href="https://openrct2.io">Website</a> <a href="https://github.com/OpenRCT2/OpenRCT2">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="16,516 GitHub stars"><span aria-hidden="true">★</span> 16.5k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="openage" data-ai="none" data-stars="14564" data-pushed="2026-10-20" data-added="2026-10-29" data-name="openage" data-search="openage age of empires ii a free engine clone of age of empires and its successors.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Age of Empires II</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/SFTtech/openage">openage</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A free engine clone of Age of Empires and its successors.</p>
+    <p class="entry-links"><a href="https://github.com/SFTtech/openage">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="14,564 GitHub stars"><span aria-hidden="true">★</span> 14.6k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-20">20 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="devilutionx" data-ai="none" data-stars="9961" data-pushed="2026-10-28" data-added="2026-10-29" data-name="devilutionx" data-search="devilutionx diablo and hellfire diablo for modern systems, built from reconstructed source code. needs the data file from your copy.  port no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Diablo and Hellfire</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/diasurgical/DevilutionX">DevilutionX</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Port</span></p>
+    <p class="entry-summary">Diablo for modern systems, built from reconstructed source code. Needs the data file from your copy.</p>
+    <p class="entry-links"><a href="https://github.com/diasurgical/DevilutionX">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="9,961 GitHub stars"><span aria-hidden="true">★</span> 10k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="openttd" data-ai="none" data-stars="8436" data-pushed="2026-10-28" data-added="2026-10-29" data-name="openttd" data-search="openttd transport tycoon deluxe started as a reimplementation and grew into its own game. it runs on free replacement graphics and sound, so you don&#39;t need the original.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Transport Tycoon Deluxe</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://www.openttd.org">OpenTTD</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">Started as a reimplementation and grew into its own game. It runs on free replacement graphics and sound, so you don&#39;t need the original.</p>
+    <p class="entry-links"><a href="https://www.openttd.org">Website</a> <a href="https://github.com/OpenTTD/OpenTTD">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="8,436 GitHub stars"><span aria-hidden="true">★</span> 8.4k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="openmw" data-ai="none" data-stars="6685" data-pushed="2026-10-29" data-added="2026-10-29" data-name="openmw" data-search="openmw the elder scrolls iii: morrowind a new open-world rpg engine that plays morrowind from your own data files.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>The Elder Scrolls III: Morrowind</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://openmw.org">OpenMW</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A new open-world RPG engine that plays Morrowind from your own data files.</p>
+    <p class="entry-links"><a href="https://openmw.org">Website</a> <a href="https://github.com/OpenMW/openmw">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="6,685 GitHub stars"><span aria-hidden="true">★</span> 6.7k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="vcmi" data-ai="none" data-stars="5995" data-pushed="2026-10-28" data-added="2026-10-29" data-name="vcmi" data-search="vcmi heroes of might and magic iii an open engine for heroes iii with mod support and new features.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Heroes of Might and Magic III</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://vcmi.eu">VCMI</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">An open engine for Heroes III with mod support and new features.</p>
+    <p class="entry-links"><a href="https://vcmi.eu">Website</a> <a href="https://github.com/vcmi/vcmi">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="5,995 GitHub stars"><span aria-hidden="true">★</span> 6k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="openlara" data-ai="none" data-stars="5142" data-pushed="2026-07-26" data-added="2026-10-29" data-name="openlara" data-search="openlara tomb raider (1996) a classic tomb raider engine that runs on everything from browsers to old consoles.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Tomb Raider (1996)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/XProger/OpenLara">OpenLara</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A classic Tomb Raider engine that runs on everything from browsers to old consoles.</p>
+    <p class="entry-links"><a href="https://github.com/XProger/OpenLara">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="5,142 GitHub stars"><span aria-hidden="true">★</span> 5.1k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-07-26">26 Jul 2026</time></span></p>
+</li>
+<li class="entry" id="corsixth" data-ai="none" data-stars="4624" data-pushed="2026-10-28" data-added="2026-10-29" data-name="corsixth" data-search="corsixth theme hospital an open-source clone of theme hospital&#39;s engine, using the original game&#39;s data.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Theme Hospital</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/CorsixTH/CorsixTH">CorsixTH</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">An open-source clone of Theme Hospital&#39;s engine, using the original game&#39;s data.</p>
+    <p class="entry-links"><a href="https://github.com/CorsixTH/CorsixTH">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="4,624 GitHub stars"><span aria-hidden="true">★</span> 4.6k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="fheroes2" data-ai="none" data-stars="3693" data-pushed="2026-10-27" data-added="2026-10-29" data-name="fheroes2" data-search="fheroes2 heroes of might and magic ii a recreation of the heroes ii engine with modern resolutions and quality-of-life fixes.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Heroes of Might and Magic II</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/ihhub/fheroes2">fheroes2</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A recreation of the Heroes II engine with modern resolutions and quality-of-life fixes.</p>
+    <p class="entry-links"><a href="https://github.com/ihhub/fheroes2">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="3,693 GitHub stars"><span aria-hidden="true">★</span> 3.7k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-27">27 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="julius" data-ai="none" data-stars="3428" data-pushed="2026-09-12" data-added="2026-10-29" data-name="julius" data-search="julius caesar iii reimplements caesar iii exactly, keeping the original gameplay.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Caesar III</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/bvschaik/julius">Julius</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">Reimplements Caesar III exactly, keeping the original gameplay.</p>
+    <p class="entry-links"><a href="https://github.com/bvschaik/julius">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="3,428 GitHub stars"><span aria-hidden="true">★</span> 3.4k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-09-12">12 Sep 2026</time></span></p>
+</li>
+<li class="entry" id="scummvm" data-ai="none" data-stars="2870" data-pushed="2026-10-29" data-added="2026-10-29" data-name="scummvm" data-search="scummvm lucasarts scumm and hundreds of other adventure engines a collection of reimplemented point-and-click engines. several games it supports are legally free to download.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>LucasArts SCUMM and hundreds of other adventure engines</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://www.scummvm.org">ScummVM</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A collection of reimplemented point-and-click engines. Several games it supports are legally free to download.</p>
+    <p class="entry-links"><a href="https://www.scummvm.org">Website</a> <a href="https://github.com/scummvm/scummvm">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="2,870 GitHub stars"><span aria-hidden="true">★</span> 2.9k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="openxcom" data-ai="none" data-stars="2245" data-pushed="2026-09-28" data-added="2026-10-29" data-name="openxcom" data-search="openxcom ufo: enemy unknown (x-com) and terror from the deep an open-source clone of the original x-com, with a large modding scene.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>UFO: Enemy Unknown (X-COM) and Terror from the Deep</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://openxcom.org">OpenXcom</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">An open-source clone of the original X-COM, with a large modding scene.</p>
+    <p class="entry-links"><a href="https://openxcom.org">Website</a> <a href="https://github.com/OpenXcom/OpenXcom">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="2,245 GitHub stars"><span aria-hidden="true">★</span> 2.2k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-09-28">28 Sep 2026</time></span></p>
+</li>
+<li class="entry" id="augustus" data-ai="none" data-stars="2138" data-pushed="2026-10-28" data-added="2026-10-29" data-name="augustus" data-search="augustus caesar iii a fork of julius that adds gameplay changes and new features.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Caesar III</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/Keriew/augustus">Augustus</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A fork of Julius that adds gameplay changes and new features.</p>
+    <p class="entry-links"><a href="https://github.com/Keriew/augustus">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="2,138 GitHub stars"><span aria-hidden="true">★</span> 2.1k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="opensage" data-ai="none" data-stars="1659" data-pushed="2026-03-30" data-added="2026-10-29" data-name="opensage" data-search="opensage ea&#39;s sage engine (command &amp; conquer: generals) a reimplementation of the 3d strategy engine behind generals and its successors.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>EA&#39;s SAGE engine (Command &amp; Conquer: Generals)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/OpenSAGE/OpenSAGE">OpenSAGE</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A reimplementation of the 3D strategy engine behind Generals and its successors.</p>
+    <p class="entry-links"><a href="https://github.com/OpenSAGE/OpenSAGE">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="1,659 GitHub stars"><span aria-hidden="true">★</span> 1.7k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-03-30">30 Mar 2026</time></span></p>
+</li>
+<li class="entry" id="freedoom" data-ai="none" data-stars="1372" data-pushed="2026-10-02" data-added="2026-10-29" data-name="freedoom" data-search="freedoom doom&#39;s game data complete free replacement art, sound and levels for any doom engine. it shows how a project can avoid the original assets altogether.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Doom&#39;s game data</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://freedoom.github.io">Freedoom</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">Complete free replacement art, sound and levels for any Doom engine. It shows how a project can avoid the original assets altogether.</p>
+    <p class="entry-links"><a href="https://freedoom.github.io">Website</a> <a href="https://github.com/freedoom/freedoom">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="1,372 GitHub stars"><span aria-hidden="true">★</span> 1.4k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-02">2 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="gemrb" data-ai="none" data-stars="1266" data-pushed="2026-10-27" data-added="2026-10-29" data-name="gemrb" data-search="gemrb bioware&#39;s infinity engine (baldur&#39;s gate, planescape: torment) a portable implementation of the infinity engine.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>BioWare&#39;s Infinity Engine (Baldur&#39;s Gate, Planescape: Torment)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://gemrb.org">GemRB</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A portable implementation of the Infinity Engine.</p>
+    <p class="entry-links"><a href="https://gemrb.org">Website</a> <a href="https://github.com/gemrb/gemrb">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="1,266 GitHub stars"><span aria-hidden="true">★</span> 1.3k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-27">27 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="falltergeist" data-ai="none" data-stars="886" data-pushed="2023-01-05" data-added="2026-10-29" data-name="falltergeist" data-search="falltergeist fallout 2 a cross-platform fallout 2 engine in c++. development has been quiet since 2023.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Fallout 2</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/falltergeist/falltergeist">Falltergeist</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A cross-platform Fallout 2 engine in C++. Development has been quiet since 2023.</p>
+    <p class="entry-links"><a href="https://github.com/falltergeist/falltergeist">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="886 GitHub stars"><span aria-hidden="true">★</span> 886<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2023-01-05">5 Jan 2023</time></span></p>
+</li>
+<li class="entry" id="exult" data-ai="none" data-stars="702" data-pushed="2026-10-29" data-added="2026-10-29" data-name="exult" data-search="exult ultima vii recreates ultima vii and its expansion for modern systems from the original data files.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Ultima VII</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://exult.info">Exult</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">Recreates Ultima VII and its expansion for modern systems from the original data files.</p>
+    <p class="entry-links"><a href="https://exult.info">Website</a> <a href="https://github.com/exult/exult">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="702 GitHub stars"><span aria-hidden="true">★</span> 702<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="openfodder" data-ai="none" data-stars="614" data-pushed="2026-10-20" data-added="2026-10-29" data-name="open fodder" data-search="open fodder cannon fodder an open-source engine for cannon fodder that also runs the free demo data.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Cannon Fodder</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/OpenFodder/openfodder">Open Fodder</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">An open-source engine for Cannon Fodder that also runs the free demo data.</p>
+    <p class="entry-links"><a href="https://github.com/OpenFodder/openfodder">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="614 GitHub stars"><span aria-hidden="true">★</span> 614<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-20">20 Oct 2026</time></span></p>
+</li>
+</ol>
+</section>
+<section class="group" id="decomp" data-group aria-labelledby="decomp-title">
+<header class="group-head">
+  <h2 class="group-title" id="decomp-title">Decompilations and recompilations <span class="group-count">6</span></h2>
+  <p class="group-blurb">Human-led projects that turned console games back into buildable source code or native PC programs. They ship no game assets.</p>
+</header>
+<ol class="entries">
+<li class="entry" id="sm64" data-ai="none" data-stars="8935" data-pushed="2024-02-04" data-added="2026-10-29" data-name="super mario 64 decompilation" data-search="super mario 64 decompilation super mario 64 (n64, 1996) the landmark matching decompilation that started the modern decomp scene and led to pc ports.  decompilation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Super Mario 64 (N64, 1996)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/n64decomp/sm64">Super Mario 64 decompilation</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Decompilation</span></p>
+    <p class="entry-summary">The landmark matching decompilation that started the modern decomp scene and led to PC ports.</p>
+    <p class="entry-links"><a href="https://github.com/n64decomp/sm64">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="8,935 GitHub stars"><span aria-hidden="true">★</span> 8.9k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2024-02-04">4 Feb 2024</time></span></p>
+</li>
+<li class="entry" id="zelda64recomp" data-ai="none" data-stars="7557" data-pushed="2026-09-25" data-added="2026-10-29" data-name="zelda64recomp" data-search="zelda64recomp the legend of zelda: majora&#39;s mask (n64, 2000) a static recompilation into a native pc program, with high frame rates and widescreen support.  recompilation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>The Legend of Zelda: Majora&#39;s Mask (N64, 2000)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/Zelda64Recomp/Zelda64Recomp">Zelda64Recomp</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Recompilation</span></p>
+    <p class="entry-summary">A static recompilation into a native PC program, with high frame rates and widescreen support.</p>
+    <p class="entry-links"><a href="https://github.com/Zelda64Recomp/Zelda64Recomp">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="7,557 GitHub stars"><span aria-hidden="true">★</span> 7.6k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-09-25">25 Sep 2026</time></span></p>
+</li>
+<li class="entry" id="shipwright" data-ai="none" data-stars="5787" data-pushed="2026-10-24" data-added="2026-10-29" data-name="ship of harkinian" data-search="ship of harkinian the legend of zelda: ocarina of time (n64, 1998) a pc port built on the ocarina of time decompilation. it reads the assets from your own rom.  port no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>The Legend of Zelda: Ocarina of Time (N64, 1998)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/HarbourMasters/Shipwright">Ship of Harkinian</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Port</span></p>
+    <p class="entry-summary">A PC port built on the Ocarina of Time decompilation. It reads the assets from your own ROM.</p>
+    <p class="entry-links"><a href="https://github.com/HarbourMasters/Shipwright">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="5,787 GitHub stars"><span aria-hidden="true">★</span> 5.8k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-24">24 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="oot" data-ai="none" data-stars="5630" data-pushed="2026-10-18" data-added="2026-10-29" data-name="ocarina of time decompilation" data-search="ocarina of time decompilation the legend of zelda: ocarina of time (n64, 1998) a matching decompilation by the zeldaret team.  decompilation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>The Legend of Zelda: Ocarina of Time (N64, 1998)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/zeldaret/oot">Ocarina of Time decompilation</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Decompilation</span></p>
+    <p class="entry-summary">A matching decompilation by the zeldaret team.</p>
+    <p class="entry-links"><a href="https://github.com/zeldaret/oot">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="5,630 GitHub stars"><span aria-hidden="true">★</span> 5.6k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-18">18 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="2ship2harkinian" data-ai="none" data-stars="2394" data-pushed="2026-10-29" data-added="2026-10-29" data-name="2 ship 2 harkinian" data-search="2 ship 2 harkinian the legend of zelda: majora&#39;s mask (n64, 2000) a pc port of majora&#39;s mask built on its decompilation.  port no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>The Legend of Zelda: Majora&#39;s Mask (N64, 2000)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/2ship2harkinian/2ship2harkinian">2 Ship 2 Harkinian</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Port</span></p>
+    <p class="entry-summary">A PC port of Majora&#39;s Mask built on its decompilation.</p>
+    <p class="entry-links"><a href="https://github.com/2ship2harkinian/2ship2harkinian">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="2,394 GitHub stars"><span aria-hidden="true">★</span> 2.4k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="perfect-dark-port" data-ai="none" data-stars="2090" data-pushed="2026-10-27" data-added="2026-10-29" data-name="perfect dark pc port" data-search="perfect dark pc port perfect dark (n64, 2000) a port of the perfect dark decompilation to modern platforms.  port no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Perfect Dark (N64, 2000)</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/perfect-dark-pc-port/perfect_dark">Perfect Dark PC port</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Port</span></p>
+    <p class="entry-summary">A port of the Perfect Dark decompilation to modern platforms.</p>
+    <p class="entry-links"><a href="https://github.com/perfect-dark-pc-port/perfect_dark">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="2,090 GitHub stars"><span aria-hidden="true">★</span> 2.1k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-27">27 Oct 2026</time></span></p>
+</li>
+</ol>
+</section>
+<section class="group" id="clean-room" data-group aria-labelledby="clean-room-title">
+<header class="group-head">
+  <h2 class="group-title" id="clean-room-title">Clean-room classics <span class="group-count">12</span></h2>
+  <p class="group-blurb">Famous independent reimplementations, from the BIOS that made PC clones possible to a Photoshop-compatible editor in the browser.</p>
+</header>
+<ol class="entries">
+<li class="entry" id="reactos" data-ai="none" data-stars="18391" data-pushed="2026-10-25" data-added="2026-10-29" data-name="reactos" data-search="reactos windows nt a free windows-compatible operating system. it audited its own code to keep it clean-room.  clean-room no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Windows NT</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://reactos.org">ReactOS</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">A free Windows-compatible operating system. It audited its own code to keep it clean-room.</p>
+    <p class="entry-links"><a href="https://reactos.org">Website</a> <a href="https://github.com/reactos/reactos">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="18,391 GitHub stars"><span aria-hidden="true">★</span> 18.4k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-25">25 Oct 2026</time></span><span>1998</span></p>
+</li>
+<li class="entry" id="mono" data-ai="none" data-stars="11472" data-pushed="2024-08-27" data-added="2026-10-29" data-name="mono" data-search="mono microsoft .net framework an open implementation of .net from the published ecma standards. it is now looked after by the wine project.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Microsoft .NET Framework</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://www.mono-project.com">Mono</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">An open implementation of .NET from the published ECMA standards. It is now looked after by the Wine project.</p>
+    <p class="entry-links"><a href="https://www.mono-project.com">Website</a> <a href="https://github.com/mono/mono">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="11,472 GitHub stars"><span aria-hidden="true">★</span> 11.5k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2024-08-27">27 Aug 2024</time></span><span>2001</span></p>
+</li>
+<li class="entry" id="photopea" data-ai="none" data-stars="8515" data-pushed="2025-06-30" data-added="2026-10-29" data-name="photopea" data-search="photopea adobe photoshop one developer&#39;s browser-based editor that opens and saves psd files. it began as a psd viewer and is written from scratch in plain javascript. ivan kutskir reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Adobe Photoshop</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://www.photopea.com">Photopea</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">One developer&#39;s browser-based editor that opens and saves PSD files. It began as a PSD viewer and is written from scratch in plain JavaScript.</p>
+    <p class="entry-links"><a href="https://www.photopea.com">Website</a> <a href="https://github.com/photopea/photopea">Source</a> <a href="https://blog.photopea.com/creating-photopea.html">Write-up</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="8,515 GitHub stars"><span aria-hidden="true">★</span> 8.5k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2025-06-30">30 Jun 2025</time></span><span>2013, Ivan Kutskir</span></p>
+</li>
+<li class="entry" id="wine" data-ai="none" data-stars="4273" data-pushed="2026-10-28" data-added="2026-10-29" data-name="wine" data-search="wine the windows api runs windows programs on linux and macos by reimplementing windows itself. it is also what steam&#39;s proton is built on.  clean-room no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>The Windows API</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://www.winehq.org">Wine</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">Runs Windows programs on Linux and macOS by reimplementing Windows itself. It is also what Steam&#39;s Proton is built on.</p>
+    <p class="entry-links"><a href="https://www.winehq.org">Website</a> <a href="https://github.com/wine-mirror/wine">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="4,273 GitHub stars"><span aria-hidden="true">★</span> 4.3k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>1993</span></p>
+</li>
+<li class="entry" id="asahi-linux" data-ai="none" data-stars="3039" data-pushed="2026-10-28" data-added="2026-10-29" data-name="asahi linux" data-search="asahi linux drivers for apple silicon macs reverse-engineered apple&#39;s undocumented gpu and hardware to run linux on m-series macs.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Drivers for Apple Silicon Macs</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://asahilinux.org">Asahi Linux</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">Reverse-engineered Apple&#39;s undocumented GPU and hardware to run Linux on M-series Macs.</p>
+    <p class="entry-links"><a href="https://asahilinux.org">Website</a> <a href="https://github.com/AsahiLinux/linux">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="3,039 GitHub stars"><span aria-hidden="true">★</span> 3k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2021</span></p>
+</li>
+<li class="entry" id="haiku" data-ai="none" data-stars="2370" data-pushed="2026-10-28" data-added="2026-10-29" data-name="haiku" data-search="haiku beos an operating system that reimplements beos and runs its applications.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>BeOS</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://www.haiku-os.org">Haiku</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">An operating system that reimplements BeOS and runs its applications.</p>
+    <p class="entry-links"><a href="https://www.haiku-os.org">Website</a> <a href="https://github.com/haiku/haiku">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="2,370 GitHub stars"><span aria-hidden="true">★</span> 2.4k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>2001</span></p>
+</li>
+<li class="entry" id="samba" data-ai="none" data-stars="1146" data-pushed="2026-10-27" data-added="2026-10-29" data-name="samba" data-search="samba windows file sharing (smb) and active directory reimplemented microsoft&#39;s networking protocols by watching them on the wire.  clean-room no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Windows file sharing (SMB) and Active Directory</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://www.samba.org">Samba</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">Reimplemented Microsoft&#39;s networking protocols by watching them on the wire.</p>
+    <p class="entry-links"><a href="https://www.samba.org">Website</a> <a href="https://github.com/samba-team/samba">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="1,146 GitHub stars"><span aria-hidden="true">★</span> 1.1k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-27">27 Oct 2026</time></span><span>1992</span></p>
+</li>
+<li class="entry" id="freedos" data-ai="none" data-stars="1063" data-pushed="2026-07-05" data-added="2026-10-29" data-name="freedos" data-search="freedos ms-dos a complete dos-compatible operating system, still used to run old games and firmware tools.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>MS-DOS</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://www.freedos.org">FreeDOS</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A complete DOS-compatible operating system, still used to run old games and firmware tools.</p>
+    <p class="entry-links"><a href="https://www.freedos.org">Website</a> <a href="https://github.com/FDOS/kernel">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="1,063 GitHub stars"><span aria-hidden="true">★</span> 1.1k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-07-05">5 Jul 2026</time></span><span>1994</span></p>
+</li>
+<li class="entry" id="aros" data-ai="none" data-stars="519" data-pushed="2026-10-28" data-added="2026-10-29" data-name="aros" data-search="aros amigaos 3.1 a portable reimplementation of the amigaos 3.1 programming interfaces.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>AmigaOS 3.1</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://aros.sourceforge.io">AROS</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">A portable reimplementation of the AmigaOS 3.1 programming interfaces.</p>
+    <p class="entry-links"><a href="https://aros.sourceforge.io">Website</a> <a href="https://github.com/aros-development-team/AROS">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="519 GitHub stars"><span aria-hidden="true">★</span> 519<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span><span>1995</span></p>
+</li>
+<li class="entry" id="apache-harmony" data-ai="none" data-stars="95" data-pushed="2026-05-15" data-added="2026-10-29" data-name="apache harmony" data-search="apache harmony java se a clean-room java class library whose code lived on in android. the project was retired in 2011.  clean-room no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Java SE</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://harmony.apache.org">Apache Harmony</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">A clean-room Java class library whose code lived on in Android. The project was retired in 2011.</p>
+    <p class="entry-links"><a href="https://harmony.apache.org">Website</a> <a href="https://github.com/apache/harmony">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="95 GitHub stars"><span aria-hidden="true">★</span> 95<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-05-15">15 May 2026</time></span><span>2005</span></p>
+</li>
+<li class="entry" id="nouveau" data-ai="none" data-stars="-1" data-pushed="" data-added="2026-10-29" data-name="nouveau" data-search="nouveau nvidia&#39;s graphics drivers open-source nvidia drivers, built by tracing what the proprietary driver does.  reimplementation no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>NVIDIA&#39;s graphics drivers</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://nouveau.freedesktop.org">Nouveau</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Reimplementation</span></p>
+    <p class="entry-summary">Open-source NVIDIA drivers, built by tracing what the proprietary driver does.</p>
+    <p class="entry-links"><a href="https://nouveau.freedesktop.org">Website</a></p>
+  </div>
+  <p class="entry-stats"></p>
+</li>
+<li class="entry" id="phoenix-bios" data-ai="none" data-stars="-1" data-pushed="" data-added="2026-10-29" data-name="phoenix bios" data-search="phoenix bios the ibm pc bios the textbook clean-room project. one team described the ibm bios and a separate team that had never seen it wrote new code. that made pc clones possible. compaq did the same for its own machines a year earlier. phoenix technologies clean-room no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>The IBM PC BIOS</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://en.wikipedia.org/wiki/Clean-room_design">Phoenix BIOS</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Clean-room</span></p>
+    <p class="entry-summary">The textbook clean-room project. One team described the IBM BIOS and a separate team that had never seen it wrote new code. That made PC clones possible. Compaq did the same for its own machines a year earlier.</p>
+    <p class="entry-links"><a href="https://en.wikipedia.org/wiki/Clean-room_design">Website</a></p>
+  </div>
+  <p class="entry-stats"><span>1984, Phoenix Technologies</span></p>
+</li>
+</ol>
+</section>
+<section class="group" id="tools" data-group aria-labelledby="tools-title">
+<header class="group-head">
+  <h2 class="group-title" id="tools-title">Tools for rebuilders <span class="group-count">13</span></h2>
+  <p class="group-blurb">What people use to study the original and check the rebuild against it: decompilers, AI bridges, matching and diffing tools.</p>
+</header>
+<ol class="entries">
+<li class="entry entry-featured" id="rea" data-ai="unknown" data-stars="404669" data-pushed="2026-10-29" data-added="2026-10-29" data-name="rea" data-search="rea reverse engineering for ai agents gives a coding agent tools to study apps and binaries, including apks, native code, .net, electron and web pages. every finding cites its evidence. the dx-ball reconstruction above uses it. morluto tool ai use not stated">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Reverse engineering for AI agents</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/morluto/rea">REA</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">Gives a coding agent tools to study apps and binaries, including APKs, native code, .NET, Electron and web pages. Every finding cites its evidence. The DX-Ball reconstruction above uses it.</p>
+    <p class="entry-links"><a href="https://github.com/morluto/rea">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="404,669 GitHub stars"><span aria-hidden="true">★</span> 405k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-29">29 Oct 2026</time></span><span>morluto</span></p>
+</li>
+<li class="entry" id="ghidra" data-ai="none" data-stars="95640" data-pushed="2026-10-27" data-added="2026-10-29" data-name="ghidra" data-search="ghidra disassembler and decompiler the nsa&#39;s free reverse-engineering suite, with disassembly, pseudocode and scripting.  tool no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Disassembler and decompiler</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/NationalSecurityAgency/ghidra">Ghidra</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">The NSA&#39;s free reverse-engineering suite, with disassembly, pseudocode and scripting.</p>
+    <p class="entry-links"><a href="https://github.com/NationalSecurityAgency/ghidra">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="95,640 GitHub stars"><span aria-hidden="true">★</span> 95.6k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-27">27 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="jadx" data-ai="none" data-stars="51358" data-pushed="2026-10-28" data-added="2026-10-29" data-name="jadx" data-search="jadx android app decompiler decompiles dex and apk files to readable java.  tool no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Android app decompiler</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/skylot/jadx">jadx</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">Decompiles DEX and APK files to readable Java.</p>
+    <p class="entry-links"><a href="https://github.com/skylot/jadx">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="51,358 GitHub stars"><span aria-hidden="true">★</span> 51.4k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-28">28 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="ida-pro-mcp" data-ai="none" data-stars="13203" data-pushed="2026-09-26" data-added="2026-10-29" data-name="ida pro mcp" data-search="ida pro mcp ida pro, for ai agents connects ida pro to language models over mcp.  tool no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>IDA Pro, for AI agents</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/mrexodia/ida-pro-mcp">IDA Pro MCP</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">Connects IDA Pro to language models over MCP.</p>
+    <p class="entry-links"><a href="https://github.com/mrexodia/ida-pro-mcp">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="13,203 GitHub stars"><span aria-hidden="true">★</span> 13.2k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-09-26">26 Sep 2026</time></span></p>
+</li>
+<li class="entry" id="ghidramcp" data-ai="none" data-stars="11623" data-pushed="2026-10-10" data-added="2026-10-29" data-name="ghidramcp" data-search="ghidramcp ghidra, for ai agents an mcp server that lets an ai model drive ghidra.  tool no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Ghidra, for AI agents</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/LaurieWired/GhidraMCP">GhidraMCP</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">An MCP server that lets an AI model drive Ghidra.</p>
+    <p class="entry-links"><a href="https://github.com/LaurieWired/GhidraMCP">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="11,623 GitHub stars"><span aria-hidden="true">★</span> 11.6k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-10">10 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="n64recomp" data-ai="none" data-stars="8328" data-pushed="2026-05-27" data-added="2026-10-29" data-name="n64recomp" data-search="n64recomp n64 static recompiler turns n64 game code into c that compiles to a native program. zelda64recomp is built with it.  tool no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>N64 static recompiler</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/N64Recomp/N64Recomp">N64Recomp</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">Turns N64 game code into C that compiles to a native program. Zelda64Recomp is built with it.</p>
+    <p class="entry-links"><a href="https://github.com/N64Recomp/N64Recomp">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="8,328 GitHub stars"><span aria-hidden="true">★</span> 8.3k<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-05-27">27 May 2026</time></span></p>
+</li>
+<li class="entry" id="ghidrassist" data-ai="none" data-stars="773" data-pushed="2026-10-16" data-added="2026-10-29" data-name="ghidrassist" data-search="ghidrassist llm help inside ghidra a ghidra extension that explains functions and suggests names with an llm.  tool no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>LLM help inside Ghidra</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/symgraph/GhidrAssist">GhidrAssist</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">A Ghidra extension that explains functions and suggests names with an LLM.</p>
+    <p class="entry-links"><a href="https://github.com/symgraph/GhidrAssist">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="773 GitHub stars"><span aria-hidden="true">★</span> 773<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-16">16 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="m2c" data-ai="none" data-stars="668" data-pushed="2026-10-22" data-added="2026-10-29" data-name="m2c" data-search="m2c assembly to c a decompiler that turns mips, powerpc, arm and superh assembly into a first draft of c.  tool no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Assembly to C</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/matt-kempster/m2c">m2c</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">A decompiler that turns MIPS, PowerPC, ARM and SuperH assembly into a first draft of C.</p>
+    <p class="entry-links"><a href="https://github.com/matt-kempster/m2c">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="668 GitHub stars"><span aria-hidden="true">★</span> 668<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-22">22 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="decomp-me" data-ai="none" data-stars="643" data-pushed="2026-10-25" data-added="2026-10-29" data-name="decomp.me" data-search="decomp.me shared matching decompilation paste a function and work with others in the browser until the compiled output matches the original.  tool no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Shared matching decompilation</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://decomp.me">decomp.me</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">Paste a function and work with others in the browser until the compiled output matches the original.</p>
+    <p class="entry-links"><a href="https://decomp.me">Website</a> <a href="https://github.com/decompme/decomp.me">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="643 GitHub stars"><span aria-hidden="true">★</span> 643<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-25">25 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="objdiff" data-ai="none" data-stars="610" data-pushed="2026-10-19" data-added="2026-10-29" data-name="objdiff" data-search="objdiff object file diffing a local tool that diffs your compiled code against the original, used by most decompilation projects.  tool no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Object file diffing</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/encounter/objdiff">objdiff</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">A local tool that diffs your compiled code against the original, used by most decompilation projects.</p>
+    <p class="entry-links"><a href="https://github.com/encounter/objdiff">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="610 GitHub stars"><span aria-hidden="true">★</span> 610<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-19">19 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="decomp-wtf" data-ai="unknown" data-stars="543" data-pushed="2026-10-15" data-added="2026-10-29" data-name="decomp.wtf" data-search="decomp.wtf agent-driven matching decompilation a command-line tool that lets claude code and similar agents decompile gamecube and wii games you own, function by function. its author archived it in october 2026.  tool ai use not stated">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Agent-driven matching decompilation</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/i12bp8/decomp.wtf">decomp.wtf</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">A command-line tool that lets Claude Code and similar agents decompile GameCube and Wii games you own, function by function. Its author archived it in October 2026.</p>
+    <p class="entry-links"><a href="https://github.com/i12bp8/decomp.wtf">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="543 GitHub stars"><span aria-hidden="true">★</span> 543<span class="sr"> GitHub stars</span></span><span class="quiet">Archived</span></p>
+</li>
+<li class="entry" id="splat" data-ai="none" data-stars="374" data-pushed="2026-10-10" data-added="2026-10-29" data-name="splat" data-search="splat binary splitter splits a rom into code and asset files to start a decompilation.  tool no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Binary splitter</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/ethteck/splat">splat</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">Splits a ROM into code and asset files to start a decompilation.</p>
+    <p class="entry-links"><a href="https://github.com/ethteck/splat">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="374 GitHub stars"><span aria-hidden="true">★</span> 374<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-10">10 Oct 2026</time></span></p>
+</li>
+<li class="entry" id="decomp-permuter" data-ai="none" data-stars="238" data-pushed="2026-10-06" data-added="2026-10-29" data-name="decomp-permuter" data-search="decomp-permuter match finder randomly rewrites c code to find a version that compiles to the original bytes.  tool no ai">
+  <p class="entry-original"><span class="sr">Rebuilds </span>Match finder</p>
+  <div class="entry-main">
+    <h3 class="entry-name"><a href="https://github.com/simonlindholm/decomp-permuter">decomp-permuter</a></h3>
+    <p class="entry-marks"><span class="mark mark-method">Tool</span></p>
+    <p class="entry-summary">Randomly rewrites C code to find a version that compiles to the original bytes.</p>
+    <p class="entry-links"><a href="https://github.com/simonlindholm/decomp-permuter">Source</a></p>
+  </div>
+  <p class="entry-stats"><span class="stars" title="238 GitHub stars"><span aria-hidden="true">★</span> 238<span class="sr"> GitHub stars</span></span><span>Last commit <time class="ago" datetime="2026-10-06">6 Oct 2026</time></span></p>
+</li>
+</ol>
+</section>
+<!-- directory:end -->
+      </section>
+
+      <section id="make-your-own" class="wrap feature" aria-labelledby="rea-title">
+        <div class="feature-text">
+          <h2 id="rea-title" class="section-title">Make your own rebuild with REA</h2>
+          <p>
+            <a href="https://github.com/morluto/rea">REA</a> gives a coding agent the tools to study software it doesn't have the
+            source for. It can work with Android APKs, native binaries, .NET, Electron apps and web pages. Every finding comes back
+            with the evidence behind it, so the agent can write a spec you can check.
+          </p>
+          <p>
+            The <a href="#dx-ball">DX-Ball reconstruction</a> in the list was made this way. Our guide shows the clean-room version of
+            the workflow. One agent studies the original and writes specs. A separate one writes new code from those specs alone.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">Browse projects</a>
-            <a class="btn" href="/contribute/#start-a-new-project">Start a rebuild</a>
+            <a class="btn btn-primary" href="/guide/">Read the REA guide</a>
+            <a class="btn" href="https://github.com/morluto/rea">REA on GitHub</a>
           </div>
         </div>
+        <pre class="feature-code" aria-label="Example prompt for an agent with REA"><code><span class="quiet"># Ask the agent, with REA connected:</span>
+Analyze ./game.apk with REA. Map the app
+structure, the main loop, the asset formats
+and every online dependency. Write specs of
+behavior and formats. Cite evidence IDs and
+don't copy decompiled code.</code></pre>
       </section>
 
-      <section class="wrap how" aria-labelledby="how-title">
-        <h2 id="how-title" class="section-title">How a rebuild works</h2>
-        <ol class="steps">
+      <section id="contribute" class="wrap contribute" aria-labelledby="contribute-title">
+        <h2 id="contribute-title" class="section-title">Add a project to the list</h2>
+        <p class="lede-sm">
+          The list lives in one file in our public repository,
+          <a href="https://github.com/a-barzanti/ai-rebuilds">github.com/a-barzanti/ai-rebuilds</a>. Anyone can suggest or add an
+          entry.
+        </p>
+        <ol class="ways">
           <li>
-            <span class="step-n">01</span>
-            <h3>Pick a game</h3>
-            <p>Choose a game that is abandoned or no longer runs anywhere. Open a project with its history, the platforms it ran on, and what is known about how it was built.</p>
+            <h3>Suggest it</h3>
+            <p>Fill in the short <a href="https://github.com/a-barzanti/ai-rebuilds/issues/new?template=suggest-project.yml">suggestion form</a> on GitHub. You don't need to write any code. A maintainer adds it.</p>
           </li>
           <li>
-            <span class="step-n">02</span>
-            <h3>Analyze with REA</h3>
-            <p>An agent connected to <a href="https://github.com/morluto/rea">REA</a> examines your own copy of the game, whether it is a native binary, an APK, a .NET build, Flash or WASM. Every finding cites its evidence. You write the findings up as specs.</p>
+            <h3>Add it yourself</h3>
+            <p>Edit <a href="https://github.com/a-barzanti/ai-rebuilds/edit/main/data/projects.json"><code>data/projects.json</code></a>, run <code>bun run sync</code> and open a pull request. <a href="/contribute/">See the steps and fields.</a></p>
           </li>
           <li>
-            <span class="step-n">03</span>
-            <h3>Rebuild for the web</h3>
-            <p>Write new code from the specs, not from decompiled source, using whatever web stack fits the game. Players load the original assets from a copy they own, or the project uses newly made assets.</p>
-          </li>
-          <li>
-            <span class="step-n">04</span>
-            <h3>Verify and ship</h3>
-            <p>Check the rebuild's behavior against what was recorded from the original. When it is playable, it goes live on this site.</p>
+            <h3>Fix an entry</h3>
+            <p>Is a link dead, or a description wrong? <a href="https://github.com/a-barzanti/ai-rebuilds/issues/new?template=fix-entry.yml">Report it</a>. If you maintain a listed project and want it changed or removed, use the same form.</p>
           </li>
         </ol>
+        <p class="quiet">
+          A project gets in if it's public, rebuilds existing software or a game, and doesn't distribute the original's code,
+          binaries or assets. Being listed doesn't mean we endorse a project or have checked its legal status.
+        </p>
       </section>
 
-      <section id="projects" class="wrap projects" aria-labelledby="projects-title">
-        <div class="projects-head">
-          <h2 id="projects-title" class="section-title">Projects <span class="count" id="project-count">…</span></h2>
-          <div class="filters" role="group" aria-label="Filter projects">
-            <input type="search" id="project-search" class="search" placeholder="Search title, developer, platform…" aria-label="Search projects" />
-            <div class="chips" id="status-chips"></div>
-          </div>
-        </div>
-
-        <div class="grid" id="project-grid">
-          <a class="card card-new" href="/contribute/#start-a-new-project">
-            <span class="plus" aria-hidden="true">+</span>
-            <span class="card-title">Propose a game</span>
-            <span class="card-summary">Copy the project template and open a pull request.</span>
-          </a>
-        </div>
-        <p class="empty" id="project-empty" hidden>No projects match that filter.</p>
-        <noscript><p class="empty">The project list needs JavaScript. You can also <a href="https://github.com/a-barzanti/ai-rebuilds/tree/main/projects">browse projects on GitHub</a>.</p></noscript>
-      </section>
-
-      <section class="wrap rules" aria-labelledby="rules-title">
-        <h2 id="rules-title" class="section-title">Ground rules</h2>
-        <ul class="rule-list">
-          <li><strong>No original files here.</strong> Do not commit game binaries, ROMs, APKs or extracted assets. CI rejects them.</li>
-          <li><strong>Specs, not stolen code.</strong> Commit findings, notes and specs. Do not commit dumps of decompiled source.</li>
-          <li><strong>Bring your own copy.</strong> A rebuild loads original assets from the player's own files, or uses newly made assets.</li>
-          <li><strong>Rights holders come first.</strong> "Abandonware" has no legal meaning. If a rights holder objects, the project comes down. No arguing.</li>
+      <section id="credits" class="wrap credits" aria-labelledby="credits-title">
+        <h2 id="credits-title" class="section-title">Sources and credits</h2>
+        <p>We found many of these projects through the lists and reporting below. The descriptions on this page are our own. Go and star theirs too.</p>
+        <ul class="credit-list">
+<!-- credits:start -->
+<li><a href="https://github.com/radek-sprta/awesome-game-remakes">awesome-game-remakes</a> <span class="quiet">by Radek Sprta, CC BY-SA 4.0. Used for: Game engine reimplementations.</span></li>
+<li><a href="https://osgameclones.com">Open Source Game Clones</a> <span class="quiet">by opengaming. Used for: Game engine reimplementations.</span></li>
+<li><a href="https://github.com/bobeff/open-source-games">open-source-games</a> <span class="quiet">by bobeff, CC0 1.0. Used for: Game engine reimplementations.</span></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_game_engine_recreations">List of game engine recreations</a> <span class="quiet">by Wikipedia, CC BY-SA 4.0. Used for: Game engine reimplementations.</span></li>
+<li><a href="https://reversedwithai.com/ai-game-decompilation">AI reverse engineered games</a> <span class="quiet">by reversedwithai.com. Used for: Games rebuilt with AI.</span></li>
+<li><a href="https://www.retroreversing.com/ai-assisted-decompilation">AI-assisted decompilation for retro games</a> <span class="quiet">by Retro Reversing. Used for: Games rebuilt with AI, tools.</span></li>
+<li><a href="https://capitalandcompute.net/md/which-games-has-ai-decompiled.md">Which games has AI decompiled? The verified list</a> <span class="quiet">by Capital and Compute. Used for: Games rebuilt with AI.</span></li>
+<li><a href="https://decomp.dev">decomp.dev</a> <span class="quiet">by encounter. Used for: Decompilation progress.</span></li>
+<li><a href="https://github.com/topics/clean-room-reimplementation">clean-room-reimplementation topic</a> <span class="quiet">by GitHub. Used for: Software rebuilt with AI.</span></li>
+<li><a href="https://www.phoronix.com/news/Photocraft-Filmcraft-AI">AI makes open-source clean-room implementations of Photoshop and Premiere</a> <span class="quiet">by Phoronix. Used for: ArtCraft Crafting Apps.</span></li>
+<!-- credits:end -->
         </ul>
-        <p><a href="/contribute/#ground-rules">Read the full ground rules &rarr;</a></p>
       </section>
     </main>
+
     <footer class="site-footer">
       <div class="wrap footer-row">
-        <p>Community-run. Analysis powered by <a href="https://github.com/morluto/rea">REA</a>. No original game files are hosted here.</p>
+        <p>AI Rebuilds links to other people's projects and hosts no software. Each project belongs to its authors.</p>
         <p>
-          <a href="/contribute/#ground-rules">Ground rules</a> ·
-          <a href="https://github.com/a-barzanti/ai-rebuilds/issues/new/choose">Open an issue</a> ·
-          <a href="https://github.com/a-barzanti/ai-rebuilds">Source</a>
+          <a href="https://github.com/a-barzanti/ai-rebuilds">Source on GitHub</a>
+          <a href="/contribute/">Add a project</a>
+          <a href="/privacy/">Privacy</a>
         </p>
       </div>
     </footer>

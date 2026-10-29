@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Rebuild guide
+  - name: Browse the list
+    url: https://ai-rebuilds.com/
+    about: Check whether the project is already listed.
+  - name: Rebuild something with REA
     url: https://ai-rebuilds.com/guide/
-    about: How projects use AI agents and REA to rebuild games.
+    about: How to use coding agents and REA to rebuild software.
