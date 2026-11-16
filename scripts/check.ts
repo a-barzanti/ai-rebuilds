@@ -1,5 +1,5 @@
 #!/usr/bin/env bun
-// Validates data/projects.json, makes sure index.html and README.md were re-synced after an edit,
+// Validates data/projects.json, makes sure index.html, README.md and feed.xml were re-synced after an edit,
 // and keeps binaries out of the repo. `bun run check`; CI runs it on every push and pull request.
 import { existsSync, statSync } from "node:fs";
 import { join } from "node:path";
@@ -81,4 +81,4 @@ if (errors.length) {
   console.error(`✗ ${errors.length} problem(s):\n  - ${errors.join("\n  - ")}`);
   process.exit(1);
 }
-console.log(`✓ ${data!.projects.length} projects OK, page and README in sync, ${tracked.length} tracked files clean`);
+console.log(`✓ ${data!.projects.length} projects OK, page, README and feed in sync, ${tracked.length} tracked files clean`);

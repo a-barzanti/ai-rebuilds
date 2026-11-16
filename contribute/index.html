@@ -10,6 +10,7 @@
     <meta property="og:description" content="How to suggest or add a rebuild, clean-room reimplementation or engine recreation to the AI Rebuilds list." />
     <meta property="og:image" content="https://ai-rebuilds.com/assets/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="alternate" type="application/atom+xml" title="AI Rebuilds: new on the list" href="/feed.xml" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,7 +58,7 @@
           <ol>
             <li>Open <a href="https://github.com/a-barzanti/ai-rebuilds/edit/main/data/projects.json"><code>data/projects.json</code></a> on GitHub, or fork and clone the repository.</li>
             <li>Add an object to <code>"projects"</code>, using the fields below. Set <code>"added"</code> to today's date, and set <code>"updated"</code> at the top of the file to the same date.</li>
-            <li>If you're working locally, run <code>bun run sync</code>. It regenerates the list in <code>index.html</code> and <code>README.md</code>. Then run <code>bun run check</code>.</li>
+            <li>If you're working locally, run <code>bun run sync</code>. It regenerates the list in <code>index.html</code> and <code>README.md</code>, and the feed in <code>feed.xml</code>. Then run <code>bun run check</code>.</li>
             <li>Open a pull request. If you edited on GitHub and can't run Bun, say so in the pull request and a maintainer will run the sync for you.</li>
           </ol>
 <pre><code>{
@@ -114,7 +115,7 @@
           <h2 id="local">Running the site locally</h2>
           <p>The site is plain HTML, CSS and JavaScript with no build step. You need <a href="https://bun.sh">Bun</a> for the scripts.</p>
 <pre><code>bun run dev       # http://localhost:3000
-bun run sync      # regenerate index.html and README.md from the data
+bun run sync      # regenerate index.html, README.md and feed.xml from the data
 bun run check     # validate the data, check the generated files are up to date
 GITHUB_TOKEN=$(gh auth token) bun run refresh   # what the weekly job does</code></pre>
         </div>
@@ -127,6 +128,7 @@ GITHUB_TOKEN=$(gh auth token) bun run refresh   # what the weekly job does</code
         <p>
           <a href="https://github.com/a-barzanti/ai-rebuilds">Source on GitHub</a>
           <a href="/contribute/">Add a project</a>
+          <a href="/feed.xml">Feed of new entries</a>
           <a href="/privacy/">Privacy</a>
         </p>
       </div>

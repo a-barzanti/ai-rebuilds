@@ -1,8 +1,8 @@
 #!/usr/bin/env bun
-// Writes the generated parts of index.html and README.md from data/projects.json.
+// Writes the generated parts of index.html and README.md, and all of feed.xml, from data/projects.json.
 // Run it after editing the data: `bun run sync`.
 import { join } from "node:path";
-import { renderIndex, renderReadme, type Data } from "./render.ts";
+import { renderFeed, renderIndex, renderReadme, type Data } from "./render.ts";
 
 export const ROOT = join(import.meta.dir, "..");
 export const DATA = join(ROOT, "data/projects.json");
@@ -11,7 +11,7 @@ export async function loadData(): Promise<Data> {
   return Bun.file(DATA).json();
 }
 
-const RENDERERS = { "index.html": renderIndex, "README.md": renderReadme } as const;
+const RENDERERS = { "index.html": renderIndex, "README.md": renderReadme, "feed.xml": renderFeed } as const;
 
 /** The full text a generated file should have. */
 export async function renderFile(file: keyof typeof RENDERERS, data: Data) {

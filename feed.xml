@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://ai-rebuilds.com/</id>
+  <title>AI Rebuilds: new on the list</title>
+  <subtitle>Software and games rebuilt by AI agents and clean-room teams, as they are added to the list.</subtitle>
+  <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/" />
+  <link rel="self" type="application/atom+xml" href="https://ai-rebuilds.com/feed.xml" />
+  <updated>2026-11-16T00:00:00Z</updated>
+  <author><name>AI Rebuilds</name><uri>https://ai-rebuilds.com/</uri></author>
+  <icon>https://ai-rebuilds.com/assets/favicon.svg</icon>
+  <entry>
+    <id>https://ai-rebuilds.com/#pgrust</id>
+    <title>pgrust: rebuilds PostgreSQL</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#pgrust" />
+    <published>2026-11-16T00:00:00Z</published>
+    <updated>2026-11-16T00:00:00Z</updated>
+    <category term="Software rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds PostgreSQL. A Rust reimplementation of Postgres that speaks its wire protocol and SQL dialect, with a new JIT-compiled query engine. Its author built it by directing coding agents, mainly Codex. Still in beta.&lt;/p&gt;&lt;p&gt;AI-built, Reimplementation, 2026, Michael Malis&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://pgrust.com&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/malisper/pgrust&quot;&gt;Source&lt;/a&gt; · &lt;a href=&quot;https://malisper.me/pgrust-rebuilding-postgres-in-rust-with-ai/&quot;&gt;Write-up&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#decomp-permuter</id>
+    <title>decomp-permuter: Match finder</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#decomp-permuter" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;Randomly rewrites C code to find a version that compiles to the original bytes.&lt;/p&gt;&lt;p&gt;No AI, Tool&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/simonlindholm/decomp-permuter&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#m2c</id>
+    <title>m2c: Assembly to C</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#m2c" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;A decompiler that turns MIPS, PowerPC, ARM and SuperH assembly into a first draft of C.&lt;/p&gt;&lt;p&gt;No AI, Tool&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/matt-kempster/m2c&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#splat</id>
+    <title>splat: Binary splitter</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#splat" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;Splits a ROM into code and asset files to start a decompilation.&lt;/p&gt;&lt;p&gt;No AI, Tool&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/ethteck/splat&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#objdiff</id>
+    <title>objdiff: Object file diffing</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#objdiff" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;A local tool that diffs your compiled code against the original, used by most decompilation projects.&lt;/p&gt;&lt;p&gt;No AI, Tool&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/encounter/objdiff&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#n64recomp</id>
+    <title>N64Recomp: N64 static recompiler</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#n64recomp" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;Turns N64 game code into C that compiles to a native program. Zelda64Recomp is built with it.&lt;/p&gt;&lt;p&gt;No AI, Tool&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/N64Recomp/N64Recomp&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#decomp-wtf</id>
+    <title>decomp.wtf: Agent-driven matching decompilation</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#decomp-wtf" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;A command-line tool that lets Claude Code and similar agents decompile GameCube and Wii games you own, function by function. Its author archived it in October 2026.&lt;/p&gt;&lt;p&gt;AI use not stated, Tool&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/i12bp8/decomp.wtf&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#decomp-me</id>
+    <title>decomp.me: Shared matching decompilation</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#decomp-me" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;Paste a function and work with others in the browser until the compiled output matches the original.&lt;/p&gt;&lt;p&gt;No AI, Tool&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://decomp.me&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/decompme/decomp.me&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#jadx</id>
+    <title>jadx: Android app decompiler</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#jadx" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;Decompiles DEX and APK files to readable Java.&lt;/p&gt;&lt;p&gt;No AI, Tool&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/skylot/jadx&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#ghidrassist</id>
+    <title>GhidrAssist: LLM help inside Ghidra</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#ghidrassist" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;A Ghidra extension that explains functions and suggests names with an LLM.&lt;/p&gt;&lt;p&gt;No AI, Tool&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/symgraph/GhidrAssist&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#ida-pro-mcp</id>
+    <title>IDA Pro MCP: IDA Pro, for AI agents</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#ida-pro-mcp" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;Connects IDA Pro to language models over MCP.&lt;/p&gt;&lt;p&gt;No AI, Tool&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/mrexodia/ida-pro-mcp&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#ghidramcp</id>
+    <title>GhidraMCP: Ghidra, for AI agents</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#ghidramcp" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;An MCP server that lets an AI model drive Ghidra.&lt;/p&gt;&lt;p&gt;No AI, Tool&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/LaurieWired/GhidraMCP&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#ghidra</id>
+    <title>Ghidra: Disassembler and decompiler</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#ghidra" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;The NSA&amp;#39;s free reverse-engineering suite, with disassembly, pseudocode and scripting.&lt;/p&gt;&lt;p&gt;No AI, Tool&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/NationalSecurityAgency/ghidra&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#rea</id>
+    <title>REA: Reverse engineering for AI agents</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#rea" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Tools for rebuilders" />
+    <content type="html">&lt;p&gt;Gives a coding agent tools to study apps and binaries, including APKs, native code, .NET, Electron and web pages. Every finding cites its evidence. The DX-Ball reconstruction above uses it.&lt;/p&gt;&lt;p&gt;AI use not stated, Tool, morluto&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/morluto/rea&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#nouveau</id>
+    <title>Nouveau: rebuilds NVIDIA&#39;s graphics drivers</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#nouveau" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Clean-room classics" />
+    <content type="html">&lt;p&gt;Rebuilds NVIDIA&amp;#39;s graphics drivers. Open-source NVIDIA drivers, built by tracing what the proprietary driver does.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://nouveau.freedesktop.org&quot;&gt;Website&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#asahi-linux</id>
+    <title>Asahi Linux: rebuilds Drivers for Apple Silicon Macs</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#asahi-linux" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Clean-room classics" />
+    <content type="html">&lt;p&gt;Rebuilds Drivers for Apple Silicon Macs. Reverse-engineered Apple&amp;#39;s undocumented GPU and hardware to run Linux on M-series Macs.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation, 2021&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://asahilinux.org&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/AsahiLinux/linux&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#apache-harmony</id>
+    <title>Apache Harmony: rebuilds Java SE</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#apache-harmony" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Clean-room classics" />
+    <content type="html">&lt;p&gt;Rebuilds Java SE. A clean-room Java class library whose code lived on in Android. The project was retired in 2011.&lt;/p&gt;&lt;p&gt;No AI, Clean-room, 2005&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://harmony.apache.org&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/apache/harmony&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#mono</id>
+    <title>Mono: rebuilds Microsoft .NET Framework</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#mono" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Clean-room classics" />
+    <content type="html">&lt;p&gt;Rebuilds Microsoft .NET Framework. An open implementation of .NET from the published ECMA standards. It is now looked after by the Wine project.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation, 2001&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.mono-project.com&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/mono/mono&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#aros</id>
+    <title>AROS: rebuilds AmigaOS 3.1</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#aros" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Clean-room classics" />
+    <content type="html">&lt;p&gt;Rebuilds AmigaOS 3.1. A portable reimplementation of the AmigaOS 3.1 programming interfaces.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation, 1995&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://aros.sourceforge.io&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/aros-development-team/AROS&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#freedos</id>
+    <title>FreeDOS: rebuilds MS-DOS</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#freedos" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Clean-room classics" />
+    <content type="html">&lt;p&gt;Rebuilds MS-DOS. A complete DOS-compatible operating system, still used to run old games and firmware tools.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation, 1994&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.freedos.org&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/FDOS/kernel&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#haiku</id>
+    <title>Haiku: rebuilds BeOS</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#haiku" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Clean-room classics" />
+    <content type="html">&lt;p&gt;Rebuilds BeOS. An operating system that reimplements BeOS and runs its applications.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation, 2001&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.haiku-os.org&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/haiku/haiku&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#samba</id>
+    <title>Samba: rebuilds Windows file sharing (SMB) and Active Directory</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#samba" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Clean-room classics" />
+    <content type="html">&lt;p&gt;Rebuilds Windows file sharing (SMB) and Active Directory. Reimplemented Microsoft&amp;#39;s networking protocols by watching them on the wire.&lt;/p&gt;&lt;p&gt;No AI, Clean-room, 1992&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.samba.org&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/samba-team/samba&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#reactos</id>
+    <title>ReactOS: rebuilds Windows NT</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#reactos" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Clean-room classics" />
+    <content type="html">&lt;p&gt;Rebuilds Windows NT. A free Windows-compatible operating system. It audited its own code to keep it clean-room.&lt;/p&gt;&lt;p&gt;No AI, Clean-room, 1998&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://reactos.org&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/reactos/reactos&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#wine</id>
+    <title>Wine: rebuilds The Windows API</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#wine" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Clean-room classics" />
+    <content type="html">&lt;p&gt;Rebuilds The Windows API. Runs Windows programs on Linux and macOS by reimplementing Windows itself. It is also what Steam&amp;#39;s Proton is built on.&lt;/p&gt;&lt;p&gt;No AI, Clean-room, 1993&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.winehq.org&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/wine-mirror/wine&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#photopea</id>
+    <title>Photopea: rebuilds Adobe Photoshop</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#photopea" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Clean-room classics" />
+    <content type="html">&lt;p&gt;Rebuilds Adobe Photoshop. One developer&amp;#39;s browser-based editor that opens and saves PSD files. It began as a PSD viewer and is written from scratch in plain JavaScript.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation, 2013, Ivan Kutskir&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.photopea.com&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/photopea/photopea&quot;&gt;Source&lt;/a&gt; · &lt;a href=&quot;https://blog.photopea.com/creating-photopea.html&quot;&gt;Write-up&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#phoenix-bios</id>
+    <title>Phoenix BIOS: rebuilds The IBM PC BIOS</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#phoenix-bios" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Clean-room classics" />
+    <content type="html">&lt;p&gt;Rebuilds The IBM PC BIOS. The textbook clean-room project. One team described the IBM BIOS and a separate team that had never seen it wrote new code. That made PC clones possible. Compaq did the same for its own machines a year earlier.&lt;/p&gt;&lt;p&gt;No AI, Clean-room, 1984, Phoenix Technologies&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Clean-room_design&quot;&gt;Website&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#perfect-dark-port</id>
+    <title>Perfect Dark PC port: rebuilds Perfect Dark (N64, 2000)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#perfect-dark-port" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Decompilations and recompilations" />
+    <content type="html">&lt;p&gt;Rebuilds Perfect Dark (N64, 2000). A port of the Perfect Dark decompilation to modern platforms.&lt;/p&gt;&lt;p&gt;No AI, Port&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/perfect-dark-pc-port/perfect_dark&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#zelda64recomp</id>
+    <title>Zelda64Recomp: rebuilds The Legend of Zelda: Majora&#39;s Mask (N64, 2000)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#zelda64recomp" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Decompilations and recompilations" />
+    <content type="html">&lt;p&gt;Rebuilds The Legend of Zelda: Majora&amp;#39;s Mask (N64, 2000). A static recompilation into a native PC program, with high frame rates and widescreen support.&lt;/p&gt;&lt;p&gt;No AI, Recompilation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Zelda64Recomp/Zelda64Recomp&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#2ship2harkinian</id>
+    <title>2 Ship 2 Harkinian: rebuilds The Legend of Zelda: Majora&#39;s Mask (N64, 2000)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#2ship2harkinian" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Decompilations and recompilations" />
+    <content type="html">&lt;p&gt;Rebuilds The Legend of Zelda: Majora&amp;#39;s Mask (N64, 2000). A PC port of Majora&amp;#39;s Mask built on its decompilation.&lt;/p&gt;&lt;p&gt;No AI, Port&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/2ship2harkinian/2ship2harkinian&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#shipwright</id>
+    <title>Ship of Harkinian: rebuilds The Legend of Zelda: Ocarina of Time (N64, 1998)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#shipwright" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Decompilations and recompilations" />
+    <content type="html">&lt;p&gt;Rebuilds The Legend of Zelda: Ocarina of Time (N64, 1998). A PC port built on the Ocarina of Time decompilation. It reads the assets from your own ROM.&lt;/p&gt;&lt;p&gt;No AI, Port&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/HarbourMasters/Shipwright&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#oot</id>
+    <title>Ocarina of Time decompilation: rebuilds The Legend of Zelda: Ocarina of Time (N64, 1998)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#oot" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Decompilations and recompilations" />
+    <content type="html">&lt;p&gt;Rebuilds The Legend of Zelda: Ocarina of Time (N64, 1998). A matching decompilation by the zeldaret team.&lt;/p&gt;&lt;p&gt;No AI, Decompilation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/zeldaret/oot&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#sm64</id>
+    <title>Super Mario 64 decompilation: rebuilds Super Mario 64 (N64, 1996)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#sm64" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Decompilations and recompilations" />
+    <content type="html">&lt;p&gt;Rebuilds Super Mario 64 (N64, 1996). The landmark matching decompilation that started the modern decomp scene and led to PC ports.&lt;/p&gt;&lt;p&gt;No AI, Decompilation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/n64decomp/sm64&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#freedoom</id>
+    <title>Freedoom: rebuilds Doom&#39;s game data</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#freedoom" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Doom&amp;#39;s game data. Complete free replacement art, sound and levels for any Doom engine. It shows how a project can avoid the original assets altogether.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://freedoom.github.io&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/freedoom/freedoom&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#openfodder</id>
+    <title>Open Fodder: rebuilds Cannon Fodder</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#openfodder" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Cannon Fodder. An open-source engine for Cannon Fodder that also runs the free demo data.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/OpenFodder/openfodder&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#falltergeist</id>
+    <title>Falltergeist: rebuilds Fallout 2</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#falltergeist" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Fallout 2. A cross-platform Fallout 2 engine in C++. Development has been quiet since 2023.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/falltergeist/falltergeist&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#opensage</id>
+    <title>OpenSAGE: rebuilds EA&#39;s SAGE engine (Command &amp; Conquer: Generals)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#opensage" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds EA&amp;#39;s SAGE engine (Command &amp;amp; Conquer: Generals). A reimplementation of the 3D strategy engine behind Generals and its successors.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/OpenSAGE/OpenSAGE&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#openlara</id>
+    <title>OpenLara: rebuilds Tomb Raider (1996)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#openlara" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Tomb Raider (1996). A classic Tomb Raider engine that runs on everything from browsers to old consoles.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/XProger/OpenLara&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#exult</id>
+    <title>Exult: rebuilds Ultima VII</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#exult" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Ultima VII. Recreates Ultima VII and its expansion for modern systems from the original data files.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://exult.info&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/exult/exult&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#gemrb</id>
+    <title>GemRB: rebuilds BioWare&#39;s Infinity Engine (Baldur&#39;s Gate, Planescape: Torment)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#gemrb" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds BioWare&amp;#39;s Infinity Engine (Baldur&amp;#39;s Gate, Planescape: Torment). A portable implementation of the Infinity Engine.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://gemrb.org&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/gemrb/gemrb&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#openxcom</id>
+    <title>OpenXcom: rebuilds UFO: Enemy Unknown (X-COM) and Terror from the Deep</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#openxcom" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds UFO: Enemy Unknown (X-COM) and Terror from the Deep. An open-source clone of the original X-COM, with a large modding scene.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://openxcom.org&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/OpenXcom/OpenXcom&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#corsixth</id>
+    <title>CorsixTH: rebuilds Theme Hospital</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#corsixth" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Theme Hospital. An open-source clone of Theme Hospital&amp;#39;s engine, using the original game&amp;#39;s data.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/CorsixTH/CorsixTH&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#augustus</id>
+    <title>Augustus: rebuilds Caesar III</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#augustus" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Caesar III. A fork of Julius that adds gameplay changes and new features.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Keriew/augustus&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#julius</id>
+    <title>Julius: rebuilds Caesar III</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#julius" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Caesar III. Reimplements Caesar III exactly, keeping the original gameplay.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/bvschaik/julius&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#vcmi</id>
+    <title>VCMI: rebuilds Heroes of Might and Magic III</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#vcmi" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Heroes of Might and Magic III. An open engine for Heroes III with mod support and new features.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://vcmi.eu&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/vcmi/vcmi&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#fheroes2</id>
+    <title>fheroes2: rebuilds Heroes of Might and Magic II</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#fheroes2" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Heroes of Might and Magic II. A recreation of the Heroes II engine with modern resolutions and quality-of-life fixes.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/ihhub/fheroes2&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#devilutionx</id>
+    <title>DevilutionX: rebuilds Diablo and Hellfire</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#devilutionx" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Diablo and Hellfire. Diablo for modern systems, built from reconstructed source code. Needs the data file from your copy.&lt;/p&gt;&lt;p&gt;No AI, Port&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/diasurgical/DevilutionX&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#openage</id>
+    <title>openage: rebuilds Age of Empires II</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#openage" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Age of Empires II. A free engine clone of Age of Empires and its successors.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/SFTtech/openage&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#openra</id>
+    <title>OpenRA: rebuilds Command &amp; Conquer, Red Alert and Dune 2000</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#openra" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Command &amp;amp; Conquer, Red Alert and Dune 2000. A modern engine for early Westwood strategy games, with online play.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.openra.net&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/OpenRA/OpenRA&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#scummvm</id>
+    <title>ScummVM: rebuilds LucasArts SCUMM and hundreds of other adventure engines</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#scummvm" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds LucasArts SCUMM and hundreds of other adventure engines. A collection of reimplemented point-and-click engines. Several games it supports are legally free to download.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.scummvm.org&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/scummvm/scummvm&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#openmw</id>
+    <title>OpenMW: rebuilds The Elder Scrolls III: Morrowind</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#openmw" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds The Elder Scrolls III: Morrowind. A new open-world RPG engine that plays Morrowind from your own data files.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://openmw.org&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/OpenMW/openmw&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#openttd</id>
+    <title>OpenTTD: rebuilds Transport Tycoon Deluxe</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#openttd" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds Transport Tycoon Deluxe. Started as a reimplementation and grew into its own game. It runs on free replacement graphics and sound, so you don&amp;#39;t need the original.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.openttd.org&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/OpenTTD/OpenTTD&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#openrct2</id>
+    <title>OpenRCT2: rebuilds RollerCoaster Tycoon 2</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#openrct2" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Game engine reimplementations" />
+    <content type="html">&lt;p&gt;Rebuilds RollerCoaster Tycoon 2. A full reimplementation of the game with multiplayer, bigger maps and modern display support. Uses the data files from your copy.&lt;/p&gt;&lt;p&gt;No AI, Reimplementation&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://openrct2.io&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/OpenRCT2/OpenRCT2&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#littleplanet</id>
+    <title>Little Planet: rebuilds Sonic CD (Mega-CD, 1993)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#littleplanet" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Games rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds Sonic CD (Mega-CD, 1993). A static recompilation of Sonic CD into a native PC program.&lt;/p&gt;&lt;p&gt;AI-assisted, Recompilation, 2026, carl0srmz&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/carl0srmz/littleplanet&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#dx-ball</id>
+    <title>DX-Ball reconstruction: rebuilds DX-Ball 1.07 (Windows, 1996)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#dx-ball" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Games rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds DX-Ball 1.07 (Windows, 1996). A coding agent driving REA reconstructs the game, checked against the original x86 with differential tests and a pinned MSVC toolchain.&lt;/p&gt;&lt;p&gt;AI-built, Reimplementation, 2026, N0zoM1z0&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/N0zoM1z0/dx-ball&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#bfm-decomp</id>
+    <title>Brave Fencer Musashi decompilation: rebuilds Brave Fencer Musashi (PlayStation, 1998)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#bfm-decomp" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Games rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds Brave Fencer Musashi (PlayStation, 1998). A matching decompilation whose rebuilt binaries are byte-identical to the originals. The repo documents how AI was used.&lt;/p&gt;&lt;p&gt;AI-assisted, Decompilation, 2026, Druthulu&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Druthulu/BFM-decomp&quot;&gt;Source&lt;/a&gt; · &lt;a href=&quot;https://github.com/Druthulu/BFM-decomp/blob/main/docs/story.md&quot;&gt;Write-up&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#kl-eod-decomp</id>
+    <title>Klonoa: Empire of Dreams decompilation: rebuilds Klonoa: Empire of Dreams (GBA, 2001)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#kl-eod-decomp" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Games rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds Klonoa: Empire of Dreams (GBA, 2001). A matching decompilation in progress since March 2026, with Claude Code credited in its commits.&lt;/p&gt;&lt;p&gt;AI-assisted, Decompilation, 2026, Dream Atelier&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Dream-Atelier/kl-eod-decomp&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#melee-decomp</id>
+    <title>Super Smash Bros. Melee decompilation: rebuilds Super Smash Bros. Melee (GameCube, 2001)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#melee-decomp" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Games rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds Super Smash Bros. Melee (GameCube, 2001). A human-led project since 2020 that finished matching all functions in 2026. AI tools proposed candidates, and some commits credit AI co-authors.&lt;/p&gt;&lt;p&gt;AI-assisted, Decompilation, 2020, doldecomp&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/doldecomp/melee&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#sm64ds-decomp</id>
+    <title>Super Mario 64 DS decompilation: rebuilds Super Mario 64 DS (Nintendo DS, 2004)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#sm64ds-decomp" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Games rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds Super Mario 64 DS (Nintendo DS, 2004). A from-scratch, byte-matching decompilation into C and C++, nearly complete, made with Claude, Codex and other models.&lt;/p&gt;&lt;p&gt;AI-built, Decompilation, 2026, tangosdev&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/tangosdev/sm64ds-decomp&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#snowboardkids-decomp</id>
+    <title>Snowboard Kids decompilation: rebuilds Snowboard Kids (N64, 1998)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#snowboardkids-decomp" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Games rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds Snowboard Kids (N64, 1998). The same approach applied to the first game, again reaching 100% matching code, with several AI models.&lt;/p&gt;&lt;p&gt;AI-built, Decompilation, 2026, Chris Lewis&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/cdlewis/snowboardkids-decomp&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#snowboardkids2-decomp</id>
+    <title>Snowboard Kids 2 decompilation: rebuilds Snowboard Kids 2 (N64, 1999)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#snowboardkids2-decomp" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Games rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds Snowboard Kids 2 (N64, 1999). Chris Lewis ran Claude in an unattended loop, one function at a time, and reached a 100% matching decompilation. His blog posts made the method famous.&lt;/p&gt;&lt;p&gt;AI-built, Decompilation, 2026, Chris Lewis&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/cdlewis/snowboardkids2-decomp&quot;&gt;Source&lt;/a&gt; · &lt;a href=&quot;https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/&quot;&gt;Write-up&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#chardet-7</id>
+    <title>chardet 7: rebuilds chardet 6 (LGPL)</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#chardet-7" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Software rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds chardet 6 (LGPL). An AI-driven rewrite of the Python encoding detector that changed its licence from LGPL to MIT, then 0BSD. The project&amp;#39;s original author disputes the relicensing. It became the test case for AI clean-room claims.&lt;/p&gt;&lt;p&gt;AI-built, Rewrite, 2026, Dan Blanchard&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/chardet/chardet&quot;&gt;Source&lt;/a&gt; · &lt;a href=&quot;https://simonw.substack.com/p/can-coding-agents-relicense-open&quot;&gt;Write-up&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#justjshtml</id>
+    <title>justjshtml: rebuilds JustHTML, in JavaScript</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#justjshtml" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Software rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds JustHTML, in JavaScript. Simon Willison had a coding agent port JustHTML to JavaScript, using the same test suite as the referee.&lt;/p&gt;&lt;p&gt;AI-built, Port, 2025, Simon Willison&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/simonw/justjshtml&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#justhtml</id>
+    <title>JustHTML: rebuilds html5lib</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#justhtml" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Software rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds html5lib. A pure-Python HTML5 parser built with coding agents against the official html5lib test suite, which it passes in full.&lt;/p&gt;&lt;p&gt;AI-built, Reimplementation, 2025, Emil Stenström&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/EmilStenstrom/justhtml&quot;&gt;Source&lt;/a&gt; · &lt;a href=&quot;https://emilstenstrom.github.io/justhtml/correctness.html&quot;&gt;Write-up&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#ladybird-libjs-rust</id>
+    <title>Ladybird LibJS in Rust: rebuilds Ladybird&#39;s C++ JavaScript engine frontend</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#ladybird-libjs-rust" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Software rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds Ladybird&amp;#39;s C++ JavaScript engine frontend. Andreas Kling ported LibJS&amp;#39;s lexer, parser, AST and bytecode generator from C++ to Rust in about two weeks, using Claude Code and Codex.&lt;/p&gt;&lt;p&gt;AI-assisted, Port, 2026, Ladybird&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/LadybirdBrowser/ladybird&quot;&gt;Source&lt;/a&gt; · &lt;a href=&quot;https://ladybird.org/posts/adopting-rust/&quot;&gt;Write-up&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#fastrender</id>
+    <title>FastRender: rebuilds A web browser engine</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#fastrender" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Software rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds A web browser engine. An experimental browser engine written by thousands of parallel agents in Cursor&amp;#39;s research on long-running autonomous coding.&lt;/p&gt;&lt;p&gt;AI-built, Reimplementation, 2026, Wilson Lin (Cursor)&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/wilsonzlin/fastrender&quot;&gt;Source&lt;/a&gt; · &lt;a href=&quot;https://simonwillison.net/2026/Jan/23/fastrender/&quot;&gt;Write-up&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#claudes-c-compiler</id>
+    <title>Claude&#39;s C Compiler: rebuilds GCC, as a C compiler</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#claudes-c-compiler" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Software rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds GCC, as a C compiler. Sixteen parallel Claude agents wrote a dependency-free C compiler in Rust that can build the Linux kernel. Not validated for production use.&lt;/p&gt;&lt;p&gt;AI-built, Reimplementation, 2026, Anthropic&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/anthropics/claudes-c-compiler&quot;&gt;Source&lt;/a&gt; · &lt;a href=&quot;https://www.anthropic.com/engineering/building-c-compiler&quot;&gt;Write-up&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#vinext</id>
+    <title>vinext: rebuilds Next.js</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#vinext" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="Software rebuilt with AI" />
+    <content type="html">&lt;p&gt;Rebuilds Next.js. Cloudflare reimplemented the Next.js API surface on Vite in about a week, with one engineer directing AI models.&lt;/p&gt;&lt;p&gt;AI-built, Reimplementation, 2026, Cloudflare&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/cloudflare/vinext&quot;&gt;Source&lt;/a&gt; · &lt;a href=&quot;https://blog.cloudflare.com/vinext/&quot;&gt;Write-up&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#soundcraft</id>
+    <title>SoundCraft: rebuilds Avid Pro Tools</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#soundcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Avid Pro Tools. A digital audio workstation, described as a clean-room reimplementation in pure Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/soundcraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#cadcraft</id>
+    <title>CADCraft: rebuilds AutoCAD</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#cadcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds AutoCAD. Computer-aided design and drafting, described as a clean-room AutoCAD-style app in Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/cadcraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#deckcraft</id>
+    <title>DeckCraft: rebuilds Microsoft PowerPoint</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#deckcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Microsoft PowerPoint. Presentations and slide shows, described as a clean-room reimplementation in pure Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/deckcraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#gridcraft</id>
+    <title>GridCraft: rebuilds Microsoft Excel</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#gridcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Microsoft Excel. A spreadsheet, described as a clean-room reimplementation in pure Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/gridcraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#wordcraft</id>
+    <title>WordCraft: rebuilds Microsoft Word</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#wordcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Microsoft Word. A word processor, described as a clean-room reimplementation in pure Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/wordcraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#figcraft</id>
+    <title>FigCraft: rebuilds Figma</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#figcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Figma. Interface design and prototyping, a clean-room take on collaborative design tools in Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/figcraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#anicraft</id>
+    <title>AniCraft: rebuilds Adobe Animate</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#anicraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Adobe Animate. A 2D animation editor written from scratch in Rust. The newest app in the suite.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/anicraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#pdfcraft</id>
+    <title>PdfCraft: rebuilds Adobe Acrobat</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#pdfcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Adobe Acrobat. A PDF reader and editor written from scratch in Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/pdfcraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#designcraft</id>
+    <title>DesignCraft: rebuilds Adobe InDesign</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#designcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Adobe InDesign. A page layout and publishing editor written from scratch in Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/designcraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#effectcraft</id>
+    <title>EffectCraft: rebuilds Adobe After Effects</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#effectcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Adobe After Effects. Motion graphics and compositing, written from scratch in Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/effectcraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#vectorcraft</id>
+    <title>VectorCraft: rebuilds Adobe Illustrator</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#vectorcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Adobe Illustrator. A vector art tool written from scratch in Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/vectorcraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#lightcraft</id>
+    <title>LightCraft: rebuilds Adobe Lightroom</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#lightcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Adobe Lightroom. A non-destructive photo developer and organizer written from scratch in Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/lightcraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#filmcraft</id>
+    <title>FilmCraft: rebuilds Adobe Premiere Pro</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#filmcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Adobe Premiere Pro. A nonlinear video editor written from scratch in Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/filmcraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#photocraft</id>
+    <title>PhotoCraft: rebuilds Adobe Photoshop</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#photocraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Adobe Photoshop. A layer-based photo editor written from scratch in Rust.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/storytold/photocraft&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <id>https://ai-rebuilds.com/#artcraft</id>
+    <title>ArtCraft: rebuilds Adobe Creative Cloud and Microsoft Office</title>
+    <link rel="alternate" type="text/html" href="https://ai-rebuilds.com/#artcraft" />
+    <published>2026-10-29T00:00:00Z</published>
+    <updated>2026-10-29T00:00:00Z</updated>
+    <category term="ArtCraft Crafting Apps" />
+    <content type="html">&lt;p&gt;Rebuilds Adobe Creative Cloud and Microsoft Office. The umbrella project and launcher for the Crafting Apps below.&lt;/p&gt;&lt;p&gt;AI-built, Clean-room, 2026, storytold&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://getartcraft.com&quot;&gt;Website&lt;/a&gt; · &lt;a href=&quot;https://github.com/storytold/artcraft&quot;&gt;Source&lt;/a&gt; · &lt;a href=&quot;https://www.phoronix.com/news/Photocraft-Filmcraft-AI&quot;&gt;Write-up&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+</feed>

@@ -1,5 +1,5 @@
-// Turns data/projects.json into the static HTML on the home page and the list in README.md.
-// `bun run sync` writes both; `bun run check` fails if either is out of date.
+// Turns data/projects.json into the static HTML on the home page, the list in README.md and feed.xml.
+// `bun run sync` writes all three; `bun run check` fails if any is out of date.
 
 export type AI = "built" | "assisted" | "none" | "unknown";
 export type Method = "clean-room" | "reimplementation" | "decompilation" | "recompilation" | "port" | "rewrite" | "tool";
@@ -189,6 +189,47 @@ export function renderIndex(html: string, data: Data) {
   html = splice(html, "credits", renderCredits(data));
   html = splice(html, "related", renderRelated(data));
   return html;
+}
+
+const SITE = "https://ai-rebuilds.com";
+const FEED_SIZE = 100;
+
+/** An Atom feed of the newest entries. It leaves out stars and commit dates, so the weekly refresh doesn't change it. */
+export function renderFeed(_previous: string, data: Data) {
+  const category = new Map(data.categories.map((c) => [c.id, c.title]));
+  const newest = data.projects
+    .map((p, i) => ({ p, i }))
+    .sort((a, b) => (a.p.added < b.p.added ? 1 : a.p.added > b.p.added ? -1 : b.i - a.i))
+    .slice(0, FEED_SIZE);
+  const entries = newest.map(({ p }) => {
+    const page = `${SITE}/#${p.id}`;
+    const links = [p.url && ["Website", p.url], p.repo && ["Source", p.repo], p.writeup && ["Write-up", p.writeup]].filter(Boolean) as [string, string][];
+    const labels = [AI_LABEL[p.ai], METHOD_LABEL[p.method], p.year, p.by].filter(Boolean).join(", ");
+    const tool = p.method === "tool";
+    const html = `<p>${tool ? "" : `Rebuilds ${esc(p.rebuilds)}. `}${esc(p.summary)}</p><p>${esc(labels)}</p><p>${links.map(([t, u]) => `<a href="${esc(u)}">${t}</a>`).join(" · ")}</p>`;
+    return `  <entry>
+    <id>${page}</id>
+    <title>${esc(p.name)}: ${tool ? "" : "rebuilds "}${esc(p.rebuilds)}</title>
+    <link rel="alternate" type="text/html" href="${page}" />
+    <published>${p.added}T00:00:00Z</published>
+    <updated>${p.added}T00:00:00Z</updated>
+    <category term="${esc(category.get(p.category) ?? p.category)}" />
+    <content type="html">${esc(html)}</content>
+  </entry>`;
+  });
+  return `<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>${SITE}/</id>
+  <title>AI Rebuilds: new on the list</title>
+  <subtitle>Software and games rebuilt by AI agents and clean-room teams, as they are added to the list.</subtitle>
+  <link rel="alternate" type="text/html" href="${SITE}/" />
+  <link rel="self" type="application/atom+xml" href="${SITE}/feed.xml" />
+  <updated>${data.updated}T00:00:00Z</updated>
+  <author><name>AI Rebuilds</name><uri>${SITE}/</uri></author>
+  <icon>${SITE}/assets/favicon.svg</icon>
+${entries.join("\n")}
+</feed>
+`;
 }
 
 export function renderReadme(md: string, data: Data) {

@@ -7,6 +7,8 @@ decompilations finished with Claude, engine reimplementations, and the clean-roo
 
 **[Browse, search and filter it at ai-rebuilds.com →](https://ai-rebuilds.com)**
 
+Follow new entries with the [Atom feed](https://ai-rebuilds.com/feed.xml).
+
 [![List updated](https://img.shields.io/github/last-commit/a-barzanti/ai-rebuilds/main?path=data%2Fprojects.json&label=list%20updated)](data/projects.json)
 [![Stars](https://img.shields.io/github/stars/a-barzanti/ai-rebuilds?style=flat)](https://github.com/a-barzanti/ai-rebuilds/stargazers)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-0d6a57)](CONTRIBUTING.md)
@@ -191,7 +193,8 @@ Plain HTML, CSS and JavaScript with no framework and no build step. [Bun](https:
 data/projects.json       the list: categories, projects, sources
 index.html               home page; the list inside it is generated
 README.md                this file; the list above is generated
-scripts/render.ts        data → HTML and Markdown
+feed.xml                 Atom feed of new entries; generated
+scripts/render.ts        data → HTML, Markdown and the feed
 scripts/sync.ts          writes the generated parts (bun run sync)
 scripts/check.ts         validates the data, checks the generated parts are current (bun run check)
 scripts/refresh.ts       updates GitHub stars and activity, checks links (bun run refresh)

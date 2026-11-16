@@ -11,7 +11,7 @@ Open the [suggestion form](https://github.com/a-barzanti/ai-rebuilds/issues/new?
 1. Add an object to `"projects"` in [`data/projects.json`](data/projects.json). See the
    [field reference](https://ai-rebuilds.com/contribute/#fields).
 2. Set `"added"` on your entry, and `"updated"` at the top of the file, to today's date (`YYYY-MM-DD`).
-3. `bun run sync` regenerates the list in `index.html` and `README.md`.
+3. `bun run sync` regenerates the list in `index.html` and `README.md`, and the feed in `feed.xml`.
 4. `bun run check`, then open a pull request.
 
 If you can't run Bun, open the pull request anyway and say so. A maintainer will run the sync for you.
