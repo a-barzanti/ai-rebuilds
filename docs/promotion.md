@@ -84,6 +84,64 @@ expect you to take part in the community as well.
 
 Attach `assets/social-preview.png` if the link card doesn't load.
 
+### New this week: pgrust
+
+Drafted 16 Nov 2026. Post it within a few days, while the entry is new.
+
+Short, for X / Bluesky / Mastodon:
+
+> New on AI Rebuilds: pgrust, a Rust reimplementation of PostgreSQL built by one developer directing coding agents,
+> mainly Codex. It speaks the Postgres wire protocol and is in beta. Suggested by a reader.
+> https://ai-rebuilds.com/#pgrust
+
+Longer, for LinkedIn or a subreddit that allows it:
+
+> **New on AI Rebuilds: Postgres, rebuilt in Rust by coding agents**
+>
+> A reader suggested pgrust this month and it is now on the list.
+>
+> Michael Malis started it in April 2026. He chose to write every component from scratch in Rust instead of
+> replacing Postgres piece by piece, and he says coding agents, mainly Codex, did most of the building while he set
+> the direction. Two weeks in, he reported 250,000 lines of Rust passing a third of the Postgres regression tests.
+>
+> Seven months later it is at v0.4-beta. It is wire compatible with Postgres, ships its own `postgres`, `initdb`
+> and `psql`, and runs in the browser as WebAssembly. The project says it has formally verified 1,397 of the 3,400
+> user-facing Postgres functions against the original.
+>
+> It is still a beta, and the authors say themselves that passing a test suite does not make the code correct.
+>
+> Entry: https://ai-rebuilds.com/#pgrust
+> All AI-built projects on the list: https://ai-rebuilds.com/?ai=built
+
+The figures come from the pgrust README and the author's write-up. Check them again if you post later than November.
+
+### Newsletter pitch
+
+Send to one newsletter at a time, through its own tip form or address, and change the first line to fit it.
+Candidates: Console.dev, Changelog News, TLDR, Hacker Newsletter. Check each one's submission page first. Some only
+take tools, and Hacker Newsletter picks from Hacker News, so the Show HN post has to come first for that one.
+
+- **Subject:** `A tracked list of software rebuilt by AI agents (82 projects, open data)`
+
+> Hi,
+>
+> A link your readers might like: AI Rebuilds, https://ai-rebuilds.com
+>
+> It is a list of 82 projects that rebuild existing software and games. Coding agents are now producing Photoshop
+> clones, a C compiler that builds the Linux kernel and a Rust reimplementation of Postgres. The list puts them next
+> to the clean-room work that came before, such as the Phoenix BIOS, Wine and Photopea.
+>
+> Each entry says what it rebuilds, how, and whether AI was involved, in the authors' own terms. Stars and
+> activity refresh weekly. The data is one JSON file on GitHub and there is an Atom feed of new entries.
+>
+> It is a personal project with no ads and nothing to sell.
+>
+> Repo: https://github.com/a-barzanti/ai-rebuilds
+> Feed: https://ai-rebuilds.com/feed.xml
+>
+> Thanks,
+> Alessandro
+
 ### Follow-ups that work well
 
 - **Filtered links.** The site keeps filters in the URL, so you can share exactly the slice you're talking about.
