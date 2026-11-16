@@ -1,33 +1,50 @@
 # Promotion plan
 
 How to get AI Rebuilds in front of people, what has been done, and ready-to-paste posts.
-Last reviewed 29 Oct 2026.
+Last reviewed 16 Nov 2026.
 
 ## Done
 
-| What | Where | Status (29 Oct 2026) |
+| What | Where | Status (16 Nov 2026) |
 | ---- | ----- | -------------------- |
 | Repo description, homepage and 12 topics (`awesome-list`, `reverse-engineering`, `clean-room`…) | GitHub repo settings | Done |
 | README turned into an awesome-list, generated from `data/projects.json` | `README.md` | Done |
 | Social preview image, favicon, touch icon, sitemap, `robots.txt` | `assets/`, site root | Done |
 | Related directories credited on the site and in the README | `data/projects.json` → `related` | Done |
-| Pull request: add to "Related lists" | [morluto/awesome-reverse-engineering#29](https://github.com/morluto/awesome-reverse-engineering/pull/29) | Open |
-| Pull request: add to "Other lists" | [bobeff/open-source-games#147](https://github.com/bobeff/open-source-games/pull/147) | Open |
-| Suggestion issue for "Related Collections" | [reacher-z/Awesome-REA#2547](https://github.com/reacher-z/Awesome-REA/issues/2547) | Open |
+| Pull request: add to "Related lists" | [morluto/awesome-reverse-engineering#29](https://github.com/morluto/awesome-reverse-engineering/pull/29) | Merged 30 Oct 2026 |
+| Pull request: add to "Other lists" | [bobeff/open-source-games#147](https://github.com/bobeff/open-source-games/pull/147) | Open, no reply yet. The repo last merged a pull request in Feb 2026 and has 30 open |
+| Suggestion issue for "Related Collections" | [reacher-z/Awesome-REA#2547](https://github.com/reacher-z/Awesome-REA/issues/2547) | Accepted 4 Nov 2026. Listed in the README and at [awesomerea.org](https://awesomerea.org/resources/ai-rebuilds-directory/) |
+| First outside suggestion (pgrust) answered and added | [#1](https://github.com/a-barzanti/ai-rebuilds/issues/1) | Done 16 Nov 2026 |
 
-Check these from time to time and answer reviewers quickly. Once both pull requests are closed, delete the forks
-`a-barzanti/awesome-reverse-engineering` and `a-barzanti/open-source-games`.
+Check the open pull request from time to time and answer reviewers quickly. The fork
+`a-barzanti/awesome-reverse-engineering` can be deleted now that its pull request is merged. Keep
+`a-barzanti/open-source-games` until #147 is closed.
+
+Answer new issues within a few days. The first suggestion waited two weeks.
+
+## Numbers
+
+| Measure | 16 Nov 2026 |
+| ------- | ----------- |
+| Projects listed | 82 |
+| GitHub stars | 9 |
+| Repo views, 1–14 Nov (GitHub traffic) | 505 views, 309 unique visitors |
+| Top referrers to the repo | github.com 97, Google 77, ai-rebuilds.com 12 |
+| Site visits | Not measured, analytics is still off |
+
+GitHub keeps traffic for 14 days only, so copy the figures here at each review. Two other repos picked the
+site up without being asked: `flexdinero/REA-Playbook` and `miles990/rea-case-rankings`.
 
 ## To do
 
-- [ ] **Upload the social preview.** Go to [repo settings](https://github.com/a-barzanti/ai-rebuilds/settings) → General → Social preview → Edit → Upload `assets/social-preview.png`.
+- [ ] **Upload the social preview.** Still missing on 16 Nov 2026. Go to [repo settings](https://github.com/a-barzanti/ai-rebuilds/settings) → General → Social preview → Edit → Upload `assets/social-preview.png`.
   GitHub has no API for this.
-- [ ] **Turn on analytics.** Create a free GA4 property at analytics.google.com with a web stream for
+- [ ] **Turn on analytics.** `GA_ID` is still empty on 16 Nov 2026. Create a free GA4 property at analytics.google.com with a web stream for
   `https://ai-rebuilds.com`. Put the Measurement ID (`G-…`) in `GA_ID` in `assets/js/analytics.js` and push.
   Do this before the posts below, so you can see what they bring in.
-- [ ] **Google Search Console.** Add `ai-rebuilds.com` as a domain property, then add the TXT record it gives you in
+- [ ] **Google Search Console.** No verification TXT record in DNS on 16 Nov 2026. Add `ai-rebuilds.com` as a domain property, then add the TXT record it gives you in
   the IONOS DNS settings. Submit `https://ai-rebuilds.com/sitemap.xml`.
-- [ ] **Hacker News**, then **Reddit**, then **X / Bluesky**. Drafts are below.
+- [ ] **Hacker News**, then **Reddit**, then **X / Bluesky**. Drafts are below. Nothing is on Hacker News yet.
 - [ ] **Keep the list growing.** New entries each week give people a reason to come back and give you something new to post.
 
 ## Posts
@@ -43,7 +60,7 @@ Submit at <https://news.ycombinator.com/submit>. Post on a weekday between 8 and
 
 > AI agents are now rebuilding Photoshop clones, finishing N64 decompilations and porting browser engines. I wanted
 > one place that tracks these projects next to the clean-room classics that came before them (Phoenix BIOS, Wine,
-> Photopea). There are 81 entries. Each says what it rebuilds, how, and whether AI was involved, and stars and activity
+> Photopea). There are 82 entries. Each says what it rebuilds, how, and whether AI was involved, and stars and activity
 > refresh weekly. The data is one JSON file, so pull requests are welcome.
 
 ### Reddit
@@ -60,7 +77,7 @@ expect you to take part in the community as well.
 
 ### X / Bluesky / Mastodon
 
-> Software and games, rebuilt from the outside in. 81 projects, from the 1984 Phoenix BIOS to apps written by AI
+> Software and games, rebuilt from the outside in. 82 projects, from the 1984 Phoenix BIOS to apps written by AI
 > agents last month, each labelled by method and AI involvement. Updated weekly. https://ai-rebuilds.com
 
 Attach `assets/social-preview.png` if the link card doesn't load.
