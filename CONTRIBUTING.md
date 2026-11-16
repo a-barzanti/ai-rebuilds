@@ -26,6 +26,14 @@ If you can't run Bun, open the pull request anyway and say so. A maintainer will
 Listing is not endorsement. Rights holders and project maintainers can ask for changes or removal through the
 [fix an entry](https://github.com/a-barzanti/ai-rebuilds/issues/new?template=fix-entry.yml) form.
 
+## Listed here?
+
+Maintainers of a listed project can add a badge that links to their entry. Replace `your-id` with the entry's `id`:
+
+```md
+[![Listed on AI Rebuilds](https://ai-rebuilds.com/assets/badge.svg)](https://ai-rebuilds.com/#your-id)
+```
+
 ## Local preview
 
 ```sh

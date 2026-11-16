@@ -16,6 +16,7 @@ Last reviewed 16 Nov 2026.
 | Suggestion issue for "Related Collections" | [reacher-z/Awesome-REA#2547](https://github.com/reacher-z/Awesome-REA/issues/2547) | Accepted 4 Nov 2026. Listed in the README and at [awesomerea.org](https://awesomerea.org/resources/ai-rebuilds-directory/) |
 | Idea posted: a "related directories" section | [replicraft/remade#354](https://github.com/replicraft/remade/discussions/354) | Open since 16 Nov 2026 |
 | Atom feed of new entries, linked from every page | [`feed.xml`](https://ai-rebuilds.com/feed.xml) | Live since 16 Nov 2026 |
+| "Listed on AI Rebuilds" badge with copy-paste snippets | [Contribute page](https://ai-rebuilds.com/contribute/#badge), `assets/badge.svg` | Live since 16 Nov 2026. Offered on the site only; don't ask projects to add it |
 | First outside suggestion (pgrust) answered and added | [#1](https://github.com/a-barzanti/ai-rebuilds/issues/1) | Done 16 Nov 2026 |
 
 Check the open pull request from time to time and answer reviewers quickly. The fork
