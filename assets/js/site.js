@@ -18,6 +18,24 @@
     });
   }
 
+  // ---------- Anchor links land below the sticky header ----------
+  // The header wraps onto two lines on phones, so its height is measured instead of assumed.
+  var siteHeader = document.querySelector(".site-header");
+  function measureHeader() {
+    root.style.scrollPaddingTop = siteHeader.offsetHeight + 16 + "px";
+  }
+  if (siteHeader) {
+    measureHeader();
+    if (window.ResizeObserver) new ResizeObserver(measureHeader).observe(siteHeader);
+    else window.addEventListener("resize", measureHeader);
+  }
+
+  // The browser may have jumped to the link target before the header and toolbar were measured.
+  window.addEventListener("load", function () {
+    var target = location.hash.length > 1 && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target) target.scrollIntoView({ behavior: "auto" });
+  });
+
   // ---------- Star count on the GitHub link ----------
   var starLink = document.querySelector("[data-star-count]");
   if (starLink && window.fetch) {
@@ -138,6 +156,17 @@
     apply();
     toListStart();
   }
+
+  // The toolbar is sticky on wide screens and its height changes when the chips wrap. Tell the CSS
+  // how tall it is, so links to an entry (/#wine) stop below it instead of underneath it.
+  var toolbar = document.querySelector(".toolbar");
+  function measureToolbar() {
+    var sticky = getComputedStyle(toolbar).position === "sticky";
+    root.style.setProperty("--toolbar-h", (sticky ? toolbar.offsetHeight : 0) + "px");
+  }
+  measureToolbar();
+  if (window.ResizeObserver) new ResizeObserver(measureToolbar).observe(toolbar);
+  else window.addEventListener("resize", measureToolbar);
 
   chips.forEach(function (chip) {
     chip.addEventListener("click", function () {

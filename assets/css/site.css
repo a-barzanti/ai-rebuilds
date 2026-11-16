@@ -488,6 +488,15 @@ pre code {
   }
 }
 
+/* Links to a category or an entry (/#wine) must land below the sticky toolbar as well as the header.
+   site.js measures the toolbar and sets --toolbar-h; 124px is its usual height. */
+@media (min-width: 900px) {
+  .group,
+  .entry {
+    scroll-margin-top: var(--toolbar-h, 124px);
+  }
+}
+
 .controls {
   display: flex;
   flex-wrap: wrap;
