@@ -14,6 +14,8 @@ Last reviewed 16 Nov 2026.
 | Pull request: add to "Related lists" | [morluto/awesome-reverse-engineering#29](https://github.com/morluto/awesome-reverse-engineering/pull/29) | Merged 30 Oct 2026 |
 | Pull request: add to "Other lists" | [bobeff/open-source-games#147](https://github.com/bobeff/open-source-games/pull/147) | Open, no reply yet. The repo last merged a pull request in Feb 2026 and has 30 open |
 | Suggestion issue for "Related Collections" | [reacher-z/Awesome-REA#2547](https://github.com/reacher-z/Awesome-REA/issues/2547) | Accepted 4 Nov 2026. Listed in the README and at [awesomerea.org](https://awesomerea.org/resources/ai-rebuilds-directory/) |
+| Idea posted: a "related directories" section | [replicraft/remade#354](https://github.com/replicraft/remade/discussions/354) | Open since 16 Nov 2026 |
+| Atom feed of new entries, linked from every page | [`feed.xml`](https://ai-rebuilds.com/feed.xml) | Live since 16 Nov 2026 |
 | First outside suggestion (pgrust) answered and added | [#1](https://github.com/a-barzanti/ai-rebuilds/issues/1) | Done 16 Nov 2026 |
 
 Check the open pull request from time to time and answer reviewers quickly. The fork
@@ -92,17 +94,17 @@ Attach `assets/social-preview.png` if the link card doesn't load.
 - **Write-up.** A blog post on dev.to or Medium about the AI clean-room question: the chardet dispute, ArtCraft and
   decomp.dev closing its index. Link the list as the source.
 
-## Other lists to approach later
+## Other lists
 
-Wait until the open pull requests are answered, and follow each list's contribution guide.
+Reviewed on 16 Nov 2026. Follow each list's contribution guide.
 
-| List | Why it fits | Note |
-| ---- | ----------- | ---- |
-| [replicraft/remade](https://github.com/replicraft/remade) (remade.wiki) | Directory of reimplementations of closed-source apps | Ask whether they link other directories |
-| [SubmitGame/awesome-decomp-games](https://github.com/SubmitGame/awesome-decomp-games) | Game reconstruction index | Generated list, check whether it has a "related" section |
-| [Sebastrion/awesome-unofficial-pc-ports](https://github.com/Sebastrion/awesome-unofficial-pc-ports) | PC ports of console games | |
-| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | Large audience | Only a fit for the REA guide as a workflow resource, not for the list itself |
-| [kaixinbaba/awesome-rea](https://github.com/kaixinbaba/awesome-rea) | REA reconstructions | Skipped: lists individual projects with cover images, not directories |
+| List | Decision | Why |
+| ---- | -------- | --- |
+| [replicraft/remade](https://github.com/replicraft/remade) (remade.wiki) | Asked, see "Done" | It has no section for other directories, so the ask is a discussion, not a catalog suggestion |
+| [Sebastrion/awesome-unofficial-pc-ports](https://github.com/Sebastrion/awesome-unofficial-pc-ports) | Ask in Feb 2027 | The maintainer told another new catalog (issue #19) that he will wait a few months to see whether it stays maintained. This list was 18 days old at the review |
+| [SubmitGame/awesome-decomp-games](https://github.com/SubmitGame/awesome-decomp-games) | Skipped | It has no "related" section, only data sources. It already has every game on this list except OpenLara, which it excludes on purpose. It also marks down projects that a source flags as AI-generated, so becoming a source would hurt the projects listed here |
+| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | Later | Large audience. Only a fit for the REA guide as a workflow resource, not for the list itself |
+| [kaixinbaba/awesome-rea](https://github.com/kaixinbaba/awesome-rea) | Skipped | Lists individual projects with cover images, not directories |
 
 ## Don't
 
