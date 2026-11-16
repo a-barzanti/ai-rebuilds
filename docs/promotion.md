@@ -17,8 +17,8 @@ Last reviewed 16 Nov 2026.
 | First outside suggestion (pgrust) answered and added | [#1](https://github.com/a-barzanti/ai-rebuilds/issues/1) | Done 16 Nov 2026 |
 
 Check the open pull request from time to time and answer reviewers quickly. The fork
-`a-barzanti/awesome-reverse-engineering` can be deleted now that its pull request is merged. Keep
-`a-barzanti/open-source-games` until #147 is closed.
+`a-barzanti/awesome-reverse-engineering` was deleted on 16 Nov 2026, after its pull request was merged. Keep
+`a-barzanti/open-source-games` until #147 is closed, then delete it too.
 
 Answer new issues within a few days. The first suggestion waited two weeks.
 
