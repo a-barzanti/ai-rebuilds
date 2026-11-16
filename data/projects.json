@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-11-16",
   "refreshed": "2026-11-16",
   "categories": [
     {
@@ -463,6 +463,27 @@
         "pushed": "2026-11-16",
         "archived": false,
         "licence": "0BSD"
+      }
+    },
+    {
+      "id": "pgrust",
+      "name": "pgrust",
+      "category": "ai-software",
+      "rebuilds": "PostgreSQL",
+      "summary": "A Rust reimplementation of Postgres that speaks its wire protocol and SQL dialect, with a new JIT-compiled query engine. Its author built it by directing coding agents, mainly Codex. Still in beta.",
+      "ai": "built",
+      "method": "reimplementation",
+      "year": 2026,
+      "by": "Michael Malis",
+      "url": "https://pgrust.com",
+      "repo": "https://github.com/malisper/pgrust",
+      "writeup": "https://malisper.me/pgrust-rebuilding-postgres-in-rust-with-ai/",
+      "added": "2026-11-16",
+      "github": {
+        "stars": 5815,
+        "pushed": "2026-10-26",
+        "archived": false,
+        "licence": "AGPL-3.0"
       }
     },
     {

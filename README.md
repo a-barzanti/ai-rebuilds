@@ -21,7 +21,7 @@ If this list is useful to you, **star the repo**. It helps other people find it.
 ## The list
 
 <!-- list:start -->
-_81 projects. List updated 29 Oct 2026; GitHub stars refreshed 16 Nov 2026. Browse, search and filter it at [ai-rebuilds.com](https://ai-rebuilds.com)._
+_82 projects. List updated 16 Nov 2026; GitHub stars refreshed 16 Nov 2026. Browse, search and filter it at [ai-rebuilds.com](https://ai-rebuilds.com)._
 
 - [ArtCraft Crafting Apps](#artcraft-crafting-apps)
 - [Software rebuilt with AI](#software-rebuilt-with-ai)
@@ -57,6 +57,7 @@ Frameworks, compilers, parsers and engines that were rebuilt, ported or rewritte
 
 - **[Ladybird LibJS in Rust](https://github.com/LadybirdBrowser/ladybird)**: rebuilds Ladybird's C++ JavaScript engine frontend. Andreas Kling ported LibJS's lexer, parser, AST and bytecode generator from C++ to Rust in about two weeks, using Claude Code and Codex. ([write-up](https://ladybird.org/posts/adopting-rust/)) _AI-assisted, Port, ★ 67.2k_
 - **[vinext](https://github.com/cloudflare/vinext)**: rebuilds Next.js. Cloudflare reimplemented the Next.js API surface on Vite in about a week, with one engineer directing AI models. ([write-up](https://blog.cloudflare.com/vinext/)) _AI-built, Reimplementation, ★ 9.4k_
+- **[pgrust](https://pgrust.com)**: rebuilds PostgreSQL. A Rust reimplementation of Postgres that speaks its wire protocol and SQL dialect, with a new JIT-compiled query engine. Its author built it by directing coding agents, mainly Codex. Still in beta. ([write-up](https://malisper.me/pgrust-rebuilding-postgres-in-rust-with-ai/)) _AI-built, Reimplementation, ★ 5.8k_
 - **[Claude's C Compiler](https://github.com/anthropics/claudes-c-compiler)**: rebuilds GCC, as a C compiler. Sixteen parallel Claude agents wrote a dependency-free C compiler in Rust that can build the Linux kernel. Not validated for production use. ([write-up](https://www.anthropic.com/engineering/building-c-compiler)) _AI-built, Reimplementation, ★ 2.8k_
 - **[chardet 7](https://github.com/chardet/chardet)**: rebuilds chardet 6 (LGPL). An AI-driven rewrite of the Python encoding detector that changed its licence from LGPL to MIT, then 0BSD. The project's original author disputes the relicensing. It became the test case for AI clean-room claims. ([write-up](https://simonw.substack.com/p/can-coding-agents-relicense-open)) _AI-built, Rewrite, ★ 2.7k_
 - **[FastRender](https://github.com/wilsonzlin/fastrender)**: rebuilds A web browser engine. An experimental browser engine written by thousands of parallel agents in Cursor's research on long-running autonomous coding. ([write-up](https://simonwillison.net/2026/Jan/23/fastrender/)) _AI-built, Reimplementation, ★ 1.6k_
