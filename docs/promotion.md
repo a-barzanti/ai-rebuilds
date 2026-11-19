@@ -40,8 +40,7 @@ site up without being asked: `flexdinero/REA-Playbook` and `miles990/rea-case-ra
 
 ## To do
 
-- [ ] **Upload the social preview.** Still missing on 16 Nov 2026. Go to [repo settings](https://github.com/a-barzanti/ai-rebuilds/settings) → General → Social preview → Edit → Upload `assets/social-preview.png`.
-  GitHub has no API for this.
+- [x] **Social preview.** Uploaded by 19 Nov 2026; GitHub serves `assets/social-preview.png` as the repo's link card.
 - [x] **Analytics.** On since 19 Nov 2026, through Google Tag Manager container `GTM-MSJT73V2`, whose GA4 tag
   sends to `G-CYQHS3F65L`. It loads only after a visitor chooses Allow. The ID is `TAG_ID` in `assets/js/analytics.js`.
 - [ ] **Google Search Console.** No verification TXT record in DNS on 16 Nov 2026. Add `ai-rebuilds.com` as a domain property, then add the TXT record it gives you in
