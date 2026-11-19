@@ -33,7 +33,7 @@ Answer new issues within a few days. The first suggestion waited two weeks.
 | GitHub stars | 9 | 13 |
 | Repo views, last 14 days (GitHub traffic) | 505 views, 309 unique | 550 views, 323 unique |
 | Top referrers to the repo | github.com 97, Google 77, ai-rebuilds.com 12 | not recorded |
-| Site visits | Not measured, analytics is still off | Still off |
+| Site visits | Not measured, analytics is still off | Analytics on from 19 Nov |
 
 GitHub keeps traffic for 14 days only, so copy the figures here at each review. Two other repos picked the
 site up without being asked: `flexdinero/REA-Playbook` and `miles990/rea-case-rankings`.
@@ -42,9 +42,8 @@ site up without being asked: `flexdinero/REA-Playbook` and `miles990/rea-case-ra
 
 - [ ] **Upload the social preview.** Still missing on 16 Nov 2026. Go to [repo settings](https://github.com/a-barzanti/ai-rebuilds/settings) → General → Social preview → Edit → Upload `assets/social-preview.png`.
   GitHub has no API for this.
-- [ ] **Turn on analytics.** `GA_ID` is still empty on 16 Nov 2026. Create a free GA4 property at analytics.google.com with a web stream for
-  `https://ai-rebuilds.com`. Put the Measurement ID (`G-…`) in `GA_ID` in `assets/js/analytics.js` and push.
-  Do this before the posts below, so you can see what they bring in.
+- [x] **Analytics.** On since 19 Nov 2026, through Google Tag Manager container `GTM-MSJT73V2`, whose GA4 tag
+  sends to `G-CYQHS3F65L`. It loads only after a visitor chooses Allow. The ID is `TAG_ID` in `assets/js/analytics.js`.
 - [ ] **Google Search Console.** No verification TXT record in DNS on 16 Nov 2026. Add `ai-rebuilds.com` as a domain property, then add the TXT record it gives you in
   the IONOS DNS settings. Submit `https://ai-rebuilds.com/sitemap.xml`.
 - [ ] **Hacker News**, then **Reddit**, then **X / Bluesky**. Drafts are below. Nothing is on Hacker News yet.

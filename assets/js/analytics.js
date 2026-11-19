@@ -1,12 +1,13 @@
-// Google Analytics 4, loaded only after the visitor agrees. Until GA_ID is set, this does nothing.
-// To turn it on: create a free GA4 property, copy its Measurement ID (G-XXXXXXXXXX) below, and push.
+// Google Analytics, loaded only after the visitor agrees. Until TAG_ID is set, this does nothing.
+// TAG_ID is either a Google Tag Manager container (GTM-XXXXXXX), whose GA4 tag is set up in Tag Manager,
+// or a GA4 Measurement ID (G-XXXXXXXXXX) to load Google Analytics directly.
 (function () {
   "use strict";
 
-  var GA_ID = "";
+  var TAG_ID = "GTM-MSJT73V2";
   var KEY = "analytics-consent"; // "granted" | "denied"
 
-  if (!GA_ID) return;
+  if (!TAG_ID) return;
 
   function read() {
     try { return localStorage.getItem(KEY); } catch (e) { return null; }
@@ -15,15 +16,22 @@
     try { localStorage.setItem(KEY, v); } catch (e) {}
   }
 
+  var loaded = false;
   function load() {
-    if (window.gtag) return;
+    if (loaded) return;
+    loaded = true;
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag("js", new Date());
-    window.gtag("config", GA_ID, { anonymize_ip: true });
     var s = document.createElement("script");
     s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_ID);
+    if (TAG_ID.indexOf("GTM-") === 0) {
+      window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      s.src = "https://www.googletagmanager.com/gtm.js?id=" + encodeURIComponent(TAG_ID);
+    } else {
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", TAG_ID);
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(TAG_ID);
+    }
     document.head.appendChild(s);
   }
 
