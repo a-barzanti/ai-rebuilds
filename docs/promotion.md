@@ -43,9 +43,8 @@ site up without being asked: `flexdinero/REA-Playbook` and `miles990/rea-case-ra
 - [x] **Social preview.** Uploaded by 19 Nov 2026; GitHub serves `assets/social-preview.png` as the repo's link card.
 - [x] **Analytics.** On since 19 Nov 2026, through Google Tag Manager container `GTM-MSJT73V2`, whose GA4 tag
   sends to `G-CYQHS3F65L`. It loads only after a visitor chooses Allow. The ID is `TAG_ID` in `assets/js/analytics.js`.
-- [ ] **Google Search Console.** URL-prefix property for `https://ai-rebuilds.com/`, verified with
-  `google1f29e96c426cae2c.html` at the site root (keep that file, or verification lapses). Waiting for the owner to
-  click Verify and submit `sitemap.xml` (19 Nov 2026).
+- [x] **Google Search Console.** Verified on 19 Nov 2026 as a URL-prefix property for `https://ai-rebuilds.com/`,
+  with `google1f29e96c426cae2c.html` at the site root (keep that file, or verification lapses). Sitemap submitted.
 - [ ] **Hacker News**, then **Reddit**, then **X / Bluesky**. Drafts are below. Nothing is on Hacker News yet.
 - [ ] **Keep the list growing.** New entries each week give people a reason to come back and give you something new to post.
 
