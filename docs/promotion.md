@@ -27,13 +27,13 @@ Answer new issues within a few days. The first suggestion waited two weeks.
 
 ## Numbers
 
-| Measure | 16 Nov 2026 |
-| ------- | ----------- |
-| Projects listed | 82 |
-| GitHub stars | 9 |
-| Repo views, 1–14 Nov (GitHub traffic) | 505 views, 309 unique visitors |
-| Top referrers to the repo | github.com 97, Google 77, ai-rebuilds.com 12 |
-| Site visits | Not measured, analytics is still off |
+| Measure | 16 Nov 2026 | 19 Nov 2026 |
+| ------- | ----------- | ----------- |
+| Projects listed | 82 | 84 |
+| GitHub stars | 9 | 13 |
+| Repo views, last 14 days (GitHub traffic) | 505 views, 309 unique | 550 views, 323 unique |
+| Top referrers to the repo | github.com 97, Google 77, ai-rebuilds.com 12 | not recorded |
+| Site visits | Not measured, analytics is still off | Still off |
 
 GitHub keeps traffic for 14 days only, so copy the figures here at each review. Two other repos picked the
 site up without being asked: `flexdinero/REA-Playbook` and `miles990/rea-case-rankings`.
@@ -63,7 +63,7 @@ Submit at <https://news.ycombinator.com/submit>. Post on a weekday between 8 and
 
 > AI agents are now rebuilding Photoshop clones, finishing N64 decompilations and porting browser engines. I wanted
 > one place that tracks these projects next to the clean-room classics that came before them (Phoenix BIOS, Wine,
-> Photopea). There are 82 entries. Each says what it rebuilds, how, and whether AI was involved, and stars and activity
+> Photopea). There are 84 entries. Each says what it rebuilds, how, and whether AI was involved, and stars and activity
 > refresh weekly. The data is one JSON file, so pull requests are welcome.
 
 ### Reddit
@@ -80,7 +80,7 @@ expect you to take part in the community as well.
 
 ### X / Bluesky / Mastodon
 
-> Software and games, rebuilt from the outside in. 82 projects, from the 1984 Phoenix BIOS to apps written by AI
+> Software and games, rebuilt from the outside in. 84 projects, from the 1984 Phoenix BIOS to apps written by AI
 > agents last month, each labelled by method and AI involvement. Updated weekly. https://ai-rebuilds.com
 
 Attach `assets/social-preview.png` if the link card doesn't load.
@@ -122,13 +122,13 @@ Send to one newsletter at a time, through its own tip form or address, and chang
 Candidates: Console.dev, Changelog News, TLDR, Hacker Newsletter. Check each one's submission page first. Some only
 take tools, and Hacker Newsletter picks from Hacker News, so the Show HN post has to come first for that one.
 
-- **Subject:** `A tracked list of software rebuilt by AI agents (82 projects, open data)`
+- **Subject:** `A tracked list of software rebuilt by AI agents (84 projects, open data)`
 
 > Hi,
 >
 > A link your readers might like: AI Rebuilds, https://ai-rebuilds.com
 >
-> It is a list of 82 projects that rebuild existing software and games. Coding agents are now producing Photoshop
+> It is a list of 84 projects that rebuild existing software and games. Coding agents are now producing Photoshop
 > clones, a C compiler that builds the Linux kernel and a Rust reimplementation of Postgres. The list puts them next
 > to the clean-room work that came before, such as the Phoenix BIOS, Wine and Photopea.
 >
