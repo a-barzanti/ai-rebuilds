@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-16",
-  "refreshed": "2026-11-16",
+  "updated": "2026-11-19",
+  "refreshed": "2026-11-19",
   "categories": [
     {
       "id": "craft",
@@ -54,8 +54,8 @@
       "writeup": "https://www.phoronix.com/news/Photocraft-Filmcraft-AI",
       "added": "2026-10-29",
       "github": {
-        "stars": 41219,
-        "pushed": "2026-11-16",
+        "stars": 41574,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -73,8 +73,8 @@
       "repo": "https://github.com/storytold/photocraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 79762,
-        "pushed": "2026-11-16",
+        "stars": 80374,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -92,8 +92,8 @@
       "repo": "https://github.com/storytold/filmcraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 18399,
-        "pushed": "2026-11-16",
+        "stars": 18570,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -111,8 +111,8 @@
       "repo": "https://github.com/storytold/lightcraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 16065,
-        "pushed": "2026-11-16",
+        "stars": 16177,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -130,8 +130,8 @@
       "repo": "https://github.com/storytold/vectorcraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 11806,
-        "pushed": "2026-11-16",
+        "stars": 11896,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -149,8 +149,8 @@
       "repo": "https://github.com/storytold/effectcraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 8862,
-        "pushed": "2026-11-16",
+        "stars": 8957,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -168,8 +168,8 @@
       "repo": "https://github.com/storytold/designcraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 5300,
-        "pushed": "2026-11-16",
+        "stars": 5325,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -187,8 +187,8 @@
       "repo": "https://github.com/storytold/pdfcraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 20875,
-        "pushed": "2026-11-16",
+        "stars": 21161,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -206,8 +206,8 @@
       "repo": "https://github.com/storytold/anicraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 428,
-        "pushed": "2026-11-16",
+        "stars": 475,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -225,8 +225,8 @@
       "repo": "https://github.com/storytold/figcraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 5041,
-        "pushed": "2026-11-16",
+        "stars": 5165,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -244,8 +244,8 @@
       "repo": "https://github.com/storytold/wordcraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 18121,
-        "pushed": "2026-11-16",
+        "stars": 18253,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -263,8 +263,8 @@
       "repo": "https://github.com/storytold/gridcraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 7595,
-        "pushed": "2026-11-16",
+        "stars": 7658,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -282,8 +282,8 @@
       "repo": "https://github.com/storytold/deckcraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 4825,
-        "pushed": "2026-11-16",
+        "stars": 4871,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -301,8 +301,8 @@
       "repo": "https://github.com/storytold/cadcraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 8154,
-        "pushed": "2026-11-16",
+        "stars": 8268,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -320,8 +320,8 @@
       "repo": "https://github.com/storytold/soundcraft",
       "added": "2026-10-29",
       "github": {
-        "stars": 4397,
-        "pushed": "2026-11-16",
+        "stars": 4456,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -340,8 +340,8 @@
       "writeup": "https://blog.cloudflare.com/vinext/",
       "added": "2026-10-29",
       "github": {
-        "stars": 9377,
-        "pushed": "2026-11-16",
+        "stars": 9387,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "MIT"
       }
@@ -360,7 +360,7 @@
       "writeup": "https://www.anthropic.com/engineering/building-c-compiler",
       "added": "2026-10-29",
       "github": {
-        "stars": 2839,
+        "stars": 2837,
         "pushed": "2026-02-05",
         "archived": false,
         "licence": "CC0-1.0"
@@ -400,8 +400,8 @@
       "writeup": "https://ladybird.org/posts/adopting-rust/",
       "added": "2026-10-29",
       "github": {
-        "stars": 67157,
-        "pushed": "2026-11-16",
+        "stars": 67207,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "BSD-2-Clause"
       }
@@ -459,8 +459,8 @@
       "writeup": "https://simonw.substack.com/p/can-coding-agents-relicense-open",
       "added": "2026-10-29",
       "github": {
-        "stars": 2685,
-        "pushed": "2026-11-16",
+        "stars": 2688,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "0BSD"
       }
@@ -480,10 +480,30 @@
       "writeup": "https://malisper.me/pgrust-rebuilding-postgres-in-rust-with-ai/",
       "added": "2026-11-16",
       "github": {
-        "stars": 5815,
-        "pushed": "2026-10-26",
+        "stars": 5929,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "AGPL-3.0"
+      }
+    },
+    {
+      "id": "solidcore",
+      "name": "solidcore",
+      "category": "ai-software",
+      "rebuilds": "NVIDIA SMLib, a CAD solid-modelling kernel",
+      "summary": "A safe-Rust port of the open-source SMLib B-rep kernel that now runs SolidCraft. Many coding agents work on it in parallel under a shared AGENTS.md rulebook, and it has since moved away from the original design. Experimental.",
+      "ai": "built",
+      "method": "port",
+      "year": 2026,
+      "by": "Tangency Labs",
+      "url": "https://tangency-labs.github.io/solidcore/",
+      "repo": "https://github.com/tangency-labs/solidcore",
+      "added": "2026-11-19",
+      "github": {
+        "stars": 465,
+        "pushed": "2026-11-19",
+        "archived": false,
+        "licence": "Apache-2.0"
       }
     },
     {
@@ -538,8 +558,8 @@
       "repo": "https://github.com/tangosdev/sm64ds-decomp",
       "added": "2026-10-29",
       "github": {
-        "stars": 262,
-        "pushed": "2026-11-16",
+        "stars": 264,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "MIT"
       }
@@ -557,7 +577,7 @@
       "repo": "https://github.com/doldecomp/melee",
       "added": "2026-10-29",
       "github": {
-        "stars": 2470,
+        "stars": 2474,
         "pushed": "2026-11-05",
         "archived": false,
         "licence": null
@@ -596,8 +616,8 @@
       "writeup": "https://github.com/Druthulu/BFM-decomp/blob/main/docs/story.md",
       "added": "2026-10-29",
       "github": {
-        "stars": 93,
-        "pushed": "2026-11-15",
+        "stars": 99,
+        "pushed": "2026-11-17",
         "archived": false,
         "licence": "AGPL-3.0"
       }
@@ -615,7 +635,7 @@
       "repo": "https://github.com/N0zoM1z0/dx-ball",
       "added": "2026-10-29",
       "github": {
-        "stars": 100,
+        "stars": 104,
         "pushed": "2026-11-10",
         "archived": false,
         "licence": "MIT"
@@ -635,7 +655,7 @@
       "added": "2026-10-29",
       "github": {
         "stars": 55,
-        "pushed": "2026-10-19",
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": null
       }
@@ -652,8 +672,8 @@
       "url": "https://openrct2.io",
       "added": "2026-10-29",
       "github": {
-        "stars": 16587,
-        "pushed": "2026-11-15",
+        "stars": 16590,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "GPL-3.0"
       }
@@ -670,8 +690,8 @@
       "url": "https://www.openttd.org",
       "added": "2026-10-29",
       "github": {
-        "stars": 8508,
-        "pushed": "2026-11-16",
+        "stars": 8516,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": null
       }
@@ -688,8 +708,8 @@
       "url": "https://openmw.org",
       "added": "2026-10-29",
       "github": {
-        "stars": 6761,
-        "pushed": "2026-11-15",
+        "stars": 6766,
+        "pushed": "2026-11-17",
         "archived": false,
         "licence": "GPL-3.0"
       }
@@ -706,8 +726,8 @@
       "url": "https://www.scummvm.org",
       "added": "2026-10-29",
       "github": {
-        "stars": 2897,
-        "pushed": "2026-11-16",
+        "stars": 2899,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "GPL-3.0"
       }
@@ -724,8 +744,8 @@
       "url": "https://www.openra.net",
       "added": "2026-10-29",
       "github": {
-        "stars": 17794,
-        "pushed": "2026-11-08",
+        "stars": 17808,
+        "pushed": "2026-11-17",
         "archived": false,
         "licence": "GPL-3.0"
       }
@@ -741,8 +761,8 @@
       "repo": "https://github.com/SFTtech/openage",
       "added": "2026-10-29",
       "github": {
-        "stars": 14607,
-        "pushed": "2026-11-15",
+        "stars": 14614,
+        "pushed": "2026-11-17",
         "archived": false,
         "licence": null
       }
@@ -758,8 +778,8 @@
       "repo": "https://github.com/diasurgical/DevilutionX",
       "added": "2026-10-29",
       "github": {
-        "stars": 10022,
-        "pushed": "2026-11-15",
+        "stars": 10026,
+        "pushed": "2026-11-17",
         "archived": false,
         "licence": null
       }
@@ -775,7 +795,7 @@
       "repo": "https://github.com/ihhub/fheroes2",
       "added": "2026-10-29",
       "github": {
-        "stars": 3728,
+        "stars": 3729,
         "pushed": "2026-11-15",
         "archived": false,
         "licence": "GPL-2.0"
@@ -793,8 +813,8 @@
       "url": "https://vcmi.eu",
       "added": "2026-10-29",
       "github": {
-        "stars": 6036,
-        "pushed": "2026-11-15",
+        "stars": 6037,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "GPL-2.0"
       }
@@ -810,7 +830,7 @@
       "repo": "https://github.com/bvschaik/julius",
       "added": "2026-10-29",
       "github": {
-        "stars": 3454,
+        "stars": 3457,
         "pushed": "2026-11-13",
         "archived": false,
         "licence": "AGPL-3.0"
@@ -827,8 +847,8 @@
       "repo": "https://github.com/Keriew/augustus",
       "added": "2026-10-29",
       "github": {
-        "stars": 2155,
-        "pushed": "2026-11-12",
+        "stars": 2157,
+        "pushed": "2026-11-17",
         "archived": false,
         "licence": "AGPL-3.0"
       }
@@ -844,8 +864,8 @@
       "repo": "https://github.com/CorsixTH/CorsixTH",
       "added": "2026-10-29",
       "github": {
-        "stars": 4731,
-        "pushed": "2026-11-15",
+        "stars": 4741,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": null
       }
@@ -862,7 +882,7 @@
       "url": "https://openxcom.org",
       "added": "2026-10-29",
       "github": {
-        "stars": 2254,
+        "stars": 2256,
         "pushed": "2026-09-28",
         "archived": false,
         "licence": "GPL-3.0"
@@ -898,8 +918,8 @@
       "url": "https://exult.info",
       "added": "2026-10-29",
       "github": {
-        "stars": 710,
-        "pushed": "2026-11-15",
+        "stars": 711,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "GPL-2.0"
       }
@@ -915,7 +935,7 @@
       "repo": "https://github.com/XProger/OpenLara",
       "added": "2026-10-29",
       "github": {
-        "stars": 5155,
+        "stars": 5156,
         "pushed": "2026-07-26",
         "archived": false,
         "licence": "BSD-2-Clause"
@@ -984,7 +1004,7 @@
       "url": "https://freedoom.github.io",
       "added": "2026-10-29",
       "github": {
-        "stars": 1386,
+        "stars": 1389,
         "pushed": "2026-11-15",
         "archived": false,
         "licence": null
@@ -1001,7 +1021,7 @@
       "repo": "https://github.com/n64decomp/sm64",
       "added": "2026-10-29",
       "github": {
-        "stars": 8977,
+        "stars": 8984,
         "pushed": "2024-02-04",
         "archived": false,
         "licence": "CC0-1.0"
@@ -1018,7 +1038,7 @@
       "repo": "https://github.com/zeldaret/oot",
       "added": "2026-10-29",
       "github": {
-        "stars": 5750,
+        "stars": 5763,
         "pushed": "2026-10-18",
         "archived": false,
         "licence": null
@@ -1035,8 +1055,8 @@
       "repo": "https://github.com/HarbourMasters/Shipwright",
       "added": "2026-10-29",
       "github": {
-        "stars": 6073,
-        "pushed": "2026-11-16",
+        "stars": 6105,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": null
       }
@@ -1052,8 +1072,8 @@
       "repo": "https://github.com/2ship2harkinian/2ship2harkinian",
       "added": "2026-10-29",
       "github": {
-        "stars": 2475,
-        "pushed": "2026-11-03",
+        "stars": 2493,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "CC0-1.0"
       }
@@ -1069,7 +1089,7 @@
       "repo": "https://github.com/Zelda64Recomp/Zelda64Recomp",
       "added": "2026-10-29",
       "github": {
-        "stars": 7719,
+        "stars": 7736,
         "pushed": "2026-09-25",
         "archived": false,
         "licence": "GPL-3.0"
@@ -1086,7 +1106,7 @@
       "repo": "https://github.com/perfect-dark-pc-port/perfect_dark",
       "added": "2026-10-29",
       "github": {
-        "stars": 2119,
+        "stars": 2117,
         "pushed": "2026-10-27",
         "archived": false,
         "licence": "MIT"
@@ -1120,7 +1140,7 @@
       "writeup": "https://blog.photopea.com/creating-photopea.html",
       "added": "2026-10-29",
       "github": {
-        "stars": 8532,
+        "stars": 8534,
         "pushed": "2025-06-30",
         "archived": false,
         "licence": null
@@ -1139,8 +1159,8 @@
       "repo": "https://github.com/wine-mirror/wine",
       "added": "2026-10-29",
       "github": {
-        "stars": 4288,
-        "pushed": "2026-11-13",
+        "stars": 4292,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": null
       }
@@ -1158,10 +1178,30 @@
       "repo": "https://github.com/reactos/reactos",
       "added": "2026-10-29",
       "github": {
-        "stars": 18525,
-        "pushed": "2026-11-16",
+        "stars": 18533,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "GPL-2.0"
+      }
+    },
+    {
+      "id": "redox-os",
+      "name": "Redox OS",
+      "category": "clean-room",
+      "rebuilds": "A Unix-like operating system",
+      "summary": "A microkernel operating system written from scratch in Rust, with its own C library so that Unix and Linux programs can be ported to it. The project does not accept contributions generated by LLMs.",
+      "ai": "none",
+      "method": "reimplementation",
+      "year": 2015,
+      "by": "Jeremy Soller and contributors",
+      "url": "https://www.redox-os.org",
+      "repo": "https://github.com/redox-os/redox",
+      "added": "2026-11-19",
+      "github": {
+        "stars": 16736,
+        "pushed": "2026-11-18",
+        "archived": false,
+        "licence": "MIT"
       }
     },
     {
@@ -1177,8 +1217,8 @@
       "repo": "https://github.com/samba-team/samba",
       "added": "2026-10-29",
       "github": {
-        "stars": 1153,
-        "pushed": "2026-11-16",
+        "stars": 1154,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "GPL-3.0"
       }
@@ -1196,8 +1236,8 @@
       "repo": "https://github.com/haiku/haiku",
       "added": "2026-10-29",
       "github": {
-        "stars": 2382,
-        "pushed": "2026-11-15",
+        "stars": 2388,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": null
       }
@@ -1234,8 +1274,8 @@
       "repo": "https://github.com/aros-development-team/AROS",
       "added": "2026-10-29",
       "github": {
-        "stars": 520,
-        "pushed": "2026-11-16",
+        "stars": 521,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": null
       }
@@ -1292,7 +1332,7 @@
       "added": "2026-10-29",
       "github": {
         "stars": 3068,
-        "pushed": "2026-11-16",
+        "pushed": "2026-11-17",
         "archived": false,
         "licence": null
       }
@@ -1321,8 +1361,8 @@
       "featured": true,
       "added": "2026-10-29",
       "github": {
-        "stars": 463482,
-        "pushed": "2026-11-16",
+        "stars": 468762,
+        "pushed": "2026-11-19",
         "archived": false,
         "licence": "MIT"
       }
@@ -1338,8 +1378,8 @@
       "repo": "https://github.com/NationalSecurityAgency/ghidra",
       "added": "2026-10-29",
       "github": {
-        "stars": 100290,
-        "pushed": "2026-11-10",
+        "stars": 100613,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -1355,7 +1395,7 @@
       "repo": "https://github.com/LaurieWired/GhidraMCP",
       "added": "2026-10-29",
       "github": {
-        "stars": 11949,
+        "stars": 11978,
         "pushed": "2026-10-10",
         "archived": false,
         "licence": "Apache-2.0"
@@ -1372,7 +1412,7 @@
       "repo": "https://github.com/mrexodia/ida-pro-mcp",
       "added": "2026-10-29",
       "github": {
-        "stars": 13492,
+        "stars": 13525,
         "pushed": "2026-11-12",
         "archived": false,
         "licence": "MIT"
@@ -1389,7 +1429,7 @@
       "repo": "https://github.com/symgraph/GhidrAssist",
       "added": "2026-10-29",
       "github": {
-        "stars": 781,
+        "stars": 782,
         "pushed": "2026-10-16",
         "archived": false,
         "licence": "MIT"
@@ -1406,8 +1446,8 @@
       "repo": "https://github.com/skylot/jadx",
       "added": "2026-10-29",
       "github": {
-        "stars": 51848,
-        "pushed": "2026-11-13",
+        "stars": 51900,
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "Apache-2.0"
       }
@@ -1425,7 +1465,7 @@
       "added": "2026-10-29",
       "github": {
         "stars": 662,
-        "pushed": "2026-11-16",
+        "pushed": "2026-11-18",
         "archived": false,
         "licence": "MIT"
       }
@@ -1458,7 +1498,7 @@
       "repo": "https://github.com/N64Recomp/N64Recomp",
       "added": "2026-10-29",
       "github": {
-        "stars": 8414,
+        "stars": 8427,
         "pushed": "2026-11-03",
         "archived": false,
         "licence": "MIT"
@@ -1492,7 +1532,7 @@
       "repo": "https://github.com/ethteck/splat",
       "added": "2026-10-29",
       "github": {
-        "stars": 385,
+        "stars": 386,
         "pushed": "2026-10-10",
         "archived": false,
         "licence": "MIT"
@@ -1509,7 +1549,7 @@
       "repo": "https://github.com/matt-kempster/m2c",
       "added": "2026-10-29",
       "github": {
-        "stars": 682,
+        "stars": 683,
         "pushed": "2026-10-22",
         "archived": false,
         "licence": "GPL-3.0"
@@ -1526,7 +1566,7 @@
       "repo": "https://github.com/simonlindholm/decomp-permuter",
       "added": "2026-10-29",
       "github": {
-        "stars": 241,
+        "stars": 242,
         "pushed": "2026-11-10",
         "archived": false,
         "licence": "MIT"

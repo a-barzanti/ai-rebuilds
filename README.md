@@ -23,7 +23,7 @@ If this list is useful to you, **star the repo**. It helps other people find it.
 ## The list
 
 <!-- list:start -->
-_82 projects. List updated 16 Nov 2026; GitHub stars refreshed 16 Nov 2026. Browse, search and filter it at [ai-rebuilds.com](https://ai-rebuilds.com)._
+_84 projects. List updated 19 Nov 2026; GitHub stars refreshed 19 Nov 2026. Browse, search and filter it at [ai-rebuilds.com](https://ai-rebuilds.com)._
 
 - [ArtCraft Crafting Apps](#artcraft-crafting-apps)
 - [Software rebuilt with AI](#software-rebuilt-with-ai)
@@ -37,21 +37,21 @@ _82 projects. List updated 16 Nov 2026; GitHub stars refreshed 16 Nov 2026. Brow
 
 A suite of desktop apps, each rebuilding a well-known creative or office tool from scratch in Rust. The authors describe them as clean-room reimplementations written predominantly by Claude Code and other AI agents.
 
-- **[PhotoCraft](https://github.com/storytold/photocraft)**: rebuilds Adobe Photoshop. A layer-based photo editor written from scratch in Rust. _AI-built, Clean-room, ★ 79.8k_
-- **[ArtCraft](https://getartcraft.com)**: rebuilds Adobe Creative Cloud and Microsoft Office. The umbrella project and launcher for the Crafting Apps below. ([write-up](https://www.phoronix.com/news/Photocraft-Filmcraft-AI)) _AI-built, Clean-room, ★ 41.2k_
-- **[PdfCraft](https://github.com/storytold/pdfcraft)**: rebuilds Adobe Acrobat. A PDF reader and editor written from scratch in Rust. _AI-built, Clean-room, ★ 20.9k_
-- **[FilmCraft](https://github.com/storytold/filmcraft)**: rebuilds Adobe Premiere Pro. A nonlinear video editor written from scratch in Rust. _AI-built, Clean-room, ★ 18.4k_
-- **[WordCraft](https://github.com/storytold/wordcraft)**: rebuilds Microsoft Word. A word processor, described as a clean-room reimplementation in pure Rust. _AI-built, Clean-room, ★ 18.1k_
-- **[LightCraft](https://github.com/storytold/lightcraft)**: rebuilds Adobe Lightroom. A non-destructive photo developer and organizer written from scratch in Rust. _AI-built, Clean-room, ★ 16.1k_
-- **[VectorCraft](https://github.com/storytold/vectorcraft)**: rebuilds Adobe Illustrator. A vector art tool written from scratch in Rust. _AI-built, Clean-room, ★ 11.8k_
-- **[EffectCraft](https://github.com/storytold/effectcraft)**: rebuilds Adobe After Effects. Motion graphics and compositing, written from scratch in Rust. _AI-built, Clean-room, ★ 8.9k_
-- **[CADCraft](https://github.com/storytold/cadcraft)**: rebuilds AutoCAD. Computer-aided design and drafting, described as a clean-room AutoCAD-style app in Rust. _AI-built, Clean-room, ★ 8.2k_
-- **[GridCraft](https://github.com/storytold/gridcraft)**: rebuilds Microsoft Excel. A spreadsheet, described as a clean-room reimplementation in pure Rust. _AI-built, Clean-room, ★ 7.6k_
+- **[PhotoCraft](https://github.com/storytold/photocraft)**: rebuilds Adobe Photoshop. A layer-based photo editor written from scratch in Rust. _AI-built, Clean-room, ★ 80.4k_
+- **[ArtCraft](https://getartcraft.com)**: rebuilds Adobe Creative Cloud and Microsoft Office. The umbrella project and launcher for the Crafting Apps below. ([write-up](https://www.phoronix.com/news/Photocraft-Filmcraft-AI)) _AI-built, Clean-room, ★ 41.6k_
+- **[PdfCraft](https://github.com/storytold/pdfcraft)**: rebuilds Adobe Acrobat. A PDF reader and editor written from scratch in Rust. _AI-built, Clean-room, ★ 21.2k_
+- **[FilmCraft](https://github.com/storytold/filmcraft)**: rebuilds Adobe Premiere Pro. A nonlinear video editor written from scratch in Rust. _AI-built, Clean-room, ★ 18.6k_
+- **[WordCraft](https://github.com/storytold/wordcraft)**: rebuilds Microsoft Word. A word processor, described as a clean-room reimplementation in pure Rust. _AI-built, Clean-room, ★ 18.3k_
+- **[LightCraft](https://github.com/storytold/lightcraft)**: rebuilds Adobe Lightroom. A non-destructive photo developer and organizer written from scratch in Rust. _AI-built, Clean-room, ★ 16.2k_
+- **[VectorCraft](https://github.com/storytold/vectorcraft)**: rebuilds Adobe Illustrator. A vector art tool written from scratch in Rust. _AI-built, Clean-room, ★ 11.9k_
+- **[EffectCraft](https://github.com/storytold/effectcraft)**: rebuilds Adobe After Effects. Motion graphics and compositing, written from scratch in Rust. _AI-built, Clean-room, ★ 9k_
+- **[CADCraft](https://github.com/storytold/cadcraft)**: rebuilds AutoCAD. Computer-aided design and drafting, described as a clean-room AutoCAD-style app in Rust. _AI-built, Clean-room, ★ 8.3k_
+- **[GridCraft](https://github.com/storytold/gridcraft)**: rebuilds Microsoft Excel. A spreadsheet, described as a clean-room reimplementation in pure Rust. _AI-built, Clean-room, ★ 7.7k_
 - **[DesignCraft](https://github.com/storytold/designcraft)**: rebuilds Adobe InDesign. A page layout and publishing editor written from scratch in Rust. _AI-built, Clean-room, ★ 5.3k_
-- **[FigCraft](https://github.com/storytold/figcraft)**: rebuilds Figma. Interface design and prototyping, a clean-room take on collaborative design tools in Rust. _AI-built, Clean-room, ★ 5k_
-- **[DeckCraft](https://github.com/storytold/deckcraft)**: rebuilds Microsoft PowerPoint. Presentations and slide shows, described as a clean-room reimplementation in pure Rust. _AI-built, Clean-room, ★ 4.8k_
-- **[SoundCraft](https://github.com/storytold/soundcraft)**: rebuilds Avid Pro Tools. A digital audio workstation, described as a clean-room reimplementation in pure Rust. _AI-built, Clean-room, ★ 4.4k_
-- **[AniCraft](https://github.com/storytold/anicraft)**: rebuilds Adobe Animate. A 2D animation editor written from scratch in Rust. The newest app in the suite. _AI-built, Clean-room, ★ 428_
+- **[FigCraft](https://github.com/storytold/figcraft)**: rebuilds Figma. Interface design and prototyping, a clean-room take on collaborative design tools in Rust. _AI-built, Clean-room, ★ 5.2k_
+- **[DeckCraft](https://github.com/storytold/deckcraft)**: rebuilds Microsoft PowerPoint. Presentations and slide shows, described as a clean-room reimplementation in pure Rust. _AI-built, Clean-room, ★ 4.9k_
+- **[SoundCraft](https://github.com/storytold/soundcraft)**: rebuilds Avid Pro Tools. A digital audio workstation, described as a clean-room reimplementation in pure Rust. _AI-built, Clean-room, ★ 4.5k_
+- **[AniCraft](https://github.com/storytold/anicraft)**: rebuilds Adobe Animate. A 2D animation editor written from scratch in Rust. The newest app in the suite. _AI-built, Clean-room, ★ 475_
 
 ### Software rebuilt with AI
 
@@ -59,11 +59,12 @@ Frameworks, compilers, parsers and engines that were rebuilt, ported or rewritte
 
 - **[Ladybird LibJS in Rust](https://github.com/LadybirdBrowser/ladybird)**: rebuilds Ladybird's C++ JavaScript engine frontend. Andreas Kling ported LibJS's lexer, parser, AST and bytecode generator from C++ to Rust in about two weeks, using Claude Code and Codex. ([write-up](https://ladybird.org/posts/adopting-rust/)) _AI-assisted, Port, ★ 67.2k_
 - **[vinext](https://github.com/cloudflare/vinext)**: rebuilds Next.js. Cloudflare reimplemented the Next.js API surface on Vite in about a week, with one engineer directing AI models. ([write-up](https://blog.cloudflare.com/vinext/)) _AI-built, Reimplementation, ★ 9.4k_
-- **[pgrust](https://pgrust.com)**: rebuilds PostgreSQL. A Rust reimplementation of Postgres that speaks its wire protocol and SQL dialect, with a new JIT-compiled query engine. Its author built it by directing coding agents, mainly Codex. Still in beta. ([write-up](https://malisper.me/pgrust-rebuilding-postgres-in-rust-with-ai/)) _AI-built, Reimplementation, ★ 5.8k_
+- **[pgrust](https://pgrust.com)**: rebuilds PostgreSQL. A Rust reimplementation of Postgres that speaks its wire protocol and SQL dialect, with a new JIT-compiled query engine. Its author built it by directing coding agents, mainly Codex. Still in beta. ([write-up](https://malisper.me/pgrust-rebuilding-postgres-in-rust-with-ai/)) _AI-built, Reimplementation, ★ 5.9k_
 - **[Claude's C Compiler](https://github.com/anthropics/claudes-c-compiler)**: rebuilds GCC, as a C compiler. Sixteen parallel Claude agents wrote a dependency-free C compiler in Rust that can build the Linux kernel. Not validated for production use. ([write-up](https://www.anthropic.com/engineering/building-c-compiler)) _AI-built, Reimplementation, ★ 2.8k_
 - **[chardet 7](https://github.com/chardet/chardet)**: rebuilds chardet 6 (LGPL). An AI-driven rewrite of the Python encoding detector that changed its licence from LGPL to MIT, then 0BSD. The project's original author disputes the relicensing. It became the test case for AI clean-room claims. ([write-up](https://simonw.substack.com/p/can-coding-agents-relicense-open)) _AI-built, Rewrite, ★ 2.7k_
 - **[FastRender](https://github.com/wilsonzlin/fastrender)**: rebuilds A web browser engine. An experimental browser engine written by thousands of parallel agents in Cursor's research on long-running autonomous coding. ([write-up](https://simonwillison.net/2026/Jan/23/fastrender/)) _AI-built, Reimplementation, ★ 1.6k_
 - **[JustHTML](https://github.com/EmilStenstrom/justhtml)**: rebuilds html5lib. A pure-Python HTML5 parser built with coding agents against the official html5lib test suite, which it passes in full. ([write-up](https://emilstenstrom.github.io/justhtml/correctness.html)) _AI-built, Reimplementation, ★ 1.2k_
+- **[solidcore](https://tangency-labs.github.io/solidcore/)**: rebuilds NVIDIA SMLib, a CAD solid-modelling kernel. A safe-Rust port of the open-source SMLib B-rep kernel that now runs SolidCraft. Many coding agents work on it in parallel under a shared AGENTS.md rulebook, and it has since moved away from the original design. Experimental. _AI-built, Port, ★ 465_
 - **[justjshtml](https://github.com/simonw/justjshtml)**: rebuilds JustHTML, in JavaScript. Simon Willison had a coding agent port JustHTML to JavaScript, using the same test suite as the referee. _AI-built, Port, ★ 173_
 
 ### Games rebuilt with AI
@@ -71,10 +72,10 @@ Frameworks, compilers, parsers and engines that were rebuilt, ported or rewritte
 Decompilations, recompilations and reconstructions of games where AI agents did much of the work. Every one needs your own copy of the game.
 
 - **[Super Smash Bros. Melee decompilation](https://github.com/doldecomp/melee)**: rebuilds Super Smash Bros. Melee (GameCube, 2001). A human-led project since 2020 that finished matching all functions in 2026. AI tools proposed candidates, and some commits credit AI co-authors. _AI-assisted, Decompilation, ★ 2.5k_
-- **[Super Mario 64 DS decompilation](https://github.com/tangosdev/sm64ds-decomp)**: rebuilds Super Mario 64 DS (Nintendo DS, 2004). A from-scratch, byte-matching decompilation into C and C++, nearly complete, made with Claude, Codex and other models. _AI-built, Decompilation, ★ 262_
+- **[Super Mario 64 DS decompilation](https://github.com/tangosdev/sm64ds-decomp)**: rebuilds Super Mario 64 DS (Nintendo DS, 2004). A from-scratch, byte-matching decompilation into C and C++, nearly complete, made with Claude, Codex and other models. _AI-built, Decompilation, ★ 264_
 - **[Snowboard Kids 2 decompilation](https://github.com/cdlewis/snowboardkids2-decomp)**: rebuilds Snowboard Kids 2 (N64, 1999). Chris Lewis ran Claude in an unattended loop, one function at a time, and reached a 100% matching decompilation. His blog posts made the method famous. ([write-up](https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/)) _AI-built, Decompilation, ★ 199_
-- **[DX-Ball reconstruction](https://github.com/N0zoM1z0/dx-ball)**: rebuilds DX-Ball 1.07 (Windows, 1996). A coding agent driving REA reconstructs the game, checked against the original x86 with differential tests and a pinned MSVC toolchain. _AI-built, Reimplementation, ★ 100_
-- **[Brave Fencer Musashi decompilation](https://github.com/Druthulu/BFM-decomp)**: rebuilds Brave Fencer Musashi (PlayStation, 1998). A matching decompilation whose rebuilt binaries are byte-identical to the originals. The repo documents how AI was used. ([write-up](https://github.com/Druthulu/BFM-decomp/blob/main/docs/story.md)) _AI-assisted, Decompilation, ★ 93_
+- **[DX-Ball reconstruction](https://github.com/N0zoM1z0/dx-ball)**: rebuilds DX-Ball 1.07 (Windows, 1996). A coding agent driving REA reconstructs the game, checked against the original x86 with differential tests and a pinned MSVC toolchain. _AI-built, Reimplementation, ★ 104_
+- **[Brave Fencer Musashi decompilation](https://github.com/Druthulu/BFM-decomp)**: rebuilds Brave Fencer Musashi (PlayStation, 1998). A matching decompilation whose rebuilt binaries are byte-identical to the originals. The repo documents how AI was used. ([write-up](https://github.com/Druthulu/BFM-decomp/blob/main/docs/story.md)) _AI-assisted, Decompilation, ★ 99_
 - **[Snowboard Kids decompilation](https://github.com/cdlewis/snowboardkids-decomp)**: rebuilds Snowboard Kids (N64, 1998). The same approach applied to the first game, again reaching 100% matching code, with several AI models. _AI-built, Decompilation, ★ 58_
 - **[Little Planet](https://github.com/carl0srmz/littleplanet)**: rebuilds Sonic CD (Mega-CD, 1993). A static recompilation of Sonic CD into a native PC program. _AI-assisted, Recompilation, ★ 55_
 - **[Klonoa: Empire of Dreams decompilation](https://github.com/Dream-Atelier/kl-eod-decomp)**: rebuilds Klonoa: Empire of Dreams (GBA, 2001). A matching decompilation in progress since March 2026, with Claude Code credited in its commits. _AI-assisted, Decompilation, ★ 17_
@@ -101,7 +102,7 @@ Long-running community engines that play classic games on modern systems. Most l
 - **[Freedoom](https://freedoom.github.io)**: rebuilds Doom's game data. Complete free replacement art, sound and levels for any Doom engine. It shows how a project can avoid the original assets altogether. _Reimplementation, ★ 1.4k_
 - **[GemRB](https://gemrb.org)**: rebuilds BioWare's Infinity Engine (Baldur's Gate, Planescape: Torment). A portable implementation of the Infinity Engine. _Reimplementation, ★ 1.3k_
 - **[Falltergeist](https://github.com/falltergeist/falltergeist)**: rebuilds Fallout 2. A cross-platform Fallout 2 engine in C++. Development has been quiet since 2023. _Reimplementation, ★ 883_
-- **[Exult](https://exult.info)**: rebuilds Ultima VII. Recreates Ultima VII and its expansion for modern systems from the original data files. _Reimplementation, ★ 710_
+- **[Exult](https://exult.info)**: rebuilds Ultima VII. Recreates Ultima VII and its expansion for modern systems from the original data files. _Reimplementation, ★ 711_
 - **[Open Fodder](https://github.com/OpenFodder/openfodder)**: rebuilds Cannon Fodder. An open-source engine for Cannon Fodder that also runs the free demo data. _Reimplementation, ★ 621_
 
 ### Decompilations and recompilations
@@ -120,6 +121,7 @@ Human-led projects that turned console games back into buildable source code or 
 Famous independent reimplementations, from the BIOS that made PC clones possible to a Photoshop-compatible editor in the browser.
 
 - **[ReactOS](https://reactos.org)**: rebuilds Windows NT. A free Windows-compatible operating system. It audited its own code to keep it clean-room. _Clean-room, ★ 18.5k_
+- **[Redox OS](https://www.redox-os.org)**: rebuilds A Unix-like operating system. A microkernel operating system written from scratch in Rust, with its own C library so that Unix and Linux programs can be ported to it. The project does not accept contributions generated by LLMs. _Reimplementation, ★ 16.7k_
 - **[Mono](https://www.mono-project.com)**: rebuilds Microsoft .NET Framework. An open implementation of .NET from the published ECMA standards. It is now looked after by the Wine project. _Reimplementation, ★ 11.5k_
 - **[Photopea](https://www.photopea.com)**: rebuilds Adobe Photoshop. One developer's browser-based editor that opens and saves PSD files. It began as a PSD viewer and is written from scratch in plain JavaScript. ([write-up](https://blog.photopea.com/creating-photopea.html)) _Reimplementation, ★ 8.5k_
 - **[Wine](https://www.winehq.org)**: rebuilds The Windows API. Runs Windows programs on Linux and macOS by reimplementing Windows itself. It is also what Steam's Proton is built on. _Clean-room, ★ 4.3k_
@@ -127,7 +129,7 @@ Famous independent reimplementations, from the BIOS that made PC clones possible
 - **[Haiku](https://www.haiku-os.org)**: rebuilds BeOS. An operating system that reimplements BeOS and runs its applications. _Reimplementation, ★ 2.4k_
 - **[Samba](https://www.samba.org)**: rebuilds Windows file sharing (SMB) and Active Directory. Reimplemented Microsoft's networking protocols by watching them on the wire. _Clean-room, ★ 1.2k_
 - **[FreeDOS](https://www.freedos.org)**: rebuilds MS-DOS. A complete DOS-compatible operating system, still used to run old games and firmware tools. _Reimplementation, ★ 1.1k_
-- **[AROS](https://aros.sourceforge.io)**: rebuilds AmigaOS 3.1. A portable reimplementation of the AmigaOS 3.1 programming interfaces. _Reimplementation, ★ 520_
+- **[AROS](https://aros.sourceforge.io)**: rebuilds AmigaOS 3.1. A portable reimplementation of the AmigaOS 3.1 programming interfaces. _Reimplementation, ★ 521_
 - **[Apache Harmony](https://harmony.apache.org)**: rebuilds Java SE. A clean-room Java class library whose code lived on in Android. The project was retired in 2011. _Clean-room, ★ 95_
 - **[Nouveau](https://nouveau.freedesktop.org)**: rebuilds NVIDIA's graphics drivers. Open-source NVIDIA drivers, built by tracing what the proprietary driver does. _Reimplementation_
 - **[Phoenix BIOS](https://en.wikipedia.org/wiki/Clean-room_design)**: rebuilds The IBM PC BIOS. The textbook clean-room project. One team described the IBM BIOS and a separate team that had never seen it wrote new code. That made PC clones possible. Compaq did the same for its own machines a year earlier. _Clean-room_
@@ -136,19 +138,19 @@ Famous independent reimplementations, from the BIOS that made PC clones possible
 
 What people use to study the original and check the rebuild against it: decompilers, AI bridges, matching and diffing tools.
 
-- **[REA](https://github.com/morluto/rea)**: rebuilds Reverse engineering for AI agents. Gives a coding agent tools to study apps and binaries, including APKs, native code, .NET, Electron and web pages. Every finding cites its evidence. The DX-Ball reconstruction above uses it. _Tool, ★ 463k_
-- **[Ghidra](https://github.com/NationalSecurityAgency/ghidra)**: rebuilds Disassembler and decompiler. The NSA's free reverse-engineering suite, with disassembly, pseudocode and scripting. _Tool, ★ 100k_
-- **[jadx](https://github.com/skylot/jadx)**: rebuilds Android app decompiler. Decompiles DEX and APK files to readable Java. _Tool, ★ 51.8k_
+- **[REA](https://github.com/morluto/rea)**: rebuilds Reverse engineering for AI agents. Gives a coding agent tools to study apps and binaries, including APKs, native code, .NET, Electron and web pages. Every finding cites its evidence. The DX-Ball reconstruction above uses it. _Tool, ★ 469k_
+- **[Ghidra](https://github.com/NationalSecurityAgency/ghidra)**: rebuilds Disassembler and decompiler. The NSA's free reverse-engineering suite, with disassembly, pseudocode and scripting. _Tool, ★ 101k_
+- **[jadx](https://github.com/skylot/jadx)**: rebuilds Android app decompiler. Decompiles DEX and APK files to readable Java. _Tool, ★ 51.9k_
 - **[IDA Pro MCP](https://github.com/mrexodia/ida-pro-mcp)**: rebuilds IDA Pro, for AI agents. Connects IDA Pro to language models over MCP. _Tool, ★ 13.5k_
-- **[GhidraMCP](https://github.com/LaurieWired/GhidraMCP)**: rebuilds Ghidra, for AI agents. An MCP server that lets an AI model drive Ghidra. _Tool, ★ 11.9k_
+- **[GhidraMCP](https://github.com/LaurieWired/GhidraMCP)**: rebuilds Ghidra, for AI agents. An MCP server that lets an AI model drive Ghidra. _Tool, ★ 12k_
 - **[N64Recomp](https://github.com/N64Recomp/N64Recomp)**: rebuilds N64 static recompiler. Turns N64 game code into C that compiles to a native program. Zelda64Recomp is built with it. _Tool, ★ 8.4k_
-- **[GhidrAssist](https://github.com/symgraph/GhidrAssist)**: rebuilds LLM help inside Ghidra. A Ghidra extension that explains functions and suggests names with an LLM. _Tool, ★ 781_
-- **[m2c](https://github.com/matt-kempster/m2c)**: rebuilds Assembly to C. A decompiler that turns MIPS, PowerPC, ARM and SuperH assembly into a first draft of C. _Tool, ★ 682_
+- **[GhidrAssist](https://github.com/symgraph/GhidrAssist)**: rebuilds LLM help inside Ghidra. A Ghidra extension that explains functions and suggests names with an LLM. _Tool, ★ 782_
+- **[m2c](https://github.com/matt-kempster/m2c)**: rebuilds Assembly to C. A decompiler that turns MIPS, PowerPC, ARM and SuperH assembly into a first draft of C. _Tool, ★ 683_
 - **[decomp.me](https://decomp.me)**: rebuilds Shared matching decompilation. Paste a function and work with others in the browser until the compiled output matches the original. _Tool, ★ 662_
 - **[objdiff](https://github.com/encounter/objdiff)**: rebuilds Object file diffing. A local tool that diffs your compiled code against the original, used by most decompilation projects. _Tool, ★ 623_
 - **[decomp.wtf](https://github.com/i12bp8/decomp.wtf)**: rebuilds Agent-driven matching decompilation. A command-line tool that lets Claude Code and similar agents decompile GameCube and Wii games you own, function by function. Its author archived it in October 2026. _Tool, ★ 556_
-- **[splat](https://github.com/ethteck/splat)**: rebuilds Binary splitter. Splits a ROM into code and asset files to start a decompilation. _Tool, ★ 385_
-- **[decomp-permuter](https://github.com/simonlindholm/decomp-permuter)**: rebuilds Match finder. Randomly rewrites C code to find a version that compiles to the original bytes. _Tool, ★ 241_
+- **[splat](https://github.com/ethteck/splat)**: rebuilds Binary splitter. Splits a ROM into code and asset files to start a decompilation. _Tool, ★ 386_
+- **[decomp-permuter](https://github.com/simonlindholm/decomp-permuter)**: rebuilds Match finder. Randomly rewrites C code to find a version that compiles to the original bytes. _Tool, ★ 242_
 
 ### Sources and credits
 
