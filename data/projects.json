@@ -1693,6 +1693,12 @@
       "by": "yibie",
       "url": "https://github.com/yibie/awesome-rea",
       "note": "AI-assisted game decompilations and ports organized around their stated acceptance checks, plus practitioner write-ups."
+    },
+    {
+      "name": "Awesome REA (AIshihzong)",
+      "by": "AIshihzong",
+      "url": "https://github.com/AIshihzong/awesome-reverse-engineer-anything",
+      "note": "Bilingual (EN/中文) list of AI reverse-engineering and rebuild cases, each checked against its sources for whether it really used REA, with an index by the app a project replaces."
     }
   ]
 }
