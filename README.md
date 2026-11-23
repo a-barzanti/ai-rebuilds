@@ -179,6 +179,7 @@ Other lists that track rebuilds, reimplementations and decompilations. Worth bro
 - [awesome-unofficial-pc-ports](https://github.com/Sebastrion/awesome-unofficial-pc-ports) by Sebastrion. Player-friendly guide to unofficial PC ports of console games.
 - [Awesome REA Cases](https://github.com/songshikang0111/awesome-REA-cases) by songshikang0111. AI-assisted reverse-engineering case studies, separating reported from reproduced results.
 - [awesome-rea](https://github.com/yibie/awesome-rea) by yibie. AI-assisted game decompilations and ports organized around their stated acceptance checks, plus practitioner write-ups.
+- [Awesome REA (AIshihzong)](https://github.com/AIshihzong/awesome-reverse-engineer-anything) by AIshihzong. Bilingual (EN/中文) list of AI reverse-engineering and rebuild cases, each checked against its sources for whether it really used REA, with an index by the app a project replaces.
 <!-- list:end -->
 
 ## Contributing
